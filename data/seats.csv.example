@@ -1,0 +1,6 @@
+seat_id,seat_number,section,row,status,buyer_name,buyer_email,buyer_phone,venta_origen,amount_paid,deposit_amount,total_amount,payment_status,reserved_at,expires_at,paid_at,created_at,updated_at,notes,cancellation_reason,refund_amount,refunded
+1,1,General,1,VACANTE,,,,,0,0,150000,,,,2025-12-10 10:00:00,2025-12-10 10:00:00,,,0,false
+2,2,General,1,VENDIDO,Juan Pérez,juan@test.com,+595981234567,WHATSAPP_CALIENTE,150000,0,150000,paid,2025-12-10 11:00:00,,2025-12-10 11:00:00,2025-12-10 10:00:00,2025-12-10 11:00:00,,,0,false
+3,3,General,1,RESERVADO,María García,maria@test.com,+595981234568,VIRTUAL_FRIO,75000,75000,150000,partial,2025-12-10 12:00:00,2025-12-17 08:00:00,,2025-12-10 10:00:00,2025-12-10 12:00:00,Seña del 50%,,0,false
+20,20,General,2,VENDIDO,Juan Carlos Cruzans,doctorjccruzans@gmail.com,+595982288036,WHATSAPP_CALIENTE,150000,0,150000,paid,2025-12-13 09:24:04,,2025-12-13 09:24:04,2025-12-13 09:24:04,2025-12-13 09:24:04,Compra confirmada - RES-1765628644730,,,0,false
+

@@ -1,0 +1,126 @@
+═══════════════════════════════════════════════════════════════════
+  INSTRUCCIONES PARA AGREGAR LA FOTO DE DRA. PATRICIA CALLISPERIS
+═══════════════════════════════════════════════════════════════════
+
+
+📸 TIENES LA IMAGEN DE LA DRA. CALLISPERIS
+
+Sigue estos pasos para agregarla a la página web:
+
+
+PASO 1: Guardar la Imagen
+───────────────────────────────────────────────────────────────────
+
+1. Localiza la imagen que me mostraste de la Dra. Patricia Callisperis
+   (la que tiene el círculo azul con su foto y la bandera de Bolivia)
+
+2. Haz click derecho en la imagen
+
+3. Selecciona "Guardar imagen como..." o "Save image as..."
+
+4. En la ventana que se abre:
+   
+   📂 Navega a esta carpeta:
+   C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+   
+   📝 Nombre del archivo (exacto):
+   patricia-callisperis.jpg
+   
+   💾 Tipo de archivo:
+   JPEG (.jpg) o PNG (.png)
+
+5. Click en "Guardar"
+
+
+PASO 2: Verificar que se Guardó Correctamente
+───────────────────────────────────────────────────────────────────
+
+1. Abre la carpeta:
+   C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+
+2. Verifica que veas el archivo:
+   patricia-callisperis.jpg
+
+3. Haz doble click para abrirla y confirmar que es la correcta
+
+
+PASO 3: Ver el Resultado en la Página Web
+───────────────────────────────────────────────────────────────────
+
+1. Abre la página web:
+   - Doble click en: ABRIR_PAGINA_WEB.bat
+   
+   O
+   
+   - Abre index.html con tu navegador
+
+2. Ve a la sección "Agenda"
+
+3. Busca a "Dra. Patrícia Callisperis" (a las 18:30 PM)
+
+4. ¡Deberías ver su foto en lugar del avatar con iniciales!
+
+
+═══════════════════════════════════════════════════════════════════
+
+
+✅ CHECKLIST:
+
+□ Imagen descargada
+□ Guardada en la carpeta correcta: images/expositores/
+□ Nombre correcto: patricia-callisperis.jpg
+□ Verificada que se ve correctamente
+□ Página web refrescada
+□ Foto visible en la agenda
+
+
+═══════════════════════════════════════════════════════════════════
+
+
+🆘 SI LA FOTO NO APARECE:
+
+1. Verifica el nombre del archivo (debe ser exacto):
+   patricia-callisperis.jpg
+   (todo en minúsculas, con guión)
+
+2. Verifica que está en la carpeta correcta:
+   images/expositores/
+
+3. Refresca el navegador:
+   Presiona Ctrl + F5
+
+4. Si la imagen es muy grande:
+   - Usa: https://tinypng.com/ para comprimirla
+   - O redimensiona a 500x500 píxeles
+
+
+═══════════════════════════════════════════════════════════════════
+
+
+💡 NOTA IMPORTANTE:
+
+La imagen que me mostraste parece tener texto y un círculo azul alrededor.
+Si es posible, sería ideal tener:
+
+✓ Solo la foto de la Dra. (sin el círculo ni texto)
+✓ Fondo liso o profesional
+✓ Formato cuadrado
+
+Pero si solo tienes esa imagen, también funcionará. El sistema
+automáticamente la recortará en forma circular.
+
+
+═══════════════════════════════════════════════════════════════════
+
+
+📞 NECESITAS AYUDA?
+
+Si tienes algún problema, revisa el archivo:
+COMO_AGREGAR_FOTOS_EXPOSITORES.md
+
+
+═══════════════════════════════════════════════════════════════════
+
+¡LISTO! Una vez guardada, la foto se mostrará automáticamente.
+
+

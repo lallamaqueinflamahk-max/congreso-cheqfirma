@@ -1,0 +1,93 @@
+REPORTE DE RESERVAS - CONGRESO CHEQFIRMA 2025
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ RESERVAS NO PAGADAS - PAGO EN PERSONA EL DÍA DEL EVENTO
+
+═══════════════════════════════════════════════════════════════════════════════
+INFORMACIÓN DE LAS RESERVAS
+═══════════════════════════════════════════════════════════════════════════════
+
+🎫 RESERVA AMARILLO - HOSPITAL DEL CHACO
+
+═══════════════════════════════════════════════════════════════════════════════
+ASIENTO 56 - DR. GERD UWE HUBERT
+═══════════════════════════════════════════════════════════════════════════════
+
+👤 Nombre: Dr. Gerd Uwe Hubert
+🆔 Cédula: 2585646
+📱 Celular: 0984475972
+🎫 Asiento: 56
+📊 Estado: RESERVADO (NO PAGADO)
+📍 Tipo de Asistencia: Presencial
+💳 Método de Pago: Pago en persona el día del congreso
+🆔 ID de Reserva: RES_HOSPITAL_CHACO_56
+
+═══════════════════════════════════════════════════════════════════════════════
+ASIENTO 57 - DR. WILMAR DYCK
+═══════════════════════════════════════════════════════════════════════════════
+
+👤 Nombre: Dr. Wilmar Dyck
+🆔 Cédula: 2120226
+📱 Celular: 0986130827
+🎫 Asiento: 57
+📊 Estado: RESERVADO (NO PAGADO)
+📍 Tipo de Asistencia: Presencial
+💳 Método de Pago: Pago en persona el día del congreso
+🆔 ID de Reserva: RES_HOSPITAL_CHACO_57
+
+═══════════════════════════════════════════════════════════════════════════════
+⚠️ IMPORTANTE - ESTADO DE PAGO
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ ESTAS RESERVAS NO ESTÁN PAGADAS
+
+✅ Los asientos 56 y 57 están RESERVADOS para los doctores del Hospital del Chaco
+✅ El pago se realizará EN PERSONA el día del evento
+✅ Los asientos están garantizados hasta el día del congreso
+✅ Se debe cobrar el día del evento antes de permitir el acceso
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTRUCCIONES PARA EL DÍA DEL EVENTO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. ⚠️ VERIFICAR PAGO: Los doctores deben pagar antes de acceder al evento
+2. 💰 MONTO A COBRAR: 150.000 Gs por cada asiento (300.000 Gs total)
+3. 📋 VERIFICAR IDENTIDAD: Confirmar cédulas al momento del pago:
+   - Dr. Gerd Uwe Hubert: Cédula 2585646
+   - Dr. Wilmar Dyck: Cédula 2120226
+4. 📱 CONTACTOS: 
+   - Dr. Hubert: 0984475972
+   - Dr. Dyck: 0986130827
+5. ✅ Una vez pagado, marcar los asientos como vendidos en el sistema
+
+═══════════════════════════════════════════════════════════════════════════════
+FECHAS DEL EVENTO
+═══════════════════════════════════════════════════════════════════════════════
+
+📅 Días: 19-20 Diciembre 2025
+🕐 Horario: 08:00 - 22:00 (Paraguay GMT-3)
+⏱️ Duración: 2 días completos
+
+═══════════════════════════════════════════════════════════════════════════════
+LUGAR DEL EVENTO
+═══════════════════════════════════════════════════════════════════════════════
+
+🏛️ Auditorio: "Ruiz Diaz"
+📍 Ubicación: Manzana de la Rivera
+🌎 Ciudad: Asunción, Paraguay
+
+═══════════════════════════════════════════════════════════════════════════════
+NOTAS ADICIONALES
+═══════════════════════════════════════════════════════════════════════════════
+
+• Reserva realizada por pedido del público
+• Promoción de entradas anticipadas prorrogada hasta el domingo 14 del mes corriente
+• Los doctores confirmaron que pagarán en persona el día del congreso
+• Mantener estos asientos reservados hasta el día del evento
+• Si no se presenta el pago, los asientos pueden ser liberados
+
+═══════════════════════════════════════════════════════════════════════════════
+                    Reporte generado automáticamente
+                    Sistema de gestión del Congreso CheqFirma
+═══════════════════════════════════════════════════════════════════════════════
+

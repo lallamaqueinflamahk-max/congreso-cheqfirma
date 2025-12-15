@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════════
+  CÓMO GUARDAR LAS 8 FOTOS RÁPIDAMENTE
+═══════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+Las fotos que me mostraste deben guardarse manualmente porque son
+archivos de imagen (JPG). Yo no puedo guardar archivos binarios
+directamente en tu sistema.
+
+
+═══════════════════════════════════════════════════════════════════
+  🚀 PROCESO RÁPIDO (2-3 MINUTOS)
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: Localiza las 8 imágenes
+────────────────────────────────────────────────────────────────────
+Las fotos que me enviaste en el chat están en tu historial.
+Ubícalas (probablemente las tienes descargadas o guardadas).
+
+
+PASO 2: Abre la carpeta de destino
+────────────────────────────────────────────────────────────────────
+Doble click en: ABRIR_CARPETA_FOTOS.bat
+(Se abrirá: images\expositores\)
+
+
+PASO 3: Copia las 8 fotos a esa carpeta
+────────────────────────────────────────────────────────────────────
+Arrastra o copia todas las imágenes a la carpeta abierta.
+
+
+PASO 4: Renombra cada foto
+────────────────────────────────────────────────────────────────────
+
+FOTO                                    NUEVO NOMBRE
+──────────────────────────────────────────────────────────────────
+Dr. Joseph Varón (calvo, USA)        →  joseph-varon.jpg
+Dra. Patricia (cabello largo, BOL)   →  patricia-callisperis.jpg
+Dr. Guillermo (bata blanca, PY)      →  guillermo-rodriguez.jpg
+Prof. Carmen (vestido blanco, PY)    →  carmen-candia.jpg
+Abog. Julio (barba gris, ARG)        →  julio-razona.jpg
+Abg. Dannia (cabello rojizo)         →  dannia-rios.jpg
+Dra. Chinda (rubia, pañuelo, ARG)    →  chinda-brandolino.jpg
+Dr. Atilio (anteojos, camisa, PY)    →  atilio-farina.jpg
+
+
+PASO 5: Verifica
+────────────────────────────────────────────────────────────────────
+Doble click en: ABRIR_PAGINA_WEB.bat
+Ve a "Agenda" → ¡Deberías ver todas las fotos!
+
+
+═══════════════════════════════════════════════════════════════════
+  💡 USO DE LA HERRAMIENTA DE IDENTIFICACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Si no estás seguro de qué foto es cuál:
+
+1. Doble click en: IDENTIFICAR_FOTOS.html
+2. Compara cada foto con las descripciones
+3. Renombra según la tabla
+
+
+═══════════════════════════════════════════════════════════════════
+
+⏱️ TIEMPO TOTAL: 2-3 minutos
+
+✅ RESULTADO: Página web lista para mostrar a los expositores
+
+═══════════════════════════════════════════════════════════════════
+

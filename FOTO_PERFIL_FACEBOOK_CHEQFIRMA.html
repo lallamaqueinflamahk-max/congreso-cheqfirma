@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto de Perfil CheqFirma - Facebook</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .preview-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+        }
+
+        .info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            border-left: 4px solid #2196F3;
+        }
+
+        .info h3 {
+            color: #1976D2;
+            margin-bottom: 10px;
+        }
+
+        .info ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Foto de Perfil Facebook - CheqFirma</h1>
+        
+        <div class="grid">
+            <!-- OPCIÓN 1: Logo ADN con degradado -->
+            <div class="card">
+                <h2>Opción 1: Logo ADN Moderno</h2>
+                <div class="preview-container">
+                    <canvas id="canvas1" width="720" height="720"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas1', 'CheqFirma_Perfil_Opcion1')">
+                    📥 Descargar Opción 1
+                </button>
+            </div>
+
+            <!-- OPCIÓN 2: Tipografía Bold -->
+            <div class="card">
+                <h2>Opción 2: Letras Bold</h2>
+                <div class="preview-container">
+                    <canvas id="canvas2" width="720" height="720"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas2', 'CheqFirma_Perfil_Opcion2')">
+                    📥 Descargar Opción 2
+                </button>
+            </div>
+
+            <!-- OPCIÓN 3: Circular con ícono -->
+            <div class="card">
+                <h2>Opción 3: Diseño Circular</h2>
+                <div class="preview-container">
+                    <canvas id="canvas3" width="720" height="720"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas3', 'CheqFirma_Perfil_Opcion3')">
+                    📥 Descargar Opción 3
+                </button>
+            </div>
+
+            <!-- OPCIÓN 4: Minimalista -->
+            <div class="card">
+                <h2>Opción 4: Estilo Minimalista</h2>
+                <div class="preview-container">
+                    <canvas id="canvas4" width="720" height="720"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas4', 'CheqFirma_Perfil_Opcion4')">
+                    📥 Descargar Opción 4
+                </button>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>📋 Instrucciones:</h3>
+            <ul>
+                <li><strong>1.</strong> Elige la opción que más te guste</li>
+                <li><strong>2.</strong> Haz clic en "Descargar" para guardar la imagen</li>
+                <li><strong>3.</strong> Sube la imagen a Facebook como foto de perfil</li>
+                <li><strong>4.</strong> Facebook la ajustará automáticamente al círculo</li>
+            </ul>
+            <h3 style="margin-top: 15px;">✅ Especificaciones:</h3>
+            <ul>
+                <li>Resolución: 720x720px (alta calidad para Facebook)</li>
+                <li>Formato: PNG con transparencia</li>
+                <li>Diseñado para visualización circular</li>
+                <li>Colores oficiales: Amarillo (#FFD700), Lila (#9C27B0), Celeste (#2196F3)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // OPCIÓN 1: Logo ADN con degradado
+        function drawOption1() {
+            const canvas = document.getElementById('canvas1');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Fondo degradado circular
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#2196F3');   // Celeste
+            gradient.addColorStop(0.5, '#9C27B0');  // Lila
+            gradient.addColorStop(1, '#FFD700');    // Amarillo
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Círculo interior blanco semi-transparente
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 280, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+            ctx.fill();
+
+            // Dibujar espiral de ADN estilizada
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.lineWidth = 12;
+            
+            // Espiral 1
+            ctx.beginPath();
+            for (let i = 0; i < 100; i++) {
+                const angle = (i / 100) * Math.PI * 4;
+                const radius = 80 + (i / 100) * 120;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY - 150 + (i / 100) * 300;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Espiral 2
+            ctx.beginPath();
+            for (let i = 0; i < 100; i++) {
+                const angle = (i / 100) * Math.PI * 4 + Math.PI;
+                const radius = 80 + (i / 100) * 120;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY - 150 + (i / 100) * 300;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Texto CheqFirma
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 90px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('CheqFirma', centerX, centerY + 180);
+
+            // Subtítulo
+            ctx.font = 'bold 40px Arial';
+            ctx.fillText('CONGRESO 2025', centerX, centerY + 240);
+        }
+
+        // OPCIÓN 2: Tipografía Bold
+        function drawOption2() {
+            const canvas = document.getElementById('canvas2');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Fondo sólido lila oscuro
+            ctx.fillStyle = '#1a237e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Círculos decorativos
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 300, 0, Math.PI * 2);
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 260, 0, Math.PI * 2);
+            ctx.strokeStyle = '#2196F3';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 220, 0, Math.PI * 2);
+            ctx.strokeStyle = '#9C27B0';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            // Texto grande
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('CHEQ', centerX, centerY - 50);
+            
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('FIRMA', centerX, centerY + 60);
+
+            // Ícono ADN pequeño arriba
+            ctx.fillStyle = '#2196F3';
+            ctx.font = '60px Arial';
+            ctx.fillText('🧬', centerX, centerY - 180);
+        }
+
+        // OPCIÓN 3: Diseño Circular
+        function drawOption3() {
+            const canvas = document.getElementById('canvas3');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Fondo blanco
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Círculo exterior amarillo
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 320, 0, Math.PI * 2);
+            ctx.fillStyle = '#FFD700';
+            ctx.fill();
+
+            // Círculo medio lila
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 280, 0, Math.PI * 2);
+            ctx.fillStyle = '#9C27B0';
+            ctx.fill();
+
+            // Círculo interior celeste
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 240, 0, Math.PI * 2);
+            ctx.fillStyle = '#2196F3';
+            ctx.fill();
+
+            // Círculo central blanco
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 200, 0, Math.PI * 2);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+
+            // Ícono ADN grande
+            ctx.fillStyle = '#1a237e';
+            ctx.font = 'bold 140px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🧬', centerX, centerY - 40);
+
+            // Texto
+            ctx.font = 'bold 60px Arial';
+            ctx.fillStyle = '#1a237e';
+            ctx.fillText('CheqFirma', centerX, centerY + 100);
+        }
+
+        // OPCIÓN 4: Minimalista
+        function drawOption4() {
+            const canvas = document.getElementById('canvas4');
+            const ctx = canvas.getContext('2d');
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            // Fondo degradado suave
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 360);
+            gradient.addColorStop(0, '#ffffff');
+            gradient.addColorStop(0.6, '#E1F5FE');
+            gradient.addColorStop(1, '#2196F3');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Hexágono de fondo
+            ctx.beginPath();
+            for (let i = 0; i < 6; i++) {
+                const angle = (Math.PI / 3) * i;
+                const x = centerX + Math.cos(angle) * 240;
+                const y = centerY + Math.sin(angle) * 240;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(255, 215, 0, 0.3)';
+            ctx.fill();
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 10;
+            ctx.stroke();
+
+            // Letra C estilizada
+            ctx.strokeStyle = '#9C27B0';
+            ctx.lineWidth = 25;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 120, Math.PI * 0.25, Math.PI * 1.75);
+            ctx.stroke();
+
+            // Texto
+            ctx.fillStyle = '#1a237e';
+            ctx.font = 'bold 70px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('CheqFirma', centerX, centerY + 200);
+        }
+
+        // Función para descargar
+        function downloadCanvas(canvasId, fileName) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = `${fileName}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            
+            alert('✅ ¡Imagen descargada!\n\nAhora puedes subirla a Facebook como foto de perfil.');
+        }
+
+        // Dibujar todas las opciones al cargar
+        window.onload = function() {
+            drawOption1();
+            drawOption2();
+            drawOption3();
+            drawOption4();
+        };
+    </script>
+</body>
+</html>
+

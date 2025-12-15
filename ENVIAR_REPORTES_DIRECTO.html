@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Reportes WhatsApp - CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0A4D9E 0%, #1E6BC7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #0A4D9E;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .status-box {
+            background: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .status-box.success {
+            background: #E8F5E9;
+            border-left-color: #4CAF50;
+        }
+        .status-box.warning {
+            background: #FFF3E0;
+            border-left-color: #FF9800;
+        }
+        .contact-info {
+            background: #F5F5F5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        .contact-info strong {
+            color: #0A4D9E;
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        button:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .note {
+            background: #FFF9C4;
+            border-left: 4px solid #FBC02D;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
+        }
+        .note strong {
+            color: #F57F17;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0A4D9E;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Enviar Reportes por WhatsApp</h1>
+        <p class="subtitle">Asientos 17 y 18 - Congreso CheqFirma</p>
+        
+        <div id="status" class="status-box warning">
+            <strong>⚠️ IMPORTANTE:</strong>
+            <p>WhatsApp no permite envío automático por seguridad. Se abrirá WhatsApp con el mensaje listo, pero debes hacer clic en <strong>"Enviar"</strong> manualmente en cada ventana.</p>
+        </div>
+
+        <div class="contact-info">
+            <strong>📋 Contactos a enviar:</strong>
+            <div style="margin-top: 10px;">
+                <div>✅ Asiento 17 - Simeona Britez</div>
+                <div style="color: #666; font-size: 14px;">+595986469470</div>
+            </div>
+            <div style="margin-top: 10px;">
+                <div>✅ Asiento 18 - Eulalio Ruiz Díaz</div>
+                <div style="color: #666; font-size: 14px;">+595981814978</div>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>💡 Consejo:</strong>
+            <p>Asegúrate de tener WhatsApp Web abierto en tu navegador. Si no está abierto, se abrirá automáticamente cuando hagas clic en el botón.</p>
+        </div>
+
+        <button id="btnEnviar" onclick="enviarReportes()">
+            🚀 Abrir WhatsApp y Enviar Reportes
+        </button>
+
+        <div id="results"></div>
+
+        <div id="countdown" class="countdown" style="display: none;"></div>
+    </div>
+
+    <script>
+        // Datos de los asientos
+        const seat17Data = {
+            seatNumber: 17,
+            status: 'sold',
+            soldAt: new Date().toISOString(),
+            customer: {
+                name: 'Simeona Britez',
+                phone: '+595986469470',
+                email: ''
+            },
+            paymentMethod: 'Pago externo',
+            reservationId: 'RES-SOLD-17'
+        };
+
+        const seat18Data = {
+            seatNumber: 18,
+            status: 'sold',
+            soldAt: new Date().toISOString(),
+            customer: {
+                name: 'Eulalio Ruiz Díaz',
+                phone: '+595981814978',
+                email: ''
+            },
+            paymentMethod: 'Pago externo',
+            reservationId: 'RES-SOLD-18'
+        };
+
+        function formatPrice(price) {
+            return price.toLocaleString('es-PY');
+        }
+
+        function getCurrentSeatPrice() {
+            return 150000;
+        }
+
+        function generateWhatsAppMessage(seatData) {
+            const { seatNumber, customer } = seatData;
+            const price = getCurrentSeatPrice();
+            
+            return `*✅ PAGO ACREDITADO - CONGRESO CHEQFIRMA 2025*
+*ASIENTO PRESENCIAL*
+
+*COMPROBANTE DE COMPRA*
+
+👤 *Nombre:* ${customer.name}
+📱 *Teléfono:* ${customer.phone || 'No proporcionado'}
+📧 *Email:* ${customer.email || 'No proporcionado'}
+
+🎫 *Asiento:* ${seatNumber}
+💰 *Monto Pagado:* ${formatPrice(price)} Gs
+💳 *Método de Pago:* ${seatData.paymentMethod || 'Pago externo'}
+📅 *Fecha de Compra:* ${new Date(seatData.soldAt).toLocaleDateString('es-PY')}
+
+🎁 *BENEFICIOS INCLUIDOS:*
+✅ Asiento garantizado en el auditorio
+✅ Acceso presencial 2 días completos
+✅ Participación en todas las sesiones
+✅ Material físico del congreso
+✅ Coffee breaks incluidos
+✅ Networking presencial
+✅ Certificado físico
+
+📅 *FECHAS DEL EVENTO:*
+19-20 Diciembre 2025
+08:00 - 22:00 (Paraguay GMT-3)
+
+📍 *LUGAR:*
+Auditorio "Ruiz Diaz", Manzana de la Rivera, Asunción, Paraguay
+
+📝 *INSTRUCCIONES:*
+1. Presenta este comprobante al llegar al evento
+2. Dirígete al área de acreditaciones
+3. Tu asiento ${seatNumber} está reservado y garantizado
+4. Llega con 30 minutos de anticipación
+
+⚠️ *IMPORTANTE:*
+• Guarda este comprobante en un lugar seguro
+• Presenta este documento junto con tu documento de identidad
+• Tu asiento está reservado y garantizado
+
+📧 *CONTACTO:*
+Email: cheqfirma@gmail.com
+WhatsApp: +549 3536 564940
+
+*¡Gracias por ser parte del Congreso CheqFirma 2025!*`;
+        }
+
+        function enviarReportes() {
+            const btnEnviar = document.getElementById('btnEnviar');
+            const statusDiv = document.getElementById('status');
+            const resultsDiv = document.getElementById('results');
+            const countdownDiv = document.getElementById('countdown');
+            
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = '⏳ Preparando...';
+
+            // Generar mensajes
+            const message17 = generateWhatsAppMessage(seat17Data);
+            const message18 = generateWhatsAppMessage(seat18Data);
+
+            // Preparar URLs de WhatsApp
+            const phone17 = seat17Data.customer.phone.replace(/\D/g, '');
+            const phone18 = seat18Data.customer.phone.replace(/\D/g, '');
+            
+            const whatsappUrl17 = `https://wa.me/${phone17}?text=${encodeURIComponent(message17)}`;
+            const whatsappUrl18 = `https://wa.me/${phone18}?text=${encodeURIComponent(message18)}`;
+
+            // Mostrar countdown
+            let countdown = 3;
+            countdownDiv.style.display = 'block';
+            countdownDiv.textContent = `Abriendo WhatsApp en ${countdown}...`;
+            
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                if (countdown > 0) {
+                    countdownDiv.textContent = `Abriendo WhatsApp en ${countdown}...`;
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownDiv.style.display = 'none';
+                }
+            }, 1000);
+
+            // Abrir WhatsApp para Asiento 17
+            setTimeout(() => {
+                statusDiv.className = 'status-box success';
+                statusDiv.innerHTML = '<strong>✅ Abriendo WhatsApp para Simeona Britez...</strong><p>Se abrirá una ventana de WhatsApp. Revisa el mensaje y haz clic en "Enviar".</p>';
+                resultsDiv.innerHTML = '<div class="contact-info"><strong>📱 Ventana 1:</strong> Simeona Britez (+595986469470)</div>';
+                window.open(whatsappUrl17, '_blank');
+            }, 3000);
+
+            // Abrir WhatsApp para Asiento 18 después de 3 segundos más
+            setTimeout(() => {
+                statusDiv.innerHTML = '<strong>✅ Abriendo WhatsApp para Eulalio Ruiz Díaz...</strong><p>Se abrirá una segunda ventana de WhatsApp. Revisa el mensaje y haz clic en "Enviar".</p>';
+                resultsDiv.innerHTML += '<div class="contact-info" style="margin-top: 10px;"><strong>📱 Ventana 2:</strong> Eulalio Ruiz Díaz (+595981814978)</div>';
+                window.open(whatsappUrl18, '_blank');
+                
+                // Mensaje final
+                setTimeout(() => {
+                    statusDiv.className = 'status-box success';
+                    statusDiv.innerHTML = '<strong>✅ ¡WhatsApp abierto para ambos contactos!</strong><p>Revisa las 2 ventanas de WhatsApp que se abrieron. Cada una tiene el reporte completo listo para enviar. Solo haz clic en "Enviar" en cada ventana.</p>';
+                    btnEnviar.textContent = '✅ WhatsApp Abierto - Revisa y Envía';
+                    btnEnviar.style.background = '#4CAF50';
+                }, 500);
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

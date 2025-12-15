@@ -1,0 +1,149 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         📍 DÓNDE VER LOS CAMBIOS EN LA PÁGINA WEB                ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+La página web acaba de abrirse en tu navegador.
+Sigue estos pasos para ver EXACTAMENTE los cambios:
+
+
+═══════════════════════════════════════════════════════════════════
+  📍 PASO 1: IR A LA SECCIÓN AGENDA
+═══════════════════════════════════════════════════════════════════
+
+1. En el menú superior, click en "AGENDA"
+   (o scroll hacia abajo hasta la sección de horarios)
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ CAMBIO 1: DR. FERNANDO GRIFFITH (NUEVO)
+═══════════════════════════════════════════════════════════════════
+
+📍 UBICACIÓN: Busca el horario "02:00 PM" o "14:00 PM"
+
+VERÁS:
+┌─────────────────────────────────────────────────────────────┐
+│ ⏰ 02:00 PM                                                  │
+│                                                              │
+│ 🔵 FG  (o foto si la guardaste)                            │
+│                                                              │
+│ Dr. Fernando Griffith                                        │
+│ Doctor en Bioquímica | Ex Ministro de Cultura              │
+│                                                              │
+│ Química del ADN Humano                                       │
+│                                                              │
+│ Doctor en Bioquímica por la UNA, investigador en            │
+│ Biología Molecular. Ex becario BID e Instituto Superior     │
+│ de Investigaciones Científicas de España. Ex Ministro de    │
+│ Cultura del Paraguay, Presidente del Comité de              │
+│ Diversidad Cultural UNESCO. Caballero de la Orden de la     │
+│ Estrella de Italia.                                          │
+│                                                              │
+│ 🎥 Transmisión en vivo | 🔬 Ciencia | 🧬 ADN               │
+└─────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ CAMBIO 2: ABOG. JUAN PUERTO (NUEVO)
+═══════════════════════════════════════════════════════════════════
+
+📍 UBICACIÓN: Busca el horario "05:15 PM" o "17:15 PM"
+
+VERÁS:
+┌─────────────────────────────────────────────────────────────┐
+│ ⏰ 05:15 PM                                                  │
+│                                                              │
+│ 🔵 JP  (o foto si la guardaste)                            │
+│                                                              │
+│ Abog. Juan Ramiro Puerto Viera                              │
+│ CEO Grupo Py SRL | Innovación y Tecnología                 │
+│                                                              │
+│ Defensa Jurídica de la Identidad Personal Digital           │
+│                                                              │
+│ Abogado de 45 años, CEO y Director de Innovación del        │
+│ Grupo Py SRL. Líder en proyectos tecnológicos de alto       │
+│ impacto: Sistema GTFS (PNUD), plataformas Smart City,       │
+│ billeteras electrónicas. Reconocido internacionalmente:     │
+│ Top 20 startups LATAM (Washington), Mejor Smart City        │
+│ Brasil, Top 100 emprendimientos mundial (Riyadh).           │
+│ Consultor BID y Banco Mundial.                              │
+│                                                              │
+│ 🎥 Transmisión en vivo | ⚖️ Legal | 💻 Tecnología          │
+└─────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+  ❌ CAMBIO 3: DR. JOSEPH VARÓN (ELIMINADO)
+═══════════════════════════════════════════════════════════════════
+
+📍 UBICACIÓN: Busca el horario "07:30 PM" o "19:30 PM"
+
+LO QUE VERÁS:
+┌─────────────────────────────────────────────────────────────┐
+│ Ya NO hay ningún expositor a las 19:30 PM                   │
+│                                                              │
+│ La agenda salta de:                                          │
+│ 18:30 PM - Dra. Patrícia Callisperis                       │
+│     ↓                                                        │
+│ 20:00 PM - Dra. Chinda Brandolino                          │
+│                                                              │
+│ (Joseph Varón fue eliminado completamente)                  │
+└─────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+  🔍 ORDEN COMPLETO DE LA AGENDA (PARA VERIFICAR)
+═══════════════════════════════════════════════════════════════════
+
+08:00 AM - Prof. Edgar Rolón
+09:00 AM - Prof. Carmen Candia
+10:00 AM - Abog. Dannia Rios Nacif
+11:00 AM - Dr. Atilio Fariña
+12:00 PM - ALMUERZO
+13:00 PM - Dr. Guillermo Rodríguez Dure
+14:00 PM - Dr. Fernando Griffith ⭐ NUEVO
+15:00 PM - Dr. Edgar Villagra
+16:00 PM - BREAK
+16:15 PM - Dr. Victor Villa
+17:15 PM - Abog. Juan Puerto ⭐ NUEVO
+17:45 PM - Abog. Julio Razona
+18:30 PM - Dra. Patrícia Callisperis
+         [19:30 PM - VACÍO - Joseph Varón eliminado]
+20:00 PM - Dra. Chinda Brandolino
+21:00 PM - CIERRE
+
+
+═══════════════════════════════════════════════════════════════════
+  💡 SI NO VES LOS CAMBIOS
+═══════════════════════════════════════════════════════════════════
+
+1. Presiona: Ctrl + F5 (refresco completo, limpia caché)
+
+2. O cierra completamente el navegador y vuelve a abrir:
+   - Doble click en: ABRIR_PAGINA_WEB.bat
+
+3. O presiona: Ctrl + Shift + R (en algunos navegadores)
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ CONFIRMACIÓN RÁPIDA
+═══════════════════════════════════════════════════════════════════
+
+Para confirmar que TODO está actualizado, verifica:
+
+□ A las 14:00 PM ves "Dr. Fernando Griffith" con su biografía
+□ A las 17:15 PM ves "Abog. Juan Ramiro Puerto Viera" con su biografía
+□ Ya NO ves "Dr. Joseph Varón" en ningún horario
+□ Total de expositores: 14 (antes eran 15)
+
+
+═══════════════════════════════════════════════════════════════════
+
+🌐 LA PÁGINA WEB ESTÁ ABIERTA EN TU NAVEGADOR
+
+Ve a la sección AGENDA y verás los 3 cambios implementados.
+
+═══════════════════════════════════════════════════════════════════
+

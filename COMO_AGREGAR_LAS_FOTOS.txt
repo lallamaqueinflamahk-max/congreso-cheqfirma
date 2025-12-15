@@ -1,0 +1,181 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         📸 CÓMO AGREGAR LAS FOTOS DE LOS EXPOSITORES            ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+  ⚠️ SITUACIÓN ACTUAL
+═══════════════════════════════════════════════════════════════════
+
+❌ La carpeta images/expositores/ está VACÍA
+❌ No hay fotos guardadas todavía
+❌ La página web mostrará solo iniciales (ER, CC, PC, etc.)
+
+✅ El código de la página web YA ESTÁ LISTO
+✅ La galería de expositores YA ESTÁ CREADA
+✅ Solo falta que guardes las 12 fotos
+
+
+═══════════════════════════════════════════════════════════════════
+  🎯 LO QUE TIENES QUE HACER
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: Abre la herramienta que te acabo de crear
+────────────────────────────────────────────────────────────────────
+
+Archivo: GUARDAR_FOTOS_EXPOSITORES.html
+
+Esta herramienta te ayudará a:
+• Seleccionar cada foto
+• Renombrarla automáticamente con el nombre correcto
+• Descargarla lista para usar
+
+
+PASO 2: Para cada uno de los 12 expositores
+────────────────────────────────────────────────────────────────────
+
+1. Haz click en "SELECCIONAR FOTO"
+2. Busca la foto del expositor en tu computadora
+3. La foto aparecerá en la tarjeta
+4. Haz click en "DESCARGAR CON NOMBRE CORRECTO"
+5. Guarda el archivo en: images\expositores\
+
+
+PASO 3: Verifica que estén todas guardadas
+────────────────────────────────────────────────────────────────────
+
+La carpeta debe tener 12 archivos:
+✓ edgar-rolon.jpg
+✓ carmen-candia.jpg
+✓ dannia-rios.jpg
+✓ atilio-farina.jpg
+✓ guillermo-rodriguez.jpg
+✓ fernando-griffith.jpg
+✓ edgar-villagra.jpg
+✓ victor-villa.jpg
+✓ juan-puerto.jpg
+✓ julio-razona.jpg
+✓ patricia-callisperis.jpg
+✓ chinda-brandolino.jpg
+
+
+PASO 4: Refresca la página web
+────────────────────────────────────────────────────────────────────
+
+1. Abre index.html en tu navegador
+2. Presiona Ctrl + F5 (refresco forzado)
+3. Ve a la sección "EXPOSITORES"
+4. ¡Verás todas las fotos!
+
+
+═══════════════════════════════════════════════════════════════════
+  📁 UBICACIÓN EXACTA DE LA CARPETA
+═══════════════════════════════════════════════════════════════════
+
+Ruta completa:
+
+C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+
+Si no existe, créala manualmente:
+1. Abre la carpeta del proyecto
+2. Entra a la carpeta "images"
+3. Verifica que exista la carpeta "expositores"
+
+
+═══════════════════════════════════════════════════════════════════
+  🎨 VISTA PREVIA
+═══════════════════════════════════════════════════════════════════
+
+He abierto también: DEMO_GALERIA_EXPOSITORES.html
+
+Esta demo te muestra EXACTAMENTE cómo se verá tu página web
+cuando todas las fotos estén guardadas.
+
+Por ahora muestra iniciales (ER, CC, PC, etc.) porque representa
+el estado actual. Una vez que guardes las fotos, la página web
+real mostrará las fotos verdaderas en lugar de las iniciales.
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ NOMBRES CORRECTOS DE LOS ARCHIVOS
+═══════════════════════════════════════════════════════════════════
+
+IMPORTANTE: Los nombres deben ser EXACTAMENTE así:
+
+1.  edgar-rolon.jpg          (Prof. Edgar Rolón)
+2.  carmen-candia.jpg         (Prof. Carmen Candia)
+3.  dannia-rios.jpg           (Abg. Dannia Ríos Nacif)
+4.  atilio-farina.jpg         (Dr. Atilio Fariña)
+5.  guillermo-rodriguez.jpg   (Dr. Guillermo Rodríguez Dure)
+6.  fernando-griffith.jpg     (Dr. Fernando Griffith)
+7.  edgar-villagra.jpg        (Dr. Edgar Villagra)
+8.  victor-villa.jpg          (Dr. Victor Villa)
+9.  juan-puerto.jpg           (Abog. Juan Ramiro Puerto Viera)
+10. julio-razona.jpg          (Abog. Julio Razona)
+11. patricia-callisperis.jpg  (Dra. Patrícia Callisperis)
+12. chinda-brandolino.jpg     (Dra. Chinda Brandolino)
+
+
+REGLAS:
+✓ Todo en minúsculas
+✓ Sin acentos ni tildes
+✓ Espacios reemplazados por guiones (-)
+✓ Extensión .jpg o .png
+✓ NO usar mayúsculas
+✓ NO usar guiones bajos (_)
+
+
+═══════════════════════════════════════════════════════════════════
+  🚀 MÉTODO ALTERNATIVO MANUAL
+═══════════════════════════════════════════════════════════════════
+
+Si prefieres no usar la herramienta HTML:
+
+1. Abre la carpeta: images\expositores\
+2. Copia cada foto del expositor
+3. Pégala en esa carpeta
+4. Renómbrala con el nombre correcto de la lista de arriba
+5. Repite para las 12 fotos
+
+
+═══════════════════════════════════════════════════════════════════
+  ❓ PREGUNTAS FRECUENTES
+═══════════════════════════════════════════════════════════════════
+
+P: ¿Puedo usar .png en vez de .jpg?
+R: Sí, pero cambia la extensión en el nombre
+   Ejemplo: edgar-rolon.png
+
+P: ¿Qué tamaño deben tener las fotos?
+R: Cualquier tamaño. La página las ajustará automáticamente.
+   Recomendado: Al menos 300x300 píxeles
+
+P: ¿Qué pasa si me equivoco en un nombre?
+R: La foto no se mostrará. Verás iniciales en su lugar.
+
+P: ¿Puedo usar mayúsculas en los nombres?
+R: NO. Debe ser todo en minúsculas.
+
+P: Ya guardé las fotos pero no se ven
+R: Presiona Ctrl + F5 para refrescar la caché del navegador
+
+
+═══════════════════════════════════════════════════════════════════
+  🎯 RESUMEN RÁPIDO
+═══════════════════════════════════════════════════════════════════
+
+1. Abre: GUARDAR_FOTOS_EXPOSITORES.html
+2. Selecciona cada foto → Descárgala con el nombre correcto
+3. Guarda las 12 fotos en: images\expositores\
+4. Abre index.html y presiona Ctrl + F5
+5. ¡Listo! Verás todas las fotos en la galería
+
+
+═══════════════════════════════════════════════════════════════════
+
+¿Necesitas ayuda? Pregúntame cualquier duda.
+
+═══════════════════════════════════════════════════════════════════
+

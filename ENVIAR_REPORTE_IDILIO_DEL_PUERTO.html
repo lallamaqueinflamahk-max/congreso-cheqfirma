@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Reporte de Reserva - Idilio del Puerto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0A4D9E;
+            text-align: center;
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #0A4D9E;
+        }
+        .btn {
+            background: #FF7A1A;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #E66A0A;
+        }
+        .btn-secondary {
+            background: #0A4D9E;
+        }
+        .btn-secondary:hover {
+            background: #073B78;
+        }
+        .report-preview {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Reporte de Reserva - Idilio del Puerto</h1>
+        
+        <div class="info-box">
+            <h2>Información de la Reserva</h2>
+            <p><strong>Cliente:</strong> Idilio del Puerto</p>
+            <p><strong>Asiento:</strong> 61</p>
+            <p><strong>Estado:</strong> Vendido y Reservado</p>
+            <p><strong>Tipo:</strong> Presencial</p>
+            <p><strong>Monto:</strong> 150.000 Gs</p>
+            <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+        </div>
+
+        <div class="report-preview" id="reportPreview"></div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="btn" id="btnEmail">📧 Enviar Reporte por Email</a>
+            <a href="#" class="btn btn-secondary" id="btnCopy">📋 Copiar Reporte</a>
+        </div>
+    </div>
+
+    <script>
+        // Generar fecha actual
+        const fecha = new Date().toLocaleString('es-PY', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        document.getElementById('fecha').textContent = fecha;
+
+        // Generar reporte completo
+        const reporte = `REPORTE DE RESERVA - CONGRESO CHEQFIRMA 2025
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ PAGO ACREDITADO - ASIENTO PRESENCIAL
+
+Fecha de Generación: ${fecha}
+
+═══════════════════════════════════════════════════════════════════════════════
+INFORMACIÓN DEL CLIENTE
+═══════════════════════════════════════════════════════════════════════════════
+
+👤 Nombre: Idilio del Puerto
+🎫 Asiento: 61
+📊 Estado: Vendido y Reservado
+📍 Tipo de Asistencia: Presencial
+
+═══════════════════════════════════════════════════════════════════════════════
+DETALLES DE PAGO
+═══════════════════════════════════════════════════════════════════════════════
+
+💰 Monto Pagado: 150.000 Gs
+💳 Método de Pago: Pago externo
+📅 Fecha de Compra: ${new Date().toLocaleDateString('es-PY')}
+🆔 ID de Reserva: SOLD_IDILIO_DEL_PUERTO_61
+
+═══════════════════════════════════════════════════════════════════════════════
+BENEFICIOS INCLUIDOS
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Asiento garantizado en el auditorio (Asiento 61)
+✅ Acceso presencial 2 días completos
+✅ Participación en todas las sesiones
+✅ Material físico del congreso
+✅ Coffee breaks incluidos
+✅ Networking presencial
+✅ Certificado físico
+
+═══════════════════════════════════════════════════════════════════════════════
+FECHAS DEL EVENTO
+═══════════════════════════════════════════════════════════════════════════════
+
+📅 Días: 19-20 Diciembre 2025
+🕐 Horario: 08:00 - 22:00 (Paraguay GMT-3)
+⏱️ Duración: 2 días completos
+
+═══════════════════════════════════════════════════════════════════════════════
+LUGAR DEL EVENTO
+═══════════════════════════════════════════════════════════════════════════════
+
+🏛️ Auditorio: "Ruiz Diaz"
+📍 Ubicación: Manzana de la Rivera
+🌎 Ciudad: Asunción, Paraguay
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTRUCCIONES PARA EL CLIENTE
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Presenta este comprobante al llegar al evento
+2. Dirígete al área de acreditaciones
+3. Tu asiento 61 está reservado y garantizado
+4. Llega con 30 minutos de anticipación
+
+═══════════════════════════════════════════════════════════════════════════════
+IMPORTANTE
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ Guarda este comprobante en un lugar seguro
+⚠️ Presenta este documento junto con tu documento de identidad
+⚠️ El asiento está garantizado y no puede ser transferido sin autorización
+⚠️ En caso de dudas, contacta a: cheqfirma@gmail.com
+
+═══════════════════════════════════════════════════════════════════════════════
+CONTACTO
+═══════════════════════════════════════════════════════════════════════════════
+
+📧 Email: cheqfirma@gmail.com
+📱 WhatsApp: +5493536564940
+
+═══════════════════════════════════════════════════════════════════════════════
+VALIDEZ DEL COMPROBANTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Este documento certifica que el pago ha sido acreditado y otorga acceso
+presencial completo al Congreso Internacional CheqFirma 2025.
+
+Este comprobante es válido como recibo de pago y acreditación de acceso.
+Presenta este documento al llegar al evento.
+
+═══════════════════════════════════════════════════════════════════════════════
+                    ¡Gracias por ser parte del Congreso CheqFirma 2025!
+═══════════════════════════════════════════════════════════════════════════════
+
+Generado automáticamente por el sistema de gestión del Congreso CheqFirma`;
+
+        // Mostrar preview del reporte
+        document.getElementById('reportPreview').textContent = reporte;
+
+        // Preparar email
+        const emailSubject = encodeURIComponent(`Reporte de Reserva - Idilio del Puerto - Asiento 61 - Congreso CheqFirma`);
+        const emailBody = encodeURIComponent(reporte);
+        const emailUrl = `mailto:cheqfirma@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+        // Botón de email - Abrir directamente el cliente de correo
+        document.getElementById('btnEmail').href = emailUrl;
+        document.getElementById('btnEmail').onclick = function(e) {
+            e.preventDefault();
+            // Abrir el cliente de correo directamente
+            window.location.href = emailUrl;
+            // Mostrar mensaje de confirmación
+            setTimeout(function() {
+                alert('✅ Se abrió tu cliente de correo con el reporte listo.\n\nDestinatario: cheqfirma@gmail.com\n\nSolo haz clic en "Enviar" para completar el envío.');
+            }, 500);
+        };
+
+        // Botón de copiar
+        document.getElementById('btnCopy').onclick = function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(reporte).then(function() {
+                alert('✅ Reporte copiado al portapapeles');
+            }, function() {
+                // Fallback para navegadores antiguos
+                const textArea = document.createElement('textarea');
+                textArea.value = reporte;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('✅ Reporte copiado al portapapeles');
+            });
+        };
+    </script>
+</body>
+</html>
+

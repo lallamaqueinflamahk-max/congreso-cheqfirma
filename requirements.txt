@@ -1,0 +1,16 @@
+# Dependencias del proyecto
+# Python 3.11+
+
+# Base de datos
+psycopg2-binary>=2.9.9
+
+# Excel
+openpyxl>=3.1.2
+
+# Configuración
+PyYAML>=6.0.1
+
+# Testing (opcional)
+pytest>=7.4.3
+pytest-cov>=4.1.0
+

@@ -1,0 +1,150 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║          1° CONGRESO CHEQFIRMA                                   ║
+║          "ADN humano en el marco de las agendas globales"        ║
+║          19-20 Diciembre 2025 | Asunción, Paraguay              ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+📂 ARCHIVOS IMPORTANTES EN ESTA CARPETA:
+
+
+1. 🌐 ABRIR_PAGINA_WEB.bat
+   ► Doble click para abrir la página web del congreso
+   ► Se abre directamente en tu navegador
+   ► NO requiere internet
+
+
+2. 👥 VISTA_PREVIA_EXPOSITORES.html
+   ► Página especial para mostrar a los expositores
+   ► Tiene un mensaje de bienvenida personalizado
+   ► Links directos a la agenda
+
+
+3. 📖 INSTRUCCIONES_PARA_COMPARTIR.md
+   ► Guía completa de cómo compartir la página
+   ► Opciones gratuitas y pagadas
+   ► Paso a paso detallado
+
+
+4. 📋 DATOS_CONGRESO_ACTUALIZADO.md
+   ► Todos los datos cargados en la página
+   ► Lista de 15 expositores
+   ► Agenda completa
+
+
+5. 📸 IDENTIFICAR_FOTOS.html (NUEVO!)
+   ► Herramienta VISUAL para identificar fotos de expositores
+   ► Doble click para abrir
+   ► Te ayuda a guardar las 8 fotos correctamente
+
+
+6. 🖼️ ABRIR_CARPETA_FOTOS.bat (NUEVO!)
+   ► Abre la carpeta donde guardar las fotos
+   ► Ubicación: images/expositores/
+
+
+══════════════════════════════════════════════════════════════════
+
+
+📸 AGREGAR FOTOS DE LOS EXPOSITORES:
+
+
+TIENES 8 FOTOS PARA AGREGAR:
+
+1. Abre: IDENTIFICAR_FOTOS.html
+2. Identifica cada foto usando las descripciones
+3. Guarda cada foto en la carpeta que se abre
+4. Renombra según indica la tabla
+5. ¡Las fotos aparecerán automáticamente!
+
+ARCHIVOS DE AYUDA:
+• IDENTIFICAR_FOTOS.html - Herramienta visual
+• GUIA_GUARDAR_FOTOS_EXPOSITORES.md - Guía completa
+• TABLA_RAPIDA_NOMBRES.txt - Referencia rápida
+• RESUMEN_FOTOS_8_EXPOSITORES.txt - Resumen del sistema
+
+
+══════════════════════════════════════════════════════════════════
+
+
+🚀 PARA COMPARTIR CON LOS EXPOSITORES (RÁPIDO):
+
+
+OPCIÓN 1 - ONLINE (Recomendado):
+--------------------------------
+1. Ve a: https://app.netlify.com/drop
+2. Arrastra toda esta carpeta
+3. Copia el link que te da
+4. Comparte ese link con los expositores
+
+¡Listo en 2 minutos!
+
+
+OPCIÓN 2 - ARCHIVO ZIP:
+-----------------------
+1. Click derecho en esta carpeta
+2. "Enviar a" > "Carpeta comprimida"
+3. Envía el .zip por email/WhatsApp
+4. Los expositores descomprimen
+5. Hacen doble click en "ABRIR_PAGINA_WEB.bat"
+
+
+══════════════════════════════════════════════════════════════════
+
+
+📱 MENSAJE PARA ENVIAR A LOS EXPOSITORES:
+
+
+    Estimados Expositores,
+
+    Les compartimos la página web del 1° Congreso CheqFirma
+    para que puedan revisarla y darnos sus comentarios.
+
+    🌐 Link: [PEGAR LINK AQUÍ]
+
+    Por favor revisen:
+    ✅ Su horario de presentación
+    ✅ El título de su conferencia
+    ✅ La descripción de su tema
+    ✅ Toda la información del evento
+
+    Cualquier sugerencia o corrección, hágannoslo saber.
+
+    ¡Gracias!
+    Equipo CheqFirma
+
+
+══════════════════════════════════════════════════════════════════
+
+
+✅ LA PÁGINA WEB INCLUYE:
+
+• Información completa del congreso
+• Agenda con 15 expositores y horarios reales
+• Sistema de preventas con descuentos
+• Sistema de credenciales de acceso
+• Integración de pagos
+• Diseño moderno y responsive
+• Compartir en redes sociales
+• Galería de fotos/videos
+• Sección de auspicios
+
+
+══════════════════════════════════════════════════════════════════
+
+
+📞 CONTACTO:
+
+Email: info@cheqfirma.com
+Ubicación: Asunción, Paraguay
+Sede: Manzana de la Rivera, Auditorio "Ruiz Diaz"
+
+
+══════════════════════════════════════════════════════════════════
+
+
+🎉 ¡TODO ESTÁ LISTO PARA COMPARTIR!
+
+

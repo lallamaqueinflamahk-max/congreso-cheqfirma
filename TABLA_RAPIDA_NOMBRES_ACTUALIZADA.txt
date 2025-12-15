@@ -1,0 +1,92 @@
+═══════════════════════════════════════════════════════════════════
+     TABLA RÁPIDA - NOMBRES DE ARCHIVOS PARA FOTOS (ACTUALIZADA)
+═══════════════════════════════════════════════════════════════════
+
+📂 CARPETA: images\expositores\
+
+🔵 = Acceso rápido: ABRIR_CARPETA_FOTOS.bat
+
+
+═══════════════════════════════════════════════════════════════════
+  FOTO                          →    NOMBRE DE ARCHIVO
+═══════════════════════════════════════════════════════════════════
+
+1. Dra. Patricia Callisperis    →    patricia-callisperis.jpg
+   Mujer, cabello largo (Bolivia)
+
+2. Dr. Guillermo Rodríguez      →    guillermo-rodriguez.jpg
+   Doctor joven, bata blanca (PY)
+
+3. Prof. Carmen Candia          →    carmen-candia.jpg
+   Mujer, vestido blanco (PY)
+
+4. Abog. Julio Razona          →    julio-razona.jpg
+   Hombre, barba gris (Argentina)
+
+5. Abg. Dannia Ríos Nacif      →    dannia-rios.jpg
+   Mujer, cabello rojizo, chaqueta
+
+6. Dra. Chinda Brandolino      →    chinda-brandolino.jpg
+   Mujer rubia, pañuelo celeste
+
+7. Dr. Atilio Fariña           →    atilio-farina.jpg
+   Hombre, anteojos, camisa puntos
+
+8. Dr. Fernando Griffith 🆕    →    fernando-griffith.jpg
+   Hombre, anteojos, saco beige
+
+9. Abog. Juan Puerto 🆕        →    juan-puerto.jpg
+   Hombre, anteojos, polo rojo
+
+
+═══════════════════════════════════════════════════════════════════
+  ❌ ELIMINADO DEL LISTADO
+═══════════════════════════════════════════════════════════════════
+
+✖️ Dr. Joseph Varón - Ya NO está en el congreso
+
+
+═══════════════════════════════════════════════════════════════════
+  REGLAS DE NOMBRES
+═══════════════════════════════════════════════════════════════════
+
+✓ Todo en minúsculas
+✓ Usar guiones (no espacios)
+✓ Sin acentos (á → a)
+✓ Extensión .jpg o .png
+
+
+═══════════════════════════════════════════════════════════════════
+  PROCESO RÁPIDO
+═══════════════════════════════════════════════════════════════════
+
+1. Doble click: ABRIR_CARPETA_FOTOS.bat
+2. Copia las 9 fotos
+3. Renombra según tabla
+4. Abre página web (ABRIR_PAGINA_WEB.bat)
+5. ¡Listo!
+
+
+═══════════════════════════════════════════════════════════════════
+
+CHECKLIST:
+
+□ patricia-callisperis.jpg
+□ guillermo-rodriguez.jpg
+□ carmen-candia.jpg
+□ julio-razona.jpg
+□ dannia-rios.jpg
+□ chinda-brandolino.jpg
+□ atilio-farina.jpg
+□ fernando-griffith.jpg ⭐ NUEVO
+□ juan-puerto.jpg ⭐ NUEVO
+
+
+═══════════════════════════════════════════════════════════════════
+
+TOTAL: 9 EXPOSITORES CON FOTOS
+
+📘 Guía detallada: GUIA_GUARDAR_FOTOS_EXPOSITORES.md
+
+═══════════════════════════════════════════════════════════════════
+

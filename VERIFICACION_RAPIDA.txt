@@ -1,0 +1,146 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║            🌐 PÁGINA WEB ABIERTA EN TU NAVEGADOR                 ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+  ⚡ ACCIÓN INMEDIATA (HAZ ESTO PRIMERO)
+═══════════════════════════════════════════════════════════════════
+
+En el navegador que se acaba de abrir:
+
+1. Presiona: Ctrl + F5
+
+2. Esto refresca TODO y elimina la caché antigua
+
+
+═══════════════════════════════════════════════════════════════════
+  📍 DÓNDE BUSCAR LOS CAMBIOS
+═══════════════════════════════════════════════════════════════════
+
+PASO 1: Haz scroll hacia abajo hasta ver "AGENDA"
+        (o click en "AGENDA" en el menú superior)
+
+PASO 2: Busca estos 3 puntos específicos:
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ CAMBIO 1: Dr. Fernando Griffith (14:00 PM)                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Busca el horario: 02:00 PM o 14:00 PM                          │
+│                                                                  │
+│ Debes ver:                                                       │
+│ • Nombre: Dr. Fernando Griffith                                 │
+│ • Título: Doctor en Bioquímica | Ex Ministro de Cultura        │
+│ • Biografía: "Doctor en Bioquímica por la UNA..."              │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ✅ CAMBIO 2: Abog. Juan Puerto (17:15 PM)                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Busca el horario: 05:15 PM o 17:15 PM                          │
+│                                                                  │
+│ Debes ver:                                                       │
+│ • Nombre: Abog. Juan Ramiro Puerto Viera                       │
+│ • Título: CEO Grupo Py SRL | Innovación y Tecnología          │
+│ • Biografía: "Abogado de 45 años, CEO..."                      │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────────────────────────┐
+│ ❌ CAMBIO 3: Joseph Varón ELIMINADO                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│ Busca entre estos horarios:                                     │
+│                                                                  │
+│ 18:30 PM - Dra. Patrícia Callisperis                           │
+│            ↓                                                     │
+│ [VACÍO - Ya NO debe haber nadie a las 19:30 PM]               │
+│            ↓                                                     │
+│ 20:00 PM - Dra. Chinda Brandolino                              │
+│                                                                  │
+│ Si ves esto = ✅ Joseph Varón eliminado correctamente          │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ CHECKLIST DE VERIFICACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Marca cada uno que veas:
+
+□ A las 14:00 PM veo "Dr. Fernando Griffith"
+□ A las 17:15 PM veo "Abog. Juan Ramiro Puerto Viera"
+□ Ya NO veo "Dr. Joseph Varón" en ningún horario
+□ La agenda salta de 18:30 PM a 20:00 PM (sin 19:30 PM)
+
+
+═══════════════════════════════════════════════════════════════════
+  🔍 ORDEN COMPLETO DE LA AGENDA (PARA COMPARAR)
+═══════════════════════════════════════════════════════════════════
+
+Sábado 20 de Diciembre:
+
+08:00 AM - Prof. Edgar Rolón
+09:00 AM - Prof. Carmen Candia
+10:00 AM - Abog. Dannia Rios Nacif
+11:00 AM - Dr. Atilio Fariña
+12:00 PM - ALMUERZO
+13:00 PM - Dr. Guillermo Rodríguez Dure
+14:00 PM - Dr. Fernando Griffith ⭐ NUEVO
+15:00 PM - Dr. Edgar Villagra
+16:00 PM - BREAK
+16:15 PM - Dr. Victor Villa
+17:15 PM - Abog. Juan Puerto ⭐ NUEVO
+17:45 PM - Abog. Julio Razona
+18:30 PM - Dra. Patrícia Callisperis
+20:00 PM - Dra. Chinda Brandolino
+21:00 PM - CIERRE
+
+Total: 14 expositores (antes 15)
+
+
+═══════════════════════════════════════════════════════════════════
+  ⚠️ SI TODAVÍA VES A JOSEPH VARÓN
+═══════════════════════════════════════════════════════════════════
+
+1. Presiona Ctrl + Shift + Delete
+
+2. Selecciona "Todo el tiempo"
+
+3. Marca "Caché" o "Archivos temporales"
+
+4. Click en "Borrar datos"
+
+5. Cierra el navegador completamente
+
+6. Abre de nuevo: Doble click en LIMPIAR_CACHE_NAVEGADOR.bat
+
+
+═══════════════════════════════════════════════════════════════════
+  📊 CONFIRMACIÓN TÉCNICA
+═══════════════════════════════════════════════════════════════════
+
+Archivo index.html verificado:
+• Joseph Varón: NO EXISTE en el código ✅
+• Fernando Griffith: EXISTE en línea 605-620 ✅
+• Juan Puerto: EXISTE en línea 691-706 ✅
+
+Los cambios están 100% aplicados en el archivo.
+Solo es cuestión de que el navegador cargue la versión nueva.
+
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 AHORA: Presiona Ctrl + F5 y busca en la AGENDA
+
+═══════════════════════════════════════════════════════════════════
+

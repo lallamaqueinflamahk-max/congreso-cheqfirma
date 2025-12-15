@@ -1,0 +1,27 @@
+[build]
+  publish = "."
+  command = ""
+
+# Configuración de funciones Netlify
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["whatsappTemplates.js"]
+
+# Redirecciones simples para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirecciones para funciones (opcional, Netlify las detecta automáticamente)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Configuración para reportes programados (si el plan lo permite)
+# Si no, usar cron externo con estas URLs:
+# - Reporte matutino: /.netlify/functions/scheduledReports?type=morning&token=XXX
+# - Reporte baja ventas: /.netlify/functions/scheduledReports?type=low-sales&token=XXX
+# - Reporte fin día: /.netlify/functions/scheduledReports?type=end-day&token=XXX

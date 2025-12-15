@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Carpetas por Correo - Congreso CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .folder-info {
+            background: white;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .folder-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .folder-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .folder-info li {
+            padding: 5px 0;
+            color: #555;
+        }
+        .folder-info li:before {
+            content: "📄 ";
+            margin-right: 5px;
+        }
+        .email-section {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        .email-section h2 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .email-info {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .email-info strong {
+            color: #1976d2;
+        }
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .instructions h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        .instructions ol {
+            padding-left: 20px;
+            color: #856404;
+        }
+        .instructions li {
+            margin: 8px 0;
+        }
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .button:active {
+            transform: translateY(0);
+        }
+        .copy-button {
+            background: #28a745;
+            margin-top: 10px;
+        }
+        .copy-button:hover {
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+            min-height: 150px;
+            margin-top: 10px;
+        }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📧 Enviar Carpetas por Correo</h1>
+        <p class="subtitle">Congreso CheqFirma - Marketing y Presupuesto</p>
+
+        <div class="section">
+            <h2>📁 Carpetas Preparadas</h2>
+            
+            <div class="folder-info">
+                <h3>1. MARKETING_Y_PAUTAJE</h3>
+                <p style="color: #666; margin-bottom: 10px;">Contenidos completos para campañas publicitarias</p>
+                <ul>
+                    <li>PLAN_MARKETING_PAUTAJE_PARAGUAY.md</li>
+                    <li>CONTENIDOS_MARKETING_COMPLETO.md</li>
+                    <li>ESTRATEGIA_MARKETING_DIGITAL_COMPLETA.md</li>
+                    <li>EJEMPLOS_ADS_LISTOS_PARA_USAR.md</li>
+                    <li>CREATIVOS_Y_COPIES_PARAGUAY.md</li>
+                    <li>README.md (Guía de uso)</li>
+                </ul>
+            </div>
+
+            <div class="folder-info">
+                <h3>2. PRESUPUESTO_50USD_48HORAS</h3>
+                <p style="color: #666; margin-bottom: 10px;">Estrategia para campaña express de $50 USD</p>
+                <ul>
+                    <li>ESTRATEGIA_50USD_48HORAS_PARAGUAY.md</li>
+                    <li>CREATIVOS_50USD_48H_PARAGUAY.md</li>
+                    <li>CREATIVOS_50USD_LISTOS_USAR.md</li>
+                    <li>README.md (Guía de uso)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="email-section">
+            <h2>✉️ Información para Envío</h2>
+            
+            <div class="email-info">
+                <strong>Destinatario:</strong> Lallamaqueinflamahk@gmail.com
+            </div>
+
+            <div class="email-info">
+                <strong>Asunto sugerido:</strong> 
+                <input type="text" id="subject" value="Carpetas de Marketing y Presupuesto - Congreso CheqFirma" 
+                       style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; margin-top: 5px;">
+            </div>
+
+            <div class="email-info">
+                <strong>Mensaje del correo:</strong>
+                <textarea id="emailBody">Hola,
+
+Te envío las carpetas preparadas con los contenidos de marketing y pautaje, así como el presupuesto de $50 USD para 48 horas que solicitaste.
+
+📁 CARPETAS INCLUIDAS:
+
+1. MARKETING_Y_PAUTAJE
+   - Plan completo de marketing para Paraguay
+   - Contenidos listos para usar (posts, stories, carousels)
+   - Estrategia multi-país
+   - Ejemplos de anuncios completos
+   - Creativos y copies
+
+2. PRESUPUESTO_50USD_48HORAS
+   - Estrategia ultra-optimizada para $50 USD
+   - Distribución del presupuesto por día y hora
+   - Creativos listos para usar
+   - Métricas y resultados esperados
+
+Cada carpeta incluye un archivo README.md con instrucciones detalladas de uso.
+
+Si tienes alguna pregunta o necesitas ajustes, no dudes en contactarme.
+
+Saludos,
+Equipo CheqFirma</textarea>
+            </div>
+
+            <button class="button copy-button" onclick="copyToClipboard()">📋 Copiar Mensaje al Portapapeles</button>
+            <div class="success-message" id="successMessage">✅ ¡Mensaje copiado al portapapeles!</div>
+
+            <button class="button" onclick="openEmailClient()">📧 Abrir Cliente de Correo</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📝 Instrucciones para Enviar:</h3>
+            <ol>
+                <li><strong>Comprimir las carpetas:</strong> Crea un archivo ZIP con las dos carpetas (MARKETING_Y_PAUTAJE y PRESUPUESTO_50USD_48HORAS)</li>
+                <li><strong>Preparar el correo:</strong> Usa el botón "Copiar Mensaje" para copiar el texto del correo</li>
+                <li><strong>Abrir tu cliente de correo:</strong> Gmail, Outlook, o el que uses</li>
+                <li><strong>Pegar el mensaje:</strong> Pega el texto copiado en el cuerpo del correo</li>
+                <li><strong>Adjuntar el ZIP:</strong> Adjunta el archivo ZIP con las carpetas</li>
+                <li><strong>Enviar:</strong> Verifica el destinatario (Lallamaqueinflamahk@gmail.com) y envía</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const subject = document.getElementById('subject').value;
+            const body = document.getElementById('emailBody').value;
+            const fullText = `Asunto: ${subject}\n\n${body}`;
+            
+            navigator.clipboard.writeText(fullText).then(() => {
+                const successMsg = document.getElementById('successMessage');
+                successMsg.style.display = 'block';
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 3000);
+            }).catch(err => {
+                alert('Error al copiar. Por favor, selecciona y copia manualmente.');
+            });
+        }
+
+        function openEmailClient() {
+            const subject = encodeURIComponent(document.getElementById('subject').value);
+            const body = encodeURIComponent(document.getElementById('emailBody').value);
+            const email = 'Lallamaqueinflamahk@gmail.com';
+            
+            // Intentar abrir cliente de correo
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
+

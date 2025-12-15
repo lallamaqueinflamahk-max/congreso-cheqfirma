@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Fotos Automáticamente - Congreso CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        .warning h2 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .warning p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+
+        .warning code {
+            background: #fed7aa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .instructions {
+            background: #f0f9ff;
+            border: 2px solid #2563eb;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        .instructions h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            margin-left: 25px;
+            color: #334155;
+            line-height: 2;
+        }
+
+        .instructions strong {
+            color: #2563eb;
+        }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .drop-zone {
+            border: 3px dashed #cbd5e1;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+            cursor: pointer;
+        }
+
+        .drop-zone:hover {
+            border-color: #2563eb;
+            background: #f0f9ff;
+        }
+
+        .drop-zone.dragover {
+            border-color: #10b981;
+            background: #d1fae5;
+            transform: scale(1.02);
+        }
+
+        .drop-zone.complete {
+            border-color: #10b981;
+            background: #d1fae5;
+            border-style: solid;
+        }
+
+        .drop-zone-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .drop-zone h4 {
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .drop-zone .description {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .drop-zone .filename {
+            background: #2563eb;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .drop-zone .flag {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .drop-zone img {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .drop-zone .status {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .progress-bar {
+            background: #e2e8f0;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #2563eb, #10b981);
+            height: 100%;
+            width: 0%;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .drop-zones {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Guardar Fotos de los Expositores</h1>
+        <p class="subtitle">Arrastra cada foto a su zona correspondiente</p>
+
+        <div class="warning">
+            <h2>⚠️ LIMITACIÓN TÉCNICA IMPORTANTE</h2>
+            <p>
+                <strong>Los navegadores web NO pueden guardar archivos directamente en tu disco duro por razones de seguridad.</strong><br><br>
+                
+                Esta herramienta te permite <strong>visualizar y descargar cada foto con el nombre correcto</strong>, 
+                pero deberás guardarlas manualmente en la carpeta: <code>images\expositores\</code>
+            </p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Instrucciones</h3>
+            <ol>
+                <li><strong>Arrastra cada foto</strong> a la zona correspondiente (1-8)</li>
+                <li>La foto se mostrará con una <strong>vista previa</strong></li>
+                <li>Click en <strong>"Descargar con nombre correcto"</strong></li>
+                <li>Guarda el archivo descargado en: <code>images\expositores\</code></li>
+                <li>Repite con las 8 fotos</li>
+                <li>Refresca la página web del congreso</li>
+            </ol>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress">0/8 Fotos Procesadas</div>
+        </div>
+
+        <div class="drop-zones" id="dropZones">
+            <!-- Zona 1: Joseph Varón -->
+            <div class="drop-zone" data-filename="joseph-varon.jpg" data-number="1">
+                <div class="drop-zone-number">1</div>
+                <div class="flag">🇺🇸</div>
+                <h4>Dr. Joseph Varón</h4>
+                <p class="description">Hombre calvo con camisa negra</p>
+                <div class="filename">joseph-varon.jpg</div>
+            </div>
+
+            <!-- Zona 2: Patricia Callisperis -->
+            <div class="drop-zone" data-filename="patricia-callisperis.jpg" data-number="2">
+                <div class="drop-zone-number">2</div>
+                <div class="flag">🇧🇴</div>
+                <h4>Dra. Patricia Callisperis</h4>
+                <p class="description">Mujer cabello largo oscuro, chaleco marrón</p>
+                <div class="filename">patricia-callisperis.jpg</div>
+            </div>
+
+            <!-- Zona 3: Guillermo Rodríguez -->
+            <div class="drop-zone" data-filename="guillermo-rodriguez.jpg" data-number="3">
+                <div class="drop-zone-number">3</div>
+                <div class="flag">🇵🇾</div>
+                <h4>Dr. Guillermo Rodríguez Dure</h4>
+                <p class="description">Hombre joven, bata blanca, corbata</p>
+                <div class="filename">guillermo-rodriguez.jpg</div>
+            </div>
+
+            <!-- Zona 4: Carmen Candia -->
+            <div class="drop-zone" data-filename="carmen-candia.jpg" data-number="4">
+                <div class="drop-zone-number">4</div>
+                <div class="flag">🇵🇾</div>
+                <h4>Prof. Carmen Candia</h4>
+                <p class="description">Mujer, vestido blanco elegante</p>
+                <div class="filename">carmen-candia.jpg</div>
+            </div>
+
+            <!-- Zona 5: Julio Razona -->
+            <div class="drop-zone" data-filename="julio-razona.jpg" data-number="5">
+                <div class="drop-zone-number">5</div>
+                <div class="flag">🇦🇷</div>
+                <h4>Abog. Julio Razona</h4>
+                <p class="description">Hombre, barba gris, camisa rayas</p>
+                <div class="filename">julio-razona.jpg</div>
+            </div>
+
+            <!-- Zona 6: Dannia Ríos -->
+            <div class="drop-zone" data-filename="dannia-rios.jpg" data-number="6">
+                <div class="drop-zone-number">6</div>
+                <div class="flag">🇵🇾</div>
+                <h4>Abg. Dannia Ríos Nacif</h4>
+                <p class="description">Mujer cabello rojizo, chaqueta blanca (SIN MARCO)</p>
+                <div class="filename">dannia-rios.jpg</div>
+            </div>
+
+            <!-- Zona 7: Chinda Brandolino -->
+            <div class="drop-zone" data-filename="chinda-brandolino.jpg" data-number="7">
+                <div class="drop-zone-number">7</div>
+                <div class="flag">🇦🇷</div>
+                <h4>Dra. Chinda Brandolino</h4>
+                <p class="description">Mujer rubia, pañuelo celeste</p>
+                <div class="filename">chinda-brandolino.jpg</div>
+            </div>
+
+            <!-- Zona 8: Atilio Fariña -->
+            <div class="drop-zone" data-filename="atilio-farina.jpg" data-number="8">
+                <div class="drop-zone-number">8</div>
+                <div class="flag">🇵🇾</div>
+                <h4>Dr. Atilio Fariña</h4>
+                <p class="description">Hombre, anteojos, camisa con puntos</p>
+                <div class="filename">atilio-farina.jpg</div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-success" onclick="window.open('images/expositores', '_blank')" style="display: none;" id="btnOpenFolder">
+                📂 Abrir Carpeta de Fotos
+            </button>
+            <a href="index.html" class="btn btn-primary">
+                🌐 Ver Página del Congreso
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let photosProcessed = 0;
+        const totalPhotos = 8;
+
+        // Manejo de drag and drop
+        const dropZones = document.querySelectorAll('.drop-zone');
+        
+        dropZones.forEach(zone => {
+            // Prevenir comportamiento por defecto
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                zone.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            // Agregar clase visual en hover
+            ['dragenter', 'dragover'].forEach(eventName => {
+                zone.addEventListener(eventName, () => {
+                    zone.classList.add('dragover');
+                });
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                zone.addEventListener(eventName, () => {
+                    zone.classList.remove('dragover');
+                });
+            });
+
+            // Manejar el drop
+            zone.addEventListener('drop', handleDrop);
+
+            // También permitir click para seleccionar archivo
+            zone.addEventListener('click', () => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = (e) => {
+                    handleFiles([e.target.files[0]], zone);
+                };
+                input.click();
+            });
+        });
+
+        function handleDrop(e) {
+            const files = e.dataTransfer.files;
+            handleFiles(files, e.currentTarget);
+        }
+
+        function handleFiles(files, zone) {
+            if (files.length === 0) return;
+
+            const file = files[0];
+            const filename = zone.dataset.filename;
+
+            // Mostrar preview
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                
+                // Limpiar zona y agregar imagen
+                const existingImg = zone.querySelector('img');
+                if (existingImg) existingImg.remove();
+                const existingBtn = zone.querySelector('.download-btn');
+                if (existingBtn) existingBtn.remove();
+                const existingStatus = zone.querySelector('.status');
+                if (existingStatus) existingStatus.remove();
+                
+                zone.appendChild(img);
+
+                // Agregar botón de descarga
+                const downloadBtn = document.createElement('button');
+                downloadBtn.className = 'btn btn-success download-btn';
+                downloadBtn.style.marginTop = '15px';
+                downloadBtn.style.padding = '10px 20px';
+                downloadBtn.style.fontSize = '0.9rem';
+                downloadBtn.textContent = '💾 Descargar: ' + filename;
+                downloadBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    downloadImage(img.src, filename);
+                };
+                zone.appendChild(downloadBtn);
+
+                // Marcar como completo
+                if (!zone.classList.contains('complete')) {
+                    zone.classList.add('complete');
+                    photosProcessed++;
+                    updateProgress();
+                }
+
+                // Mensaje de estado
+                const status = document.createElement('div');
+                status.className = 'status';
+                status.textContent = '✅ Lista para descargar';
+                zone.appendChild(status);
+
+                // Mostrar botón de abrir carpeta
+                document.getElementById('btnOpenFolder').style.display = 'inline-block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function downloadImage(dataUrl, filename) {
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = filename;
+            link.click();
+
+            alert(`✅ Foto descargada como: ${filename}\n\n📂 Ahora guárdala en la carpeta: images\\expositores\\`);
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progress');
+            const percentage = (photosProcessed / totalPhotos) * 100;
+            progressBar.style.width = percentage + '%';
+            progressBar.textContent = `${photosProcessed}/${totalPhotos} Fotos Procesadas`;
+
+            if (photosProcessed === totalPhotos) {
+                progressBar.textContent = '🎉 ¡Todas las fotos procesadas!';
+                setTimeout(() => {
+                    alert('¡Perfecto! Ahora guarda las 8 fotos descargadas en la carpeta: images\\expositores\\');
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>
+

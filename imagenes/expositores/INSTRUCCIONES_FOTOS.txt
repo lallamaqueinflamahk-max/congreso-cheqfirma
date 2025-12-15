@@ -1,0 +1,91 @@
+═══════════════════════════════════════════════════════════════
+  INSTRUCCIONES PARA AGREGAR FOTOS DE LOS EXPOSITORES
+═══════════════════════════════════════════════════════════════
+
+📁 UBICACIÓN:
+Esta carpeta: imagenes/expositores/
+
+
+📋 LISTA DE FOTOS NECESARIAS (15 expositores):
+
+Guarda cada foto con el nombre exacto indicado:
+
+1.  edgar-rolon.jpg          - Prof. Edgar Rolón
+2.  carmen-candia.jpg         - Prof. Carmen Candia
+3.  dannia-rios.jpg           - Abog. Dannia Rios Nacif
+4.  atilio-farina.jpg         - Dr. Atilio Fariña
+5.  guillermo-rodriguez.jpg   - Dr. Guillermo Rodríguez Dure
+6.  fernando-griffith.jpg     - Dr. Fernando Griffith
+7.  edgar-villagra.jpg        - Dr. Edgar Villagra
+8.  victor-villa.jpg          - Dr. Victor Villa
+9.  juan-puerto.jpg           - Abog. Juan Puerto
+10. julio-razona.jpg          - Abog. Julio Razona
+11. patricia-callisperis.jpg  - Dra. Patrícia Callisperis
+12. joseph-varon.jpg          - Dr. Joseph Varón
+13. chinda-brandolino.jpg     - Dra. Chinda Brandolino
+
+
+✅ REQUISITOS DE LAS FOTOS:
+
+• Formato: JPG o PNG
+• Tamaño recomendado: 400x400 px (cuadrada)
+• Peso: Máximo 500KB por foto
+• Fondo: Preferiblemente neutro o profesional
+• Tipo: Foto tipo carnet/profesional
+• Calidad: Alta resolución, bien iluminada
+
+
+🔄 PASOS PARA AGREGAR LAS FOTOS:
+
+1. Conseguir las fotos de cada expositor
+2. Recortar/editar para que sean cuadradas (1:1)
+3. Renombrar con el nombre exacto de la lista
+4. Guardar en esta carpeta (imagenes/expositores/)
+5. Actualizar la página web
+
+
+💡 HERRAMIENTAS ÚTILES:
+
+• Para recortar: Paint, Photoshop, GIMP (gratis)
+• Para comprimir: TinyPNG.com (online, gratis)
+• Para crear avatar si no hay foto: UI Avatars (online)
+
+
+🎨 SI NO TIENES LA FOTO:
+
+Si no consigues la foto de un expositor:
+
+Opción 1: Usar generadores de avatares
+• https://ui-avatars.com/
+• Genera avatar con iniciales automáticamente
+
+Opción 2: Dejar el avatar con iniciales
+• El sistema actual ya muestra iniciales
+• Se ve profesional de todas formas
+
+Opción 3: Foto genérica
+• Usar icono de persona profesional
+• Avatar neutro
+
+
+⚠️ IMPORTANTE:
+
+• Los nombres de archivo NO deben tener espacios
+• Usar minúsculas y guiones (como se indica)
+• La extensión debe ser .jpg o .png
+• Si la foto no existe, se mostrará el avatar con iniciales
+
+
+🔍 VERIFICAR:
+
+Después de agregar las fotos, abre la página web y:
+1. Ve a la sección "Agenda"
+2. Revisa que todas las fotos se vean bien
+3. Si alguna no aparece, revisa el nombre del archivo
+
+
+═══════════════════════════════════════════════════════════════
+
+¿Dudas? info@cheqfirma.com
+
+

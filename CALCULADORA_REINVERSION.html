@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Reinversión - Congreso CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .results {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            display: none;
+        }
+        .results h2 {
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+        .result-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #1976d2;
+        }
+        .result-item strong {
+            color: #1976d2;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result-item .value {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
+        .projection-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .projection-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .projection-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        .projection-table tr:hover {
+            background: #f8f9fa;
+        }
+        .positive {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .negative {
+            color: #dc3545;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Calculadora de Reinversión</h1>
+        <p class="subtitle">Calcula cuánto reinvertir y proyecta tu crecimiento</p>
+
+        <div class="section">
+            <h2>📊 Datos de la Campaña Actual</h2>
+            
+            <div class="input-group">
+                <label>Inversión Inicial (USD):</label>
+                <input type="number" id="inversion" value="50" min="1" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label>Ventas Básico ($7 USD):</label>
+                <input type="number" id="ventasBasico" value="10" min="0">
+            </div>
+
+            <div class="input-group">
+                <label>Ventas Premium ($25 USD):</label>
+                <input type="number" id="ventasPremium" value="10" min="0">
+            </div>
+
+            <div class="input-group">
+                <label>Ventas VIP ($75 USD):</label>
+                <input type="number" id="ventasVIP" value="5" min="0">
+            </div>
+
+            <div class="input-group">
+                <label>Costos Operativos (USD):</label>
+                <input type="number" id="costos" value="10" min="0" step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label>Porcentaje de Reinversión:</label>
+                <select id="porcentajeReinversion">
+                    <option value="70">70% (Conservador)</option>
+                    <option value="75" selected>75% (Recomendado)</option>
+                    <option value="80">80% (Agresivo)</option>
+                </select>
+            </div>
+
+            <button class="button" onclick="calcular()">📈 Calcular Reinversión</button>
+        </div>
+
+        <div class="results" id="results">
+            <h2>💡 Resultados y Proyección</h2>
+            
+            <div class="result-item">
+                <strong>Ingresos Totales:</strong>
+                <span class="value" id="ingresos">$0</span>
+            </div>
+
+            <div class="result-item">
+                <strong>Ganancia Neta:</strong>
+                <span class="value positive" id="ganancia">$0</span>
+            </div>
+
+            <div class="result-item">
+                <strong>Reinversión Recomendada:</strong>
+                <span class="value" id="reinversion">$0</span>
+            </div>
+
+            <div class="result-item">
+                <strong>Ganancia a Guardar:</strong>
+                <span class="value positive" id="guardar">$0</span>
+            </div>
+
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: #667eea;">📈 Proyección de Crecimiento (4 Semanas)</h3>
+            <table class="projection-table" id="projectionTable">
+                <thead>
+                    <tr>
+                        <th>Semana</th>
+                        <th>Inversión</th>
+                        <th>Ventas</th>
+                        <th>Ingresos</th>
+                        <th>Reinversión</th>
+                        <th>Ganancia</th>
+                    </tr>
+                </thead>
+                <tbody id="projectionBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            // Obtener valores
+            const inversion = parseFloat(document.getElementById('inversion').value) || 0;
+            const ventasBasico = parseInt(document.getElementById('ventasBasico').value) || 0;
+            const ventasPremium = parseInt(document.getElementById('ventasPremium').value) || 0;
+            const ventasVIP = parseInt(document.getElementById('ventasVIP').value) || 0;
+            const costos = parseFloat(document.getElementById('costos').value) || 0;
+            const porcentajeReinversion = parseFloat(document.getElementById('porcentajeReinversion').value) || 75;
+
+            // Calcular ingresos
+            const ingresosBasico = ventasBasico * 7;
+            const ingresosPremium = ventasPremium * 25;
+            const ingresosVIP = ventasVIP * 75;
+            const ingresosTotales = ingresosBasico + ingresosPremium + ingresosVIP;
+
+            // Calcular ganancia
+            const gananciaNeta = ingresosTotales - inversion - costos;
+
+            // Calcular reinversión
+            const reinversion = gananciaNeta > 0 ? (gananciaNeta * porcentajeReinversion / 100) : 0;
+            const guardar = gananciaNeta - reinversion;
+
+            // Mostrar resultados
+            document.getElementById('ingresos').textContent = '$' + ingresosTotales.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('ganancia').textContent = '$' + gananciaNeta.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('reinversion').textContent = '$' + reinversion.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('guardar').textContent = '$' + guardar.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+            // Calcular proyección
+            calcularProyeccion(inversion, ingresosTotales, gananciaNeta, reinversion, porcentajeReinversion);
+
+            // Mostrar resultados
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function calcularProyeccion(inversionInicial, ingresosSemana1, gananciaSemana1, reinversionSemana1, porcentaje) {
+            const semanas = 4;
+            let inversionActual = inversionInicial;
+            let inversionTotal = inversionInicial;
+            let gananciaTotal = 0;
+            let tbody = document.getElementById('projectionBody');
+            tbody.innerHTML = '';
+
+            for (let semana = 1; semana <= semanas; semana++) {
+                let ingresos, ganancia, reinversion, guardar;
+
+                if (semana === 1) {
+                    ingresos = ingresosSemana1;
+                    ganancia = gananciaSemana1;
+                    reinversion = reinversionSemana1;
+                    guardar = ganancia - reinversion;
+                } else {
+                    // Proyección: asumir que cada semana mejora 20% (por escalamiento)
+                    const factorCrecimiento = Math.pow(1.2, semana - 1);
+                    const ventasEstimadas = Math.round((ventasBasico + ventasPremium + ventasVIP) * factorCrecimiento);
+                    
+                    // Distribución similar
+                    const ventasB = Math.round(ventasEstimadas * 0.4);
+                    const ventasP = Math.round(ventasEstimadas * 0.4);
+                    const ventasV = Math.round(ventasEstimadas * 0.2);
+                    
+                    ingresos = (ventasB * 7) + (ventasP * 25) + (ventasV * 75);
+                    ganancia = ingresos - inversionActual - (10 * semana); // Costos aumentan
+                    reinversion = ganancia > 0 ? (ganancia * porcentaje / 100) : 0;
+                    guardar = ganancia - reinversion;
+                    
+                    inversionActual = reinversion;
+                }
+
+                inversionTotal += inversionActual;
+                gananciaTotal += guardar;
+
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td><strong>Semana ${semana}</strong></td>
+                    <td>$${semana === 1 ? inversionInicial.toFixed(2) : reinversion.toFixed(2)}</td>
+                    <td>${semana === 1 ? (parseInt(document.getElementById('ventasBasico').value) + parseInt(document.getElementById('ventasPremium').value) + parseInt(document.getElementById('ventasVIP').value)) : Math.round((parseInt(document.getElementById('ventasBasico').value) + parseInt(document.getElementById('ventasPremium').value) + parseInt(document.getElementById('ventasVIP').value)) * Math.pow(1.2, semana - 1))}</td>
+                    <td class="positive">$${ingresos.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td>$${reinversion.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td class="positive">$${guardar.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                `;
+            }
+
+            // Agregar fila de totales
+            const totalRow = tbody.insertRow();
+            totalRow.style.background = '#f8f9fa';
+            totalRow.style.fontWeight = 'bold';
+            totalRow.innerHTML = `
+                <td><strong>TOTAL</strong></td>
+                <td>$${inversionTotal.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                <td>-</td>
+                <td class="positive">-</td>
+                <td>-</td>
+                <td class="positive">$${gananciaTotal.toLocaleString('es-ES', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+            `;
+        }
+
+        // Calcular automáticamente al cargar
+        window.onload = function() {
+            calcular();
+        };
+    </script>
+</body>
+</html>
+

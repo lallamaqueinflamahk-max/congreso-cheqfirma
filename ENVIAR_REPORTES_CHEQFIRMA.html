@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Reportes a CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0A4D9E 0%, #1E6BC7 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #0A4D9E;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .info-box {
+            background: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .info-box.success {
+            background: #E8F5E9;
+            border-left-color: #4CAF50;
+        }
+        button {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        button:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+        .btn-email {
+            background: #0A4D9E;
+            box-shadow: 0 4px 15px rgba(10, 77, 158, 0.4);
+        }
+        .btn-email:hover {
+            background: #1E6BC7;
+        }
+        .contact-list {
+            background: #F5F5F5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+        }
+        .contact-list strong {
+            color: #0A4D9E;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-item {
+            padding: 10px;
+            background: white;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 3px solid #0A4D9E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Enviar Reportes a CheqFirma</h1>
+        <p class="subtitle">Asientos 17 y 18 - Para reenvío automático</p>
+        
+        <div class="info-box">
+            <strong>📋 Reportes a enviar:</strong>
+            <div class="contact-list" style="margin-top: 15px;">
+                <div class="contact-item">
+                    <strong>Asiento 17:</strong> Simeona Britez<br>
+                    <span style="color: #666; font-size: 14px;">+595986469470</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Asiento 18:</strong> Eulalio Ruiz Díaz<br>
+                    <span style="color: #666; font-size: 14px;">+595981814978</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box success">
+            <strong>✅ Destinos:</strong>
+            <p style="margin-top: 10px;">
+                📱 WhatsApp CheqFirma: +549 3536 564940<br>
+                📧 Email CheqFirma: cheqfirma@gmail.com
+            </p>
+        </div>
+
+        <button onclick="enviarAWhatsApp()">
+            📱 Enviar a WhatsApp de CheqFirma
+        </button>
+
+        <button onclick="enviarAEmail()" class="btn-email">
+            📧 Enviar a Email de CheqFirma
+        </button>
+
+        <button onclick="enviarAmbos()" style="background: linear-gradient(135deg, #25D366, #0A4D9E);">
+            🚀 Enviar a WhatsApp Y Email
+        </button>
+
+        <div id="status" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        // Datos de los asientos
+        const seat17Data = {
+            seatNumber: 17,
+            status: 'sold',
+            soldAt: new Date().toISOString(),
+            customer: {
+                name: 'Simeona Britez',
+                phone: '+595986469470',
+                email: ''
+            },
+            paymentMethod: 'Pago externo',
+            reservationId: 'RES-SOLD-17'
+        };
+
+        const seat18Data = {
+            seatNumber: 18,
+            status: 'sold',
+            soldAt: new Date().toISOString(),
+            customer: {
+                name: 'Eulalio Ruiz Díaz',
+                phone: '+595981814978',
+                email: ''
+            },
+            paymentMethod: 'Pago externo',
+            reservationId: 'RES-SOLD-18'
+        };
+
+        function formatPrice(price) {
+            return price.toLocaleString('es-PY');
+        }
+
+        function getCurrentSeatPrice() {
+            return 150000;
+        }
+
+        function generateReporteCompleto(seatData) {
+            const { seatNumber, customer, soldAt, reservationId } = seatData;
+            const price = getCurrentSeatPrice();
+            
+            return `*ASIENTO ${seatNumber} - ${customer.name.toUpperCase()}*
+
+👤 *Nombre:* ${customer.name}
+📱 *Teléfono:* ${customer.phone}
+🎫 *Asiento:* ${seatNumber}
+💰 *Monto Pagado:* ${formatPrice(price)} Gs
+💳 *Método de Pago:* ${seatData.paymentMethod}
+📅 *Fecha de Compra:* ${new Date(soldAt).toLocaleDateString('es-PY')}
+🆔 *ID Reserva:* ${reservationId}
+
+🎁 *BENEFICIOS:*
+✅ Asiento garantizado
+✅ Acceso presencial 2 días
+✅ Material físico
+✅ Coffee breaks
+✅ Networking
+✅ Certificado físico
+
+📅 *EVENTO:*
+19-20 Diciembre 2025
+08:00 - 22:00
+Auditorio "Ruiz Diaz", Manzana de la Rivera, Asunción
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+        }
+
+        function generarMensajeWhatsApp() {
+            const reporte17 = generateReporteCompleto(seat17Data);
+            const reporte18 = generateReporteCompleto(seat18Data);
+            
+            return `*📋 REPORTES DE ASIENTOS PRESENCIALES - CONGRESO CHEQFIRMA*
+
+*Para reenvío a clientes:*
+
+${reporte17}
+
+${reporte18}
+
+*INSTRUCCIONES PARA REENVÍO:*
+1. Copia el reporte de cada asiento
+2. Envía a cada cliente por WhatsApp:
+   • Simeona Britez: +595986469470
+   • Eulalio Ruiz Díaz: +595981814978
+
+*Contacto CheqFirma:*
+📧 cheqfirma@gmail.com
+📱 +549 3536 564940`;
+        }
+
+        function generarEmailCompleto() {
+            const reporte17 = generateReporteCompleto(seat17Data).replace(/\*/g, '');
+            const reporte18 = generateReporteCompleto(seat18Data).replace(/\*/g, '');
+            
+            return `REPORTES DE ASIENTOS PRESENCIALES - CONGRESO CHEQFIRMA
+
+Para reenvío a clientes:
+
+═══════════════════════════════════════════════════════════════════════════════
+
+${reporte17}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+${reporte18}
+
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTRUCCIONES PARA REENVÍO:
+1. Copia el reporte de cada asiento
+2. Envía a cada cliente por WhatsApp:
+   • Simeona Britez: +595986469470
+   • Eulalio Ruiz Díaz: +595981814978
+
+Contacto CheqFirma:
+Email: cheqfirma@gmail.com
+WhatsApp: +549 3536 564940`;
+        }
+
+        function enviarAWhatsApp() {
+            const mensaje = generarMensajeWhatsApp();
+            const whatsappUrl = `https://wa.me/5493536564940?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="info-box success"><strong>✅ WhatsApp abierto</strong><p>Se abrió WhatsApp de CheqFirma con ambos reportes. Revisa y envía el mensaje.</p></div>';
+        }
+
+        function enviarAEmail() {
+            const emailBody = generarEmailCompleto();
+            const emailSubject = encodeURIComponent('Reportes Asientos 17 y 18 - Para Reenvío');
+            const emailUrl = `mailto:cheqfirma@gmail.com?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
+            window.location.href = emailUrl;
+            
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="info-box success"><strong>✅ Email abierto</strong><p>Se abrió tu cliente de email con ambos reportes. Revisa y envía el email.</p></div>';
+        }
+
+        function enviarAmbos() {
+            // Enviar a WhatsApp primero
+            enviarAWhatsApp();
+            
+            // Esperar 1 segundo y enviar a Email
+            setTimeout(() => {
+                enviarAEmail();
+            }, 1000);
+            
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="info-box success"><strong>✅ Ambos abiertos</strong><p>Se abrieron WhatsApp y Email con ambos reportes. Revisa y envía ambos.</p></div>';
+        }
+
+        // Auto-ejecutar al cargar
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                enviarAmbos();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

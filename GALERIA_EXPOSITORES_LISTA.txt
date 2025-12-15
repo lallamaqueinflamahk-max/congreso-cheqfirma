@@ -1,0 +1,246 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║     ✅ GALERÍA DE EXPOSITORES AGREGADA - 12 EXPOSITORES          ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+  📊 LO QUE SE HA AGREGADO
+═══════════════════════════════════════════════════════════════════
+
+✅ NUEVA SECCIÓN "Nuestros Expositores"
+   • Ubicación: Después de la Agenda, antes de la Galería
+   • Diseño: Tarjetas modernas con fotos y temas
+   • Responsive: Se adapta a móviles y tablets
+   • Animaciones: Efectos hover y entrada progresiva
+
+✅ 12 TARJETAS DE EXPOSITORES
+   • Cada una con foto, nombre, especialidad y tema
+   • Banderas de países de origen
+   • Iconos representativos para cada tema
+   • Enlaces a las fotos configurados
+
+✅ MENÚ DE NAVEGACIÓN ACTUALIZADO
+   • Nuevo botón "Expositores" en el menú superior
+   • Click directo para ver la galería de expositores
+
+✅ ESTILOS CSS PROFESIONALES
+   • Diseño moderno tipo tarjetas
+   • Efecto zoom en hover
+   • Animación de entrada escalonada
+   • Totalmente responsive
+
+
+═══════════════════════════════════════════════════════════════════
+  📋 LISTA DE LOS 12 EXPOSITORES AGREGADOS
+═══════════════════════════════════════════════════════════════════
+
+1. Prof. Edgar Rolón 🇵🇾
+   Tema: Historia del ADN paraguayo
+
+2. Prof. Carmen Candia 🇵🇾
+   Tema: Historia ADN paraguayo y comparación con otras regiones
+
+3. Abg. Dannia Ríos Nacif 🇵🇾
+   Tema: Afectación en niños por ideología de género
+
+4. Dr. Atilio Fariña 🇵🇾
+   Tema: Protección del ADN humano desde el embrión
+
+5. Dr. Guillermo Rodríguez Dure 🇵🇾
+   Tema: Política internacional y protección del individuo
+
+6. Dr. Fernando Griffith 🇵🇾
+   Tema: Química del ADN humano
+
+7. Dr. Edgar Villagra 🇵🇾
+   Tema: ARNm - Vacunas
+
+8. Dr. Victor Villa 🇵🇾
+   Tema: Estudio médico jurídico sobre daño en ADN en autopsias
+
+9. Abog. Juan Ramiro Puerto Viera 🇵🇾
+   Tema: Defensa jurídica de la identidad personal digital
+
+10. Abog. Julio Razona 🇦🇷
+    Tema: Presenta Libro "Agenda de la Resistencia"
+
+11. Dra. Patrícia Callisperis 🇧🇴
+    Tema: Terapéutica - CDS y restauración celular
+
+12. Dra. Chinda Brandolino 🇦🇷
+    Tema: Nuestro ADN comprometido - Sistema de control
+
+
+═══════════════════════════════════════════════════════════════════
+  📸 CÓMO GUARDAR LAS FOTOS
+═══════════════════════════════════════════════════════════════════
+
+UBICACIÓN: images\expositores\
+
+NOMBRES DE ARCHIVOS NECESARIOS:
+
+□ edgar-rolon.jpg
+□ carmen-candia.jpg
+□ dannia-rios.jpg
+□ atilio-farina.jpg
+□ guillermo-rodriguez.jpg
+□ fernando-griffith.jpg
+□ edgar-villagra.jpg
+□ victor-villa.jpg
+□ juan-puerto.jpg
+□ julio-razona.jpg
+□ patricia-callisperis.jpg
+□ chinda-brandolino.jpg
+
+
+PROCESO:
+
+1. Abre la carpeta: 
+   C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+
+   O doble click en: ABRIR_CARPETA_FOTOS.bat
+
+2. Guarda cada foto con el nombre exacto de la lista
+
+3. Si la foto no existe, se mostrará un placeholder con iniciales
+
+
+═══════════════════════════════════════════════════════════════════
+  🎨 CARACTERÍSTICAS DE LA GALERÍA
+═══════════════════════════════════════════════════════════════════
+
+DISEÑO:
+• Tarjetas modernas con sombras y bordes redondeados
+• Grid responsive (4 columnas en desktop, 1 en móvil)
+• Fotos de 300x300px con efecto parallax
+
+EFECTOS:
+• Hover: Tarjeta sube y hace zoom en la foto
+• Animación de entrada: Cada tarjeta aparece progresivamente
+• País de origen mostrado en overlay sobre la foto
+
+INFORMACIÓN EN CADA TARJETA:
+• Foto profesional (o placeholder con iniciales)
+• Nombre completo
+• Especialidad/Profesión
+• Tema que va a exponer
+• Icono representativo del tema
+
+
+═══════════════════════════════════════════════════════════════════
+  🌐 CÓMO VER LA NUEVA GALERÍA
+═══════════════════════════════════════════════════════════════════
+
+1. Abre la página web:
+   Doble click en: index.html
+   O en: ABRIR_PAGINA_WEB.bat
+
+2. En el menú superior, click en "EXPOSITORES"
+
+3. Verás una galería moderna con las 12 tarjetas
+
+4. Pasa el mouse sobre cada tarjeta para ver el efecto hover
+
+
+═══════════════════════════════════════════════════════════════════
+  ✨ FUNCIONALIDADES
+═══════════════════════════════════════════════════════════════════
+
+SISTEMA INTELIGENTE:
+• Si la foto existe → la muestra
+• Si la foto NO existe → muestra placeholder con iniciales
+• El placeholder es un SVG con las iniciales del nombre
+
+EJEMPLO:
+- Si existe patricia-callisperis.jpg → Muestra la foto
+- Si NO existe → Muestra "PC" en un círculo azul
+
+RESPONSIVE:
+• Desktop (>1024px): 4 columnas
+• Tablet (768-1024px): 3 columnas
+• Móvil (480-768px): 2 columnas
+• Móvil pequeño (<480px): 1 columna
+
+
+═══════════════════════════════════════════════════════════════════
+  📊 RESUMEN DE CAMBIOS
+═══════════════════════════════════════════════════════════════════
+
+ARCHIVOS MODIFICADOS:
+
+✅ index.html
+   • Nueva sección "speakers-gallery-section"
+   • 12 tarjetas de expositores con toda su información
+   • Link "Expositores" agregado al menú de navegación
+
+✅ styles.css
+   • Estilos para .speakers-gallery-section
+   • Estilos para .speaker-card (tarjetas)
+   • Estilos para .speaker-card-image (fotos)
+   • Estilos para .speaker-card-overlay (país)
+   • Estilos para .speaker-card-content (información)
+   • Animaciones fadeInUp escalonadas
+   • Media queries responsive
+
+
+═══════════════════════════════════════════════════════════════════
+  🎯 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════
+
+PARA COMPLETAR LA GALERÍA:
+
+1. Guarda las 12 fotos que me enviaste en: images\expositores\
+
+2. Renombra cada foto según la lista de arriba
+
+3. Refresca la página web (F5)
+
+4. Verás las fotos reales en lugar de los placeholders
+
+
+FOTOS QUE ENVIASTE (mapeo):
+
+Foto 1 (Dr. Edgar Villagra - microscopio)     → edgar-villagra.jpg
+Foto 2 (Abog. Juan Puerto - polo rojo)        → juan-puerto.jpg
+Foto 3 (Abog. Julio Razona - barba gris)      → julio-razona.jpg
+Foto 4 (Dr. Victor Villa - mayor)             → victor-villa.jpg
+Foto 5 (Dr. Atilio Fariña - anteojos)         → atilio-farina.jpg
+Foto 6 (Dr. Fernando Griffith - saco negro)   → fernando-griffith.jpg
+Foto 7 (Abg. Dannia Ríos - cabello rojizo)    → dannia-rios.jpg
+Foto 8 (Dr. Guillermo Rodríguez - bata)       → guillermo-rodriguez.jpg
+Foto 9 (Prof. Edgar Rolón - camisa celeste)   → edgar-rolon.jpg
+Foto 10 (Dra. Chinda Brandolino - rubia)      → chinda-brandolino.jpg
+Foto 11 (Dra. Patricia Callisperis)           → patricia-callisperis.jpg
+Foto 12 (Prof. Carmen Candia - vestido)       → carmen-candia.jpg
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ ESTADO ACTUAL
+═══════════════════════════════════════════════════════════════════
+
+CÓDIGO: ✅ 100% Completado
+   • HTML con galería de expositores
+   • CSS con estilos modernos
+   • Menú de navegación actualizado
+
+FOTOS: ⏳ Pendiente
+   • Guardar 12 fotos en la carpeta
+   • Renombrar según la lista
+
+RESULTADO FINAL:
+   • Galería profesional tipo Pinterest
+   • Cada expositor con foto, nombre y tema
+   • Click en menú "Expositores" lleva directo
+   • 100% responsive y con animaciones
+
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 LA GALERÍA DE EXPOSITORES YA ESTÁ LISTA EN LA PÁGINA WEB
+
+📂 Solo falta guardar las 12 fotos en: images\expositores\
+
+═══════════════════════════════════════════════════════════════════
+

@@ -1,0 +1,61 @@
+# Configuración del Sistema de Reportes - Congreso ADN Humano
+
+# Fecha del evento (para calcular vencimientos)
+event:
+  date: "2025-12-19T08:00:00"  # ISO format
+  name: "Congreso ADN Humano"
+
+# Capacidad total de asientos
+capacity: 100
+
+# Fuente de datos (postgresql o csv)
+datasource:
+  type: "csv"  # o "postgresql"
+  
+  # Para PostgreSQL:
+  # host: "localhost"
+  # port: 5432
+  # dbname: "congreso"
+  # user: "postgres"
+  # password: "password"
+  # connection_string: "host=localhost dbname=congreso user=postgres password=pass"
+  
+  # Para CSV:
+  csv_path: "data/seats.csv"
+  column_mapping:
+    seat_id: "seat_id"
+    seat_number: "seat_number"
+    section: "section"
+    row: "row"
+    status: "status"
+    buyer_name: "buyer_name"
+    buyer_email: "buyer_email"
+    buyer_phone: "buyer_phone"
+    venta_origen: "venta_origen"
+    amount_paid: "amount_paid"
+    deposit_amount: "deposit_amount"
+    total_amount: "total_amount"
+    payment_status: "payment_status"
+    reserved_at: "reserved_at"
+    expires_at: "expires_at"
+    paid_at: "paid_at"
+    created_at: "created_at"
+    updated_at: "updated_at"
+    notes: "notes"
+    cancellation_reason: "cancellation_reason"
+    refund_amount: "refund_amount"
+    refunded: "refunded"
+
+# Directorio de salida para reportes
+output_dir: "reports"
+
+# Configuración de email (Gmail SMTP)
+email:
+  enabled: true
+  sender_email: "tu-email@gmail.com"
+  app_password: "tu-app-password"  # App Password de Gmail (no la contraseña normal)
+  recipients:
+    - "cheqfirma@gmail.com"
+    - "Lallamaqueinflamahk@gmail.com"
+    - "richitexx07@gmail.com"
+

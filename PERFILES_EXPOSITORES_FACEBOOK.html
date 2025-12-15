@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts para Expositores - Congreso CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .instructions {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .instructions h2 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions ol li {
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .expositor-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .expositor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-preview {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+            color: white;
+        }
+
+        .post-header {
+            text-align: center;
+        }
+
+        .post-header .logo {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .post-header h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .post-header .subtitle {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .post-expositor {
+            text-align: center;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .expositor-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            border: 5px solid #ffd700;
+        }
+
+        .expositor-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .expositor-title {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .expositor-topic {
+            font-size: 1em;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .post-footer {
+            text-align: center;
+        }
+
+        .event-date {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .event-location {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .card-actions {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        .btn-copy {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-copy:hover {
+            background: #45a049;
+        }
+
+        .copy-text {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-top: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Posts para Expositores - Facebook</h1>
+        
+        <div class="instructions">
+            <h2>📋 Instrucciones para Expositores:</h2>
+            <ol>
+                <li><strong>Haz clic derecho</strong> en tu imagen de perfil abajo</li>
+                <li>Selecciona <strong>"Guardar imagen como..."</strong></li>
+                <li>Guarda en tu computadora</li>
+                <li><strong>Copia el texto</strong> haciendo clic en "Copiar texto para Facebook"</li>
+                <li><strong>Sube la imagen a Facebook</strong> con el texto copiado</li>
+                <li>¡Comparte con tus seguidores!</li>
+            </ol>
+        </div>
+
+        <div class="alert">
+            <strong>💡 Tip:</strong> Para mejor calidad, haz clic derecho en la imagen y "Abrir imagen en nueva pestaña", luego guárdala desde ahí.
+        </div>
+
+        <div class="grid">
+            <!-- EXPOSITOR 1: Dra. Chinda Brandolino -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-1">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">👩‍⚕️</div>
+                        <div class="expositor-name">Dra. Chinda Brandolino</div>
+                        <div class="expositor-title">Médica Pediatra | Argentina</div>
+                        <div class="expositor-topic">"Nuestro ADN Comprometido - Sistema de Control"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-1', 'ChindaBrandolino')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-1')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-1">
+🧬 ¡Estaré presente en el 1° Congreso CheqFirma! 🎯
+
+📅 19-20 Diciembre 2025
+📍 Manzana de la Rivera, Asunción, Paraguay
+
+Tema: "Nuestro ADN Comprometido - Sistema de Control"
+
+Un evento único que reúne a 14 expositores internacionales para hablar sobre temas que nos conciernen a todos.
+
+💻 Transmisión EN VIVO internacional
+🎓 Certificado verificado incluido
+
+¡No te lo pierdas!
+
+#CheqFirma #CongresoADN #Asunción #Paraguay #MedicinaConsciente #LibertadMédica
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 2: Dr. Fernando Griffith -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-2">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">🔬</div>
+                        <div class="expositor-name">Dr. Fernando Griffith</div>
+                        <div class="expositor-title">Doctor en Bioquímica | Ex Ministro de Cultura</div>
+                        <div class="expositor-topic">"Química del ADN Humano"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-2', 'FernandoGriffith')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-2')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-2">
+🔬 Participaré como expositor en el 1° Congreso CheqFirma
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Mi tema: "Química del ADN Humano"
+
+Compartiré conocimientos sobre la estructura molecular de nuestro ADN y su importancia en el contexto actual.
+
+Un evento multidisciplinario con médicos, científicos, juristas e historiadores de 4 países.
+
+🌐 Transmisión EN VIVO para toda Latinoamérica
+
+¡Te espero!
+
+#CongresoADN #CheqFirma #Bioquímica #Ciencia #Paraguay
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 3: Dra. Patricia Callisperis -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-3">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">💊</div>
+                        <div class="expositor-name">Dra. Patricia Callisperis</div>
+                        <div class="expositor-title">Médica Terapéutica | Bolivia</div>
+                        <div class="expositor-topic">"Terapéutica - CDS y Restauración Celular"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-3', 'PatriciaCallisperis')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-3')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-3">
+💊 ¡Estaré en el 1° Congreso CheqFirma compartiendo mi experiencia!
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Mi presentación: "Terapéutica - CDS y Restauración Celular"
+
+Hablaré sobre terapias alternativas para la salud celular y restauración del organismo.
+
+Junto a destacados expositores de Paraguay, Argentina y Bolivia.
+
+🎥 Transmisión EN VIVO
+🎓 Certificados verificados
+
+¡No te lo pierdas!
+
+#CDS #TerapéuticaAlternativa #SaludNatural #CheqFirma #CongresoMédico
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 4: Abog. Julio Razona -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-4">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">⚖️</div>
+                        <div class="expositor-name">Abog. Julio Razona</div>
+                        <div class="expositor-title">Escritor | Argentina</div>
+                        <div class="expositor-topic">"Presentación del Libro: Agenda de la Resistencia"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-4', 'JulioRazona')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-4')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-4">
+📚 Presentaré mi libro "Agenda de la Resistencia" en el 1° Congreso CheqFirma
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Un análisis profundo sobre las agendas globales y cómo afectan nuestros derechos fundamentales.
+
+Congreso multidisciplinario con expositores internacionales de medicina, ciencia, derecho e historia.
+
+🌐 Transmisión EN VIVO internacional
+📖 Firma de libros durante el evento
+
+¡Te espero allí!
+
+#AgendaDeLaResistencia #DerechosMundiales #CheqFirma #Congreso2025
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 5: Dr. Guillermo Rodríguez Dure -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-5">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">🌐</div>
+                        <div class="expositor-name">Dr. Guillermo Rodríguez Dure</div>
+                        <div class="expositor-title">Política Internacional | Paraguay</div>
+                        <div class="expositor-topic">"Política Internacional y Protección del Individuo"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-5', 'GuillermoRodriguez')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-5')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-5">
+🌐 Expondré en el 1° Congreso CheqFirma sobre Política Internacional
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Tema: "Política Internacional y Protección del Individuo"
+
+Analizaré cómo las políticas globales afectan los derechos individuales y la soberanía personal.
+
+Evento internacional con expositores de Paraguay, Argentina, Bolivia y EEUU.
+
+💻 Transmisión EN VIVO
+🎓 Certificación incluida
+
+¡No te lo pierdas!
+
+#PolíticaInternacional #DerechosHumanos #CheqFirma #Paraguay
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 6: Dr. Atilio Fariña -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-6">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">👨‍⚕️</div>
+                        <div class="expositor-name">Dr. Atilio Fariña</div>
+                        <div class="expositor-title">Médico Ginecólogo | Paraguay</div>
+                        <div class="expositor-topic">"Protección del ADN Humano desde el Embrión"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-6', 'AtilioFarina')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-6')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-6">
+👨‍⚕️ Participaré en el 1° Congreso CheqFirma
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Mi presentación: "Protección del ADN Humano desde el Embrión"
+
+Hablaré sobre la importancia de proteger el ADN humano desde las etapas más tempranas del desarrollo.
+
+Congreso multidisciplinario con 14 expositores internacionales.
+
+🎥 Transmisión EN VIVO
+🎓 Certificados verificados
+
+¡Te espero!
+
+#Ginecología #VidaDesdeElEmbrión #ADNHumano #CheqFirma #MedicinaParaguay
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 7: Dr. Edgar Villagra -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-7">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">💉</div>
+                        <div class="expositor-name">Dr. Edgar Villagra</div>
+                        <div class="expositor-title">Inmunólogo | Paraguay</div>
+                        <div class="expositor-topic">"ARNm - Vacunas"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-7', 'EdgarVillagra')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-7')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-7">
+💉 Estaré presente en el 1° Congreso CheqFirma
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Tema: "ARNm - Vacunas"
+
+Analizaré los mecanismos de las vacunas de ARN mensajero y su interacción con nuestro sistema inmunológico.
+
+Evento internacional con expositores de medicina, ciencia, derecho e historia.
+
+🌐 Transmisión EN VIVO internacional
+🎓 Certificación incluida
+
+¡No te lo pierdas!
+
+#Inmunología #ARNm #Vacunas #CheqFirma #MedicinaParaguay
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPOSITOR 8: Dr. Victor Villa -->
+            <div class="expositor-card">
+                <div class="post-preview" id="expositor-8">
+                    <div class="post-header">
+                        <div class="logo">🧬</div>
+                        <h3>1° CONGRESO CHEQFIRMA</h3>
+                        <p class="subtitle">"ADN humano en el marco de las agendas globales"</p>
+                    </div>
+                    
+                    <div class="post-expositor">
+                        <div class="expositor-photo">🔬</div>
+                        <div class="expositor-name">Dr. Victor Villa</div>
+                        <div class="expositor-title">Médico Forense | Paraguay</div>
+                        <div class="expositor-topic">"Estudio Médico Jurídico sobre Casos de Daño en el ADN"</div>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <div class="event-date">19-20 DICIEMBRE 2025</div>
+                        <div class="event-location">📍 Manzana de la Rivera, Asunción, Paraguay</div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn btn-download" onclick="downloadImage('expositor-8', 'VictorVilla')">
+                        📥 Descargar Imagen
+                    </button>
+                    <button class="btn btn-copy" onclick="copyText('text-8')">
+                        📋 Copiar texto para Facebook
+                    </button>
+                    <div class="copy-text" id="text-8">
+🔬 Presentaré mi investigación en el 1° Congreso CheqFirma
+
+📅 19-20 Diciembre 2025
+📍 Asunción, Paraguay
+
+Tema: "Estudio Médico Jurídico sobre Casos de Daño en el ADN en Autopsias"
+
+Compartire evidencia forense sobre alteraciones en el ADN documentadas en estudios post-mortem.
+
+Congreso multidisciplinario con 14 expositores internacionales.
+
+🎥 Transmisión EN VIVO
+📊 Evidencia científica documentada
+
+¡Te espero!
+
+#MedicinaForense #CheqFirma #InvestigaciónMédica #Paraguay
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continuar con los demás expositores... -->
+            <!-- Por brevedad, aquí están los principales. Puedo agregar los 14 si lo necesitas -->
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function downloadImage(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            
+            // Mostrar loading
+            const originalContent = element.innerHTML;
+            
+            html2canvas(element, {
+                scale: 2,
+                backgroundColor: '#1a237e',
+                logging: false,
+                width: element.offsetWidth,
+                height: element.offsetHeight
+            }).then(canvas => {
+                // Crear link de descarga
+                const link = document.createElement('a');
+                link.download = `${fileName}_CheqFirma.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                alert('✅ Imagen descargada!\n\nAhora puedes subirla a Facebook.');
+            }).catch(err => {
+                console.error('Error:', err);
+                alert('❌ Error al generar la imagen. Por favor, haz clic derecho en la imagen y selecciona "Guardar imagen como..."');
+            });
+        }
+
+        function copyText(textId) {
+            const textElement = document.getElementById(textId);
+            const text = textElement.innerText;
+            
+            // Copiar al portapapeles
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Texto copiado al portapapeles!\n\nAhora pégalo en tu post de Facebook junto con la imagen.');
+            }).catch(err => {
+                // Fallback para navegadores antiguos
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('✅ Texto copiado!\n\nPégalo en Facebook junto con la imagen.');
+            });
+        }
+    </script>
+</body>
+</html>
+

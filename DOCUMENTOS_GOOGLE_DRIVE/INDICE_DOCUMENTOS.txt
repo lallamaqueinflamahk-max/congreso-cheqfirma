@@ -1,0 +1,94 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    ÍNDICE DE DOCUMENTOS
+         Congreso CheqFirma - Marketing y Análisis Internacional
+═══════════════════════════════════════════════════════════════════════════════
+
+DESTINATARIO: golazodep77@gmail.com
+FECHA: Diciembre 2025
+
+───────────────────────────────────────────────────────────────────────────────
+📋 DOCUMENTOS INCLUIDOS
+───────────────────────────────────────────────────────────────────────────────
+
+1. RESUMEN_EJECUTIVO.md
+   → Resumen rápido de toda la estrategia
+   → Países prioritarios y ciudades
+   → Proyecciones de ROI
+   → Próximos pasos
+
+2. ESTRATEGIA_MARKETING_50USD_BRASIL.md
+   → Estrategia completa para campaña de $50 USD
+   → Configuración de Facebook Ads
+   → Creativos y copy sugeridos
+   → Métricas y objetivos
+
+3. ANALISIS_PAISES_CIUDADES_OBJETIVO.md
+   → Análisis detallado por país y ciudad
+   → Tier 1, 2 y 3 de prioridades
+   → Audiencias estimadas
+   → Estrategias específicas
+
+4. ANALISIS_MERCADO_POR_PAIS.md
+   → Análisis de mercado por país
+   → Volúmenes de búsqueda
+   → Costos publicitarios
+   → Influencers clave
+
+5. SOLUCION_ERROR_NETLIFY.md
+   → Solución al error de Netlify
+   → Cómo trabajar localmente
+   → Alternativas de hosting
+
+6. INSTRUCCIONES_SERVIDOR_MOVIL.md
+   → Cómo acceder desde celular
+   → Configuración de servidor local
+   → Solución de problemas
+
+7. README_INSTRUCCIONES.md
+   → Descripción de todos los documentos
+   → Próximos pasos recomendados
+   → Resumen ejecutivo
+
+8. INSTRUCCIONES_SUBIR_GOOGLE_DRIVE.md
+   → Cómo subir estos archivos a Google Drive
+   → Métodos paso a paso
+   → Checklist de verificación
+
+9. ABRIR_CARPETA_GOOGLE_DRIVE.bat
+   → Script para abrir esta carpeta fácilmente
+
+───────────────────────────────────────────────────────────────────────────────
+📊 RESUMEN RÁPIDO
+───────────────────────────────────────────────────────────────────────────────
+
+PAÍSES PRIORITARIOS:
+1. Brasil (2M-5M personas) - MÁXIMA PRIORIDAD
+2. Argentina (850K-2.75M personas)
+3. Colombia (700K-2.2M personas)
+4. Chile (380K-1.2M personas)
+
+PRESUPUESTO RECOMENDADO:
+- Fase 1: $50 USD (Brasil - prueba)
+- Fase 2: $100-200 USD (Brasil + Argentina + Colombia)
+- Fase 3: $500-1000 USD (Todos los países)
+
+ROI ESPERADO: 5:1 a 15:1
+
+───────────────────────────────────────────────────────────────────────────────
+✅ CHECKLIST ANTES DE SUBIR
+───────────────────────────────────────────────────────────────────────────────
+
+[ ] Verificar que todos los 9 archivos estén presentes
+[ ] Leer RESUMEN_EJECUTIVO.md primero
+[ ] Revisar ESTRATEGIA_MARKETING_50USD_BRASIL.md
+[ ] Confirmar destinatario: golazodep77@gmail.com
+[ ] Seguir INSTRUCCIONES_SUBIR_GOOGLE_DRIVE.md
+
+───────────────────────────────────────────────────────────────────────────────
+
+Total de archivos: 9
+Formato: Markdown (.md) y Batch (.bat)
+Tamaño total: ~45 KB
+
+═══════════════════════════════════════════════════════════════════════════════
+

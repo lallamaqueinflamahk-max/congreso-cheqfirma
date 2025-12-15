@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Reporte Ahora - CheqFirma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0A4D9E;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #0A4D9E;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #1E6BC7;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0A4D9E;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Generar Reporte de Asientos</h1>
+        
+        <div>
+            <button onclick="generarReporteAhora()" id="btnAhora">
+                🚀 Generar Reporte AHORA
+            </button>
+            <button onclick="descargarReporte()" id="btnDescargar">
+                📥 Solo Descargar (sin enviar)
+            </button>
+        </div>
+        
+        <div id="status"></div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+            <h3>📋 Reportes Programados</h3>
+            <p><strong>Reporte Matutino:</strong> Se ejecuta automáticamente a primera hora</p>
+            <p><strong>Reporte Baja Ventas:</strong> Se ejecuta si no hay ventas en 24h</p>
+            <p><strong>Reporte Fin de Día:</strong> Se ejecuta antes de terminar la jornada</p>
+            <p style="margin-top: 15px; color: #666; font-size: 14px;">
+                <em>Los reportes se envían automáticamente a:<br>
+                • cheqfirma@gmail.com<br>
+                • Lallamaqueinflamahk@gmail.com<br>
+                • richitexx07@gmail.com</em>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const TOKEN = 'cheqfirma2025'; // Cambiar según configuración
+        
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = `status ${type}`;
+            statusDiv.innerHTML = message;
+        }
+        
+        function setLoading(buttonId, loading) {
+            const btn = document.getElementById(buttonId);
+            if (loading) {
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loading"></span>Generando...';
+            } else {
+                btn.disabled = false;
+                btn.innerHTML = buttonId === 'btnAhora' ? '🚀 Generar Reporte AHORA' : '📥 Solo Descargar (sin enviar)';
+            }
+        }
+        
+        async function generarReporteAhora() {
+            setLoading('btnAhora', true);
+            showStatus('Generando reporte completo con análisis de problemas...', 'info');
+            
+            try {
+                const response = await fetch(`/.netlify/functions/sendReportNow?token=${TOKEN}`);
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showStatus(`
+                        ✅ <strong>Reporte generado y enviado exitosamente</strong><br>
+                        Fecha: ${result.fecha}<br>
+                        Hora: ${result.hora}<br>
+                        Destinatarios: ${result.destinatarios.join(', ')}<br>
+                        <br>
+                        El reporte incluye:<br>
+                        • Resumen financiero con recuento de plata<br>
+                        • Análisis de problemas y soluciones<br>
+                        • Lista completa de vendidos, reservados y disponibles
+                    `, 'success');
+                } else {
+                    throw new Error(result.error || 'Error generando reporte');
+                }
+            } catch (error) {
+                showStatus(`❌ Error: ${error.message}`, 'error');
+            } finally {
+                setLoading('btnAhora', false);
+            }
+        }
+        
+        async function descargarReporte() {
+            setLoading('btnDescargar', true);
+            showStatus('Generando reporte para descarga...', 'info');
+            
+            try {
+                const response = await fetch(`/.netlify/functions/generateReportWithAnalysis?token=${TOKEN}`);
+                
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `reporte_completo_${new Date().toISOString().split('T')[0]}.xlsx`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                    
+                    showStatus('✅ Reporte descargado exitosamente', 'success');
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Error generando reporte');
+                }
+            } catch (error) {
+                showStatus(`❌ Error: ${error.message}`, 'error');
+            } finally {
+                setLoading('btnDescargar', false);
+            }
+        }
+    </script>
+</body>
+</html>
+

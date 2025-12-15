@@ -1,0 +1,78 @@
+═══════════════════════════════════════════════════════════════════
+     TABLA RÁPIDA - NOMBRES DE ARCHIVOS PARA FOTOS
+═══════════════════════════════════════════════════════════════════
+
+📂 CARPETA: images\expositores\
+
+🔵 = Acceso rápido: ABRIR_CARPETA_FOTOS.bat
+
+
+═══════════════════════════════════════════════════════════════════
+  FOTO                          →    NOMBRE DE ARCHIVO
+═══════════════════════════════════════════════════════════════════
+
+1. Dr. Joseph Varón (USA)       →    joseph-varon.jpg
+   Hombre calvo, camisa negra
+
+2. Dra. Patricia Callisperis    →    patricia-callisperis.jpg
+   Mujer, cabello largo (Bolivia)
+
+3. Dr. Guillermo Rodríguez      →    guillermo-rodriguez.jpg
+   Doctor joven, bata blanca (PY)
+
+4. Prof. Carmen Candia          →    carmen-candia.jpg
+   Mujer, vestido blanco (PY)
+
+5. Abog. Julio Razona          →    julio-razona.jpg
+   Hombre, barba gris (Argentina)
+
+6. Abg. Dannia Ríos Nacif      →    dannia-rios.jpg
+   Mujer, cabello rojizo, chaqueta
+
+7. Dra. Chinda Brandolino      →    chinda-brandolino.jpg
+   Mujer rubia, pañuelo celeste
+
+8. Dr. Atilio Fariña           →    atilio-farina.jpg
+   Hombre, anteojos, camisa puntos
+
+
+═══════════════════════════════════════════════════════════════════
+  REGLAS DE NOMBRES
+═══════════════════════════════════════════════════════════════════
+
+✓ Todo en minúsculas
+✓ Usar guiones (no espacios)
+✓ Sin acentos (á → a)
+✓ Extensión .jpg o .png
+
+
+═══════════════════════════════════════════════════════════════════
+  PROCESO RÁPIDO
+═══════════════════════════════════════════════════════════════════
+
+1. Doble click: ABRIR_CARPETA_FOTOS.bat
+2. Copia las 8 fotos
+3. Renombra según tabla
+4. Abre página web (ABRIR_PAGINA_WEB.bat)
+5. ¡Listo!
+
+
+═══════════════════════════════════════════════════════════════════
+
+CHECKLIST:
+
+□ joseph-varon.jpg
+□ patricia-callisperis.jpg
+□ guillermo-rodriguez.jpg
+□ carmen-candia.jpg
+□ julio-razona.jpg
+□ dannia-rios.jpg
+□ chinda-brandolino.jpg
+□ atilio-farina.jpg
+
+
+═══════════════════════════════════════════════════════════════════
+
+📘 Guía detallada: GUIA_GUARDAR_FOTOS_EXPOSITORES.md
+
+

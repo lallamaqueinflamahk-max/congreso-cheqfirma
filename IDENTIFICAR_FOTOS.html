@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificar Fotos de Expositores - Congreso CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .instructions {
+            background: #f0f9ff;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .instructions h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ol {
+            margin-left: 25px;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .instructions strong {
+            color: #2563eb;
+        }
+
+        .folder-info {
+            background: #fef3c7;
+            border: 2px dashed #f59e0b;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: #92400e;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .photo-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+            border-color: #2563eb;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .photo-info h3 {
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .description {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .filename {
+            background: #2563eb;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .country {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .presentation {
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #475569;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #64748b;
+        }
+
+        .checklist {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .checklist h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .checklist-item {
+            padding: 8px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+
+        @media (max-width: 768px) {
+            .photos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Identificador de Fotos de Expositores</h1>
+        <p class="subtitle">1° Congreso CheqFirma - ADN Humano en el Marco de las Agendas Globales</p>
+
+        <div class="instructions">
+            <h2>📋 Instrucciones para Guardar las Fotos</h2>
+            <ol>
+                <li>Identifica cada foto usando las descripciones de abajo</li>
+                <li>Copia cada foto a la carpeta: <strong>images/expositores/</strong></li>
+                <li>Renombra cada archivo con el <strong>nombre exacto</strong> que aparece en azul</li>
+                <li>Refresca la página web del congreso</li>
+                <li>¡Las fotos aparecerán automáticamente en la agenda!</li>
+            </ol>
+            
+            <div class="folder-info">
+                📂 C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+            </div>
+        </div>
+
+        <div class="photos-grid">
+            <!-- FOTO 1 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">1</div>
+                <div class="photo-info">
+                    <div class="country">🇺🇸</div>
+                    <h3>Dr. Joseph Varón</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Hombre calvo con camisa negra. Marco azul con texto "DR. JOSEPH VARÓN" y bandera de Estados Unidos.
+                    </p>
+                    <div class="filename">joseph-varon.jpg</div>
+                    <div class="presentation">⏰ 19:30 PM - Efectos adversos vacunas ARNm</div>
+                </div>
+            </div>
+
+            <!-- FOTO 2 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">2</div>
+                <div class="photo-info">
+                    <div class="country">🇧🇴</div>
+                    <h3>Dra. Patricia Callisperis</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Mujer con cabello largo oscuro, chaleco marrón. Marco azul con texto "DRA. PATRICIA CALLISPERIS" y bandera de Bolivia.
+                    </p>
+                    <div class="filename">patricia-callisperis.jpg</div>
+                    <div class="presentation">⏰ 18:30 PM - Terapéutica CDS</div>
+                </div>
+            </div>
+
+            <!-- FOTO 3 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">3</div>
+                <div class="photo-info">
+                    <div class="country">🇵🇾</div>
+                    <h3>Dr. Guillermo Rodríguez Dure</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Hombre joven con bata blanca de doctor, corbata azul. Marco azul con texto "DR. GUILLERMO RODRÍGUEZ DURE" y bandera de Paraguay.
+                    </p>
+                    <div class="filename">guillermo-rodriguez.jpg</div>
+                    <div class="presentation">⏰ 13:00 PM - Política internacional</div>
+                </div>
+            </div>
+
+            <!-- FOTO 4 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">4</div>
+                <div class="photo-info">
+                    <div class="country">🇵🇾</div>
+                    <h3>Prof. Carmen Candia</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Mujer con cabello recogido, vestido blanco elegante, labios rosados. Marco azul con texto "PROF. CARMEN CANDIA" y bandera de Paraguay.
+                    </p>
+                    <div class="filename">carmen-candia.jpg</div>
+                    <div class="presentation">⏰ 09:00 AM - Historia ADN paraguayo</div>
+                </div>
+            </div>
+
+            <!-- FOTO 5 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">5</div>
+                <div class="photo-info">
+                    <div class="country">🇦🇷</div>
+                    <h3>Abog. Julio Razona</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Hombre mayor con barba gris, camisa a rayas azules y blancas. Marco azul con texto "ABOG. JULIO RAZONA" y bandera de Argentina.
+                    </p>
+                    <div class="filename">julio-razona.jpg</div>
+                    <div class="presentation">⏰ 17:45 PM - Libro "Agenda de la Resistencia"</div>
+                </div>
+            </div>
+
+            <!-- FOTO 6 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">6</div>
+                <div class="photo-info">
+                    <div class="country">🇵🇾</div>
+                    <h3>Abg. Dannia Ríos Nacif</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Mujer joven con cabello castaño/rojizo, chaqueta blanca. <strong>FOTO SIN MARCO</strong> - Solo rostro con fondo blanco/gris.
+                    </p>
+                    <div class="filename">dannia-rios.jpg</div>
+                    <div class="presentation">⏰ 10:00 AM - Ideología de género en educación</div>
+                </div>
+            </div>
+
+            <!-- FOTO 7 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">7</div>
+                <div class="photo-info">
+                    <div class="country">🇦🇷</div>
+                    <h3>Dra. Chinda Brandolino</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Mujer rubia con pañuelo celeste al cuello. Marco azul con texto "DRA. CHINDA BRANDOLINO" y bandera de Argentina.
+                    </p>
+                    <div class="filename">chinda-brandolino.jpg</div>
+                    <div class="presentation">⏰ 20:00 PM - ADN y sistema de control</div>
+                </div>
+            </div>
+
+            <!-- FOTO 8 -->
+            <div class="photo-card">
+                <div class="photo-placeholder">8</div>
+                <div class="photo-info">
+                    <div class="country">🇵🇾</div>
+                    <h3>Dr. Atilio Fariña</h3>
+                    <p class="description">
+                        <strong>Identificación:</strong> Hombre mayor con anteojos, camisa negra con puntos blancos. Marco azul con texto "DR. ATILIO FARIÑA" y bandera de Paraguay.
+                    </p>
+                    <div class="filename">atilio-farina.jpg</div>
+                    <div class="presentation">⏰ 11:00 AM - Protección ADN desde embrión</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h3>✅ Checklist de Archivos</h3>
+            <p style="color: #64748b; margin-bottom: 15px;">Verifica que hayas guardado todos estos archivos en la carpeta:</p>
+            <div class="checklist-item">□ joseph-varon.jpg</div>
+            <div class="checklist-item">□ patricia-callisperis.jpg</div>
+            <div class="checklist-item">□ guillermo-rodriguez.jpg</div>
+            <div class="checklist-item">□ carmen-candia.jpg</div>
+            <div class="checklist-item">□ julio-razona.jpg</div>
+            <div class="checklist-item">□ dannia-rios.jpg</div>
+            <div class="checklist-item">□ chinda-brandolino.jpg</div>
+            <div class="checklist-item">□ atilio-farina.jpg</div>
+        </div>
+
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                🌐 Ver Página Web del Congreso
+            </button>
+            <button class="btn btn-secondary" onclick="window.open('images/expositores', '_blank')">
+                📂 Abrir Carpeta de Fotos
+            </button>
+        </div>
+
+        <div class="footer">
+            <p><strong>📘 Documentación adicional:</strong></p>
+            <p>GUIA_GUARDAR_FOTOS_EXPOSITORES.md | TABLA_RAPIDA_NOMBRES.txt</p>
+            <p style="margin-top: 20px;">1° Congreso CheqFirma 2025 | 19-20 Diciembre | Asunción, Paraguay</p>
+        </div>
+    </div>
+</body>
+</html>
+

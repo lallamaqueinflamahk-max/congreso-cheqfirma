@@ -1,0 +1,137 @@
+# Archivos y carpetas que NO deben subirse a Netlify
+
+# Scripts de Windows
+*.bat
+*.ps1
+*.vbs
+*.py
+
+# Documentos de desarrollo
+*.md
+*.txt
+*.pdf
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+
+# Archivos de configuración local
+*.local
+*.env
+*.log
+
+# Carpetas de desarrollo
+DOCUMENTOS_GOOGLE_DRIVE/
+MARKETING_Y_PAUTAJE/
+PRESUPUESTO_50USD_48HORAS/
+
+# Archivos temporales
+*.tmp
+*.temp
+*~
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de reportes
+REPORTE_*.txt
+REPORTE_*.md
+
+# Scripts de servidor local
+SERVIDOR_LOCAL*
+ABRIR_*
+CREAR_*
+ENVIAR_*
+INICIAR_*
+LIMPIAR_*
+VER_*
+
+# Archivos HTML de desarrollo (no el index.html principal)
+DEMO_*.html
+PRUEBA_*.html
+DECK_*.html
+CALCULADORA_*.html
+ENVIAR_*.html
+FOTO_*.html
+GUARDAR_*.html
+IDENTIFICAR_*.html
+PERFILES_*.html
+PORTADA_*.html
+VISTA_*.html
+reporte-*.html
+
+# Archivos de verificación
+# IMPORTANTE: VERIFICACION_MOVIL_AUTOMATICA.js NO está en esta lista, debe subirse
+VERIFICAR_*.txt
+
+# Archivos de instrucciones
+INSTRUCCIONES_*.md
+INSTRUCCIONES_*.txt
+COMO_*.md
+COMO_*.txt
+GUIA_*.md
+LEEME*.txt
+
+# Archivos de solución/documentación
+SOLUCION_*.md
+FIX_*.md
+OPTIMIZACION_*.md
+RESUMEN_*.md
+ANALISIS_*.md
+ESTRATEGIA_*.md
+PLAN_*.md
+PROMPT_*.md
+TEMPLATE_*.md
+VALORACION_*.md
+DEFENSA_*.md
+CONSEJOS_*.md
+PROPUESTA_*.md
+CHECKLIST_*.md
+CALENDARIO_*.md
+CONTENIDO_*.md
+CREATIVOS_*.md
+DECK_*.md
+EJEMPLOS_*.md
+EMAILS_*.md
+EMPRESAS_*.md
+ESTRATEGIAS_*.md
+EXPLICACION_*.txt
+GUIA_*.md
+INDICE_*.txt
+INFORMACION_*.md
+INTEGRACION_*.md
+ORDEN_*.md
+PAQUETES_*.md
+PRESUPUESTO_*.md
+PRUEBA_*.md
+README_*.md
+SCRIPT_*.md
+SCRIPTS_*.md
+STORYBOARD_*.md
+TABLA_*.txt
+URGENTE_*.txt
+
+# Imágenes de WhatsApp temporales
+Imagen de WhatsApp*.jpg
+
+# Archivos de configuración de servidor local
+SERVIDOR_LOCAL*.js
+SERVIDOR_LOCAL*.bat
+SERVIDOR_LOCAL*.ps1
+
+# Archivos de reportes de asientos
+REPORTE_ASIENTO_*.txt
+REPORTE_RESERVA_*.txt
+REPORTE_RESERVAS_*.txt
+
+# Archivos de confirmación
+CONFIRMACION_*.txt
+CAMBIOS_*.txt
+

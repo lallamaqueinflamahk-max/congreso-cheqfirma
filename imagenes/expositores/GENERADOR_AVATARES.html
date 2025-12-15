@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Avatares - Expositores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+
+        .instructions {
+            background: #e7f3ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .instructions ol {
+            margin-left: 1.5rem;
+            line-height: 2;
+        }
+
+        .avatars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .avatar-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #dee2e6;
+        }
+
+        .avatar-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .avatar-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .avatar-card h3 {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .avatar-card p {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .note {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            margin-top: 2rem;
+        }
+
+        .note p {
+            color: #856404;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Generador de Avatares - Expositores</h1>
+        <p class="subtitle">Avatares temporales hasta conseguir las fotos reales</p>
+
+        <div class="instructions">
+            <h3>📝 Cómo usar estos avatares:</h3>
+            <ol>
+                <li>Click derecho en cada avatar</li>
+                <li>Seleccionar "Guardar imagen como..."</li>
+                <li>Guardar con el nombre indicado (ej: edgar-rolon.jpg)</li>
+                <li>Los avatares son cuadrados y optimizados (400x400px)</li>
+                <li>Cuando tengas las fotos reales, reemplázalas con el mismo nombre</li>
+            </ol>
+        </div>
+
+        <div class="avatars-grid">
+            <!-- Avatar 1 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Edgar+Rolon&size=400&background=667eea&color=fff&bold=true&font-size=0.4" alt="Edgar Rolón">
+                <h3>Prof. Edgar Rolón</h3>
+                <p>Historiador</p>
+                <button class="download-btn" onclick="downloadAvatar('Edgar+Rolon', 'edgar-rolon')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 2 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Carmen+Candia&size=400&background=764ba2&color=fff&bold=true&font-size=0.4" alt="Carmen Candia">
+                <h3>Prof. Carmen Candia</h3>
+                <p>Historiadora</p>
+                <button class="download-btn" onclick="downloadAvatar('Carmen+Candia', 'carmen-candia')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 3 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Dannia+Rios&size=400&background=e74c3c&color=fff&bold=true&font-size=0.4" alt="Dannia Rios">
+                <h3>Abog. Dannia Rios Nacif</h3>
+                <p>Abogada - Derechos Humanos</p>
+                <button class="download-btn" onclick="downloadAvatar('Dannia+Rios', 'dannia-rios')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 4 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Atilio+Farina&size=400&background=27ae60&color=fff&bold=true&font-size=0.4" alt="Atilio Fariña">
+                <h3>Dr. Atilio Fariña</h3>
+                <p>Médico Genetista</p>
+                <button class="download-btn" onclick="downloadAvatar('Atilio+Farina', 'atilio-farina')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 5 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Guillermo+Rodriguez&size=400&background=2980b9&color=fff&bold=true&font-size=0.4" alt="Guillermo Rodríguez">
+                <h3>Dr. Guillermo Rodríguez Dure</h3>
+                <p>Política Internacional</p>
+                <button class="download-btn" onclick="downloadAvatar('Guillermo+Rodriguez', 'guillermo-rodriguez')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 6 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Fernando+Griffith&size=400&background=8e44ad&color=fff&bold=true&font-size=0.4" alt="Fernando Griffith">
+                <h3>Dr. Fernando Griffith</h3>
+                <p>Bioquímico</p>
+                <button class="download-btn" onclick="downloadAvatar('Fernando+Griffith', 'fernando-griffith')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 7 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Edgar+Villagra&size=400&background=d35400&color=fff&bold=true&font-size=0.4" alt="Edgar Villagra">
+                <h3>Dr. Edgar Villagra</h3>
+                <p>Inmunólogo</p>
+                <button class="download-btn" onclick="downloadAvatar('Edgar+Villagra', 'edgar-villagra')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 8 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Victor+Villa&size=400&background=c0392b&color=fff&bold=true&font-size=0.4" alt="Victor Villa">
+                <h3>Dr. Victor Villa</h3>
+                <p>Médico Forense</p>
+                <button class="download-btn" onclick="downloadAvatar('Victor+Villa', 'victor-villa')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 9 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Juan+Puerto&size=400&background=16a085&color=fff&bold=true&font-size=0.4" alt="Juan Puerto">
+                <h3>Abog. Juan Puerto</h3>
+                <p>Derecho Digital</p>
+                <button class="download-btn" onclick="downloadAvatar('Juan+Puerto', 'juan-puerto')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 10 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Julio+Razona&size=400&background=f39c12&color=fff&bold=true&font-size=0.4" alt="Julio Razona">
+                <h3>Abog. Julio Razona</h3>
+                <p>Abogado y Escritor</p>
+                <button class="download-btn" onclick="downloadAvatar('Julio+Razona', 'julio-razona')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 11 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Patricia+Callisperis&size=400&background=e91e63&color=fff&bold=true&font-size=0.4" alt="Patricia Callisperis">
+                <h3>Dra. Patrícia Callisperis</h3>
+                <p>Médica Terapéutica</p>
+                <button class="download-btn" onclick="downloadAvatar('Patricia+Callisperis', 'patricia-callisperis')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 12 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Joseph+Varon&size=400&background=3498db&color=fff&bold=true&font-size=0.4" alt="Joseph Varón">
+                <h3>Dr. Joseph Varón</h3>
+                <p>Médico Intensivista</p>
+                <button class="download-btn" onclick="downloadAvatar('Joseph+Varon', 'joseph-varon')">
+                    Descargar
+                </button>
+            </div>
+
+            <!-- Avatar 13 -->
+            <div class="avatar-card">
+                <img src="https://ui-avatars.com/api/?name=Chinda+Brandolino&size=400&background=9b59b6&color=fff&bold=true&font-size=0.4" alt="Chinda Brandolino">
+                <h3>Dra. Chinda Brandolino</h3>
+                <p>Médica Pediatra</p>
+                <button class="download-btn" onclick="downloadAvatar('Chinda+Brandolino', 'chinda-brandolino')">
+                    Descargar
+                </button>
+            </div>
+        </div>
+
+        <div class="note">
+            <p>
+                <strong>💡 Nota:</strong> Estos son avatares temporales generados automáticamente. 
+                Se recomienda reemplazarlos con fotos profesionales reales de cada expositor 
+                para una mejor presentación del congreso.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function downloadAvatar(name, filename) {
+            const url = `https://ui-avatars.com/api/?name=${name}&size=400&background=random&color=fff&bold=true&font-size=0.4`;
+            
+            // Crear un enlace temporal
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${filename}.jpg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            alert(`Avatar de ${filename} descargado. Guárdalo en la carpeta "imagenes/expositores/"`);
+        }
+    </script>
+</body>
+</html>
+

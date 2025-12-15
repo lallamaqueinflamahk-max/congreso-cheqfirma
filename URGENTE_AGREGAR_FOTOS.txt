@@ -1,0 +1,163 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         🚨 CÓMO AGREGAR LAS FOTOS - 3 OPCIONES                  ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+⚠️ IMPORTANTE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Por razones de seguridad, los archivos de imagen (JPG/PNG) NO pueden
+ser guardados automáticamente por un script. DEBES guardarlos manualmente.
+
+Pero he creado 3 herramientas para facilitarte el proceso:
+
+
+═══════════════════════════════════════════════════════════════════
+  OPCIÓN 1: HERRAMIENTA DRAG & DROP (MÁS FÁCIL) ⭐
+═══════════════════════════════════════════════════════════════════
+
+1. Doble click en: GUARDAR_FOTOS_AUTOMATICO.html
+
+2. Arrastra cada foto a su zona correspondiente (1-8)
+
+3. Click en "Descargar" en cada foto
+   (Se descargará con el nombre correcto)
+
+4. Guarda cada foto descargada en: images\expositores\
+
+5. ¡Listo!
+
+VENTAJA: Las fotos se renombran automáticamente
+TIEMPO: 3-4 minutos
+
+
+═══════════════════════════════════════════════════════════════════
+  OPCIÓN 2: IDENTIFICAR Y RENOMBRAR MANUAL
+═══════════════════════════════════════════════════════════════════
+
+1. Doble click en: IDENTIFICAR_FOTOS.html
+
+2. Identifica cada foto usando las descripciones visuales
+
+3. Doble click en: ABRIR_CARPETA_FOTOS.bat
+
+4. Copia las 8 fotos a esa carpeta
+
+5. Renombra cada una según la tabla:
+
+   FOTO                                  NOMBRE
+   ────────────────────────────────────────────────────────
+   Dr. Joseph Varón (calvo)           →  joseph-varon.jpg
+   Dra. Patricia (cabello largo)      →  patricia-callisperis.jpg
+   Dr. Guillermo (bata blanca)        →  guillermo-rodriguez.jpg
+   Prof. Carmen (vestido blanco)      →  carmen-candia.jpg
+   Abog. Julio (barba gris)           →  julio-razona.jpg
+   Abg. Dannia (cabello rojizo)       →  dannia-rios.jpg
+   Dra. Chinda (rubia, pañuelo)       →  chinda-brandolino.jpg
+   Dr. Atilio (anteojos)              →  atilio-farina.jpg
+
+6. Refresca la página web
+
+VENTAJA: Proceso directo
+TIEMPO: 2-3 minutos
+
+
+═══════════════════════════════════════════════════════════════════
+  OPCIÓN 3: 100% MANUAL
+═══════════════════════════════════════════════════════════════════
+
+1. Localiza las 8 fotos que me enviaste
+
+2. Navega a: 
+   C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+
+3. Copia las 8 fotos
+
+4. Renombra usando: TABLA_RAPIDA_NOMBRES.txt como referencia
+
+5. Refresca la página web
+
+VENTAJA: Control total
+TIEMPO: 3-5 minutos
+
+
+═══════════════════════════════════════════════════════════════════
+  📋 CHECKLIST DE NOMBRES
+═══════════════════════════════════════════════════════════════════
+
+□ joseph-varon.jpg
+□ patricia-callisperis.jpg
+□ guillermo-rodriguez.jpg
+□ carmen-candia.jpg
+□ julio-razona.jpg
+□ dannia-rios.jpg
+□ chinda-brandolino.jpg
+□ atilio-farina.jpg
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ VERIFICACIÓN
+═══════════════════════════════════════════════════════════════════
+
+Una vez guardadas todas las fotos:
+
+1. Doble click: ABRIR_PAGINA_WEB.bat
+
+2. Ve a la sección "Agenda"
+
+3. ¿Ves las 8 fotos de los expositores?
+   ✅ SÍ → ¡Perfecto! La página está lista
+   ❌ NO → Verifica los nombres de archivo (deben ser exactos)
+
+
+═══════════════════════════════════════════════════════════════════
+  🎯 RECOMENDACIÓN
+═══════════════════════════════════════════════════════════════════
+
+MEJOR OPCIÓN: GUARDAR_FOTOS_AUTOMATICO.html
+
+✓ Arrastra y suelta
+✓ Descarga con nombre correcto
+✓ Vista previa de cada foto
+✓ Progreso visual
+
+
+═══════════════════════════════════════════════════════════════════
+  🛠️ HERRAMIENTAS DISPONIBLES
+═══════════════════════════════════════════════════════════════════
+
+⭐ GUARDAR_FOTOS_AUTOMATICO.html      (Drag & Drop - Recomendado)
+📸 IDENTIFICAR_FOTOS.html             (Identificación visual)
+🖼️  ABRIR_CARPETA_FOTOS.bat           (Abre carpeta destino)
+📄 TABLA_RAPIDA_NOMBRES.txt           (Referencia rápida)
+📖 GUIA_GUARDAR_FOTOS_EXPOSITORES.md  (Guía completa)
+🌐 DEMO_CON_FOTOS_PLACEHOLDER.html    (Vista previa)
+
+
+═══════════════════════════════════════════════════════════════════
+  📍 UBICACIÓN FINAL DE LAS FOTOS
+═══════════════════════════════════════════════════════════════════
+
+C:\Users\HP\Documents\Congreso Foro Cheq Firma\images\expositores\
+
+
+═══════════════════════════════════════════════════════════════════
+  ⏱️ RESUMEN
+═══════════════════════════════════════════════════════════════════
+
+PROCESO:  Guardar 8 fotos con nombres correctos
+TIEMPO:   2-4 minutos
+MÉTODO:   Manual (con herramientas de ayuda)
+RESULTADO: Página web lista para mostrar a expositores
+
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 ¡EL SISTEMA ESTÁ 100% LISTO!
+
+Solo falta que guardes las 8 fotos en la carpeta correcta.
+
+═══════════════════════════════════════════════════════════════════
+

@@ -1,0 +1,202 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║       ✅ CAMBIOS EN EXPOSITORES - ACTUALIZACIÓN COMPLETADA      ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+  📝 RESUMEN DE CAMBIOS
+═══════════════════════════════════════════════════════════════════
+
+FECHA: 18 de Noviembre, 2025
+
+
+🆕 AGREGADOS (con foto y biografía completa):
+────────────────────────────────────────────────────────────────────
+
+1. DR. FERNANDO GRIFFITH
+   ├─ Foto: fernando-griffith.jpg
+   ├─ Horario: 14:00 PM (02:00 PM)
+   ├─ Tema: Química del ADN Humano
+   └─ Perfil: Doctor en Bioquímica, Ex Ministro de Cultura,
+              Investigador en Biología Molecular, 
+              Caballero Orden Estrella de Italia
+
+
+2. ABOG. JUAN RAMIRO PUERTO VIERA
+   ├─ Foto: juan-puerto.jpg
+   ├─ Horario: 17:15 PM (05:15 PM)
+   ├─ Tema: Defensa Jurídica Identidad Personal Digital
+   └─ Perfil: CEO Grupo Py SRL, Innovación y Tecnología,
+              Top 20 startups LATAM, Consultor BID/Banco Mundial
+
+
+❌ ELIMINADO:
+────────────────────────────────────────────────────────────────────
+
+✖️  DR. JOSEPH VARÓN (anteriormente a las 19:30 PM)
+    - Eliminado de la agenda
+    - Eliminado de todas las guías
+    - Archivo joseph-varon.jpg ya NO es necesario
+
+
+═══════════════════════════════════════════════════════════════════
+  📊 NUEVA CONFIGURACIÓN DE EXPOSITORES
+═══════════════════════════════════════════════════════════════════
+
+TOTAL DE EXPOSITORES: 14 (antes 15)
+
+CON FOTOS CONFIGURADAS: 9
+SIN FOTOS: 5
+
+
+LISTADO COMPLETO (Sábado 20 de Diciembre):
+────────────────────────────────────────────────────────────────────
+
+08:00 AM - Prof. Edgar Rolón (sin foto)
+09:00 AM - Prof. Carmen Candia ✓ CON FOTO
+10:00 AM - Abog. Dannia Rios Nacif ✓ CON FOTO
+11:00 AM - Dr. Atilio Fariña ✓ CON FOTO
+12:00 PM - ALMUERZO
+13:00 PM - Dr. Guillermo Rodríguez Dure ✓ CON FOTO
+14:00 PM - Dr. Fernando Griffith ✓ CON FOTO 🆕
+15:00 PM - Dr. Edgar Villagra (sin foto)
+16:00 PM - BREAK
+16:15 PM - Dr. Victor Villa (sin foto)
+17:15 PM - Abog. Juan Puerto ✓ CON FOTO 🆕
+17:45 PM - Abog. Julio Razona ✓ CON FOTO
+18:30 PM - Dra. Patrícia Callisperis ✓ CON FOTO
+19:30 PM - [ESPACIO LIBRE - JOSEPH VARÓN ELIMINADO]
+20:00 PM - Dra. Chinda Brandolino ✓ CON FOTO
+
+
+═══════════════════════════════════════════════════════════════════
+  📸 FOTOS A GUARDAR (9 ARCHIVOS)
+═══════════════════════════════════════════════════════════════════
+
+UBICACIÓN: images\expositores\
+
+
+ARCHIVOS NECESARIOS:
+────────────────────────────────────────────────────────────────────
+
+✓ patricia-callisperis.jpg
+✓ guillermo-rodriguez.jpg
+✓ carmen-candia.jpg
+✓ julio-razona.jpg
+✓ dannia-rios.jpg
+✓ chinda-brandolino.jpg
+✓ atilio-farina.jpg
+✓ fernando-griffith.jpg  ← NUEVA (hombre anteojos, saco beige)
+✓ juan-puerto.jpg        ← NUEVA (hombre anteojos, polo rojo)
+
+
+ARCHIVO YA NO NECESARIO:
+────────────────────────────────────────────────────────────────────
+
+✖️  joseph-varon.jpg (ELIMINAR si existe)
+
+
+═══════════════════════════════════════════════════════════════════
+  🔍 IDENTIFICACIÓN DE LAS NUEVAS FOTOS
+═══════════════════════════════════════════════════════════════════
+
+FERNANDO GRIFFITH:
+──────────────────
+📸 Primera imagen que enviaste
+✓ Hombre con anteojos (marco negro/marrón)
+✓ Barba y bigote gris
+✓ Saco/blazer color beige/crema
+✓ Camisa oscura
+✓ Pin/bandera Paraguay en solapa
+✓ Fondo negro
+→ Guardar como: fernando-griffith.jpg
+
+
+JUAN PUERTO:
+────────────
+📸 Segunda imagen que enviaste
+✓ Hombre con anteojos (marco grueso)
+✓ Barba y bigote gris
+✓ Polo/camisa rojo con cuello
+✓ Fondo con diseño floral
+✓ Marco circular azul
+✓ Bandera Paraguay
+✓ Texto: "ABOG. JUAN PUERTO"
+→ Guardar como: juan-puerto.jpg
+
+
+═══════════════════════════════════════════════════════════════════
+  ✅ ARCHIVOS ACTUALIZADOS
+═══════════════════════════════════════════════════════════════════
+
+✓ index.html
+  - Joseph Varón ELIMINADO
+  - Fernando Griffith con foto y biografía completa
+  - Juan Puerto con foto y biografía completa
+
+✓ TABLA_RAPIDA_NOMBRES_ACTUALIZADA.txt
+  - Nueva tabla con 9 expositores
+
+✓ CAMBIOS_EXPOSITORES_ACTUALIZACION.txt
+  - Este archivo (registro de cambios)
+
+
+═══════════════════════════════════════════════════════════════════
+  🚀 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════
+
+1. Guarda las DOS NUEVAS fotos:
+   ✓ fernando-griffith.jpg (hombre saco beige)
+   ✓ juan-puerto.jpg (hombre polo rojo, marco azul)
+
+2. En la carpeta: images\expositores\
+
+3. Refresca la página web (F5)
+
+4. Verifica en la sección Agenda:
+   ✓ 14:00 PM - Ver foto Dr. Fernando Griffith
+   ✓ 17:15 PM - Ver foto Abog. Juan Puerto
+
+
+═══════════════════════════════════════════════════════════════════
+  📊 IMPACTO DE LOS CAMBIOS
+═══════════════════════════════════════════════════════════════════
+
+ANTES:
+──────
+• 15 expositores totales
+• 8 con sistema de fotos
+• Dr. Joseph Varón incluido
+
+AHORA:
+──────
+• 14 expositores totales (-1)
+• 9 con sistema de fotos (+1)
+• Joseph Varón eliminado
+• Fernando Griffith con biografía completa
+• Juan Puerto con biografía completa
+
+
+═══════════════════════════════════════════════════════════════════
+  💡 NOTAS IMPORTANTES
+═══════════════════════════════════════════════════════════════════
+
+✓ Las biografías completas ahora aparecen en la descripción
+✓ Se agregaron tags adicionales (ADN, Tecnología)
+✓ Los títulos profesionales fueron actualizados
+✓ El horario de 19:30 PM ahora está libre (puede agregarse alguien)
+
+
+═══════════════════════════════════════════════════════════════════
+
+📞 SOPORTE:
+
+Archivos de referencia:
+• TABLA_RAPIDA_NOMBRES_ACTUALIZADA.txt
+• LEEME - IMPORTANTE.txt
+• RESUMEN_COMPLETO_PROYECTO.md
+
+═══════════════════════════════════════════════════════════════════
+

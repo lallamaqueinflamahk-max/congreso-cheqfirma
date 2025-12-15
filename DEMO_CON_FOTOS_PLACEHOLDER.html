@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Congreso con Fotos Placeholder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .notice {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+        }
+
+        .notice h2 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .notice p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+
+        .schedule-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .schedule-item {
+            display: flex;
+            gap: 20px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #2563eb;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .speaker-photo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            border: 4px solid #2563eb;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker-photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                left: 100%;
+            }
+        }
+
+        .speaker-info {
+            flex: 1;
+        }
+
+        .speaker-info h3 {
+            color: #1e293b;
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+
+        .specialty {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .time {
+            background: #2563eb;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .topic {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .country-flag {
+            font-size: 1.5rem;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .instructions {
+            background: #f0f9ff;
+            border: 2px dashed #2563eb;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .instructions h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .instructions p {
+            color: #334155;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            background: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Vista Previa - Página con Fotos</h1>
+        <p class="subtitle">Así se verá la página una vez que agregues las fotos reales</p>
+
+        <div class="notice">
+            <h2>ℹ️ Esta es una DEMO</h2>
+            <p>
+                <strong>Los círculos con iniciales simulan cómo se verán las fotos.</strong><br>
+                Una vez que guardes las fotos reales en la carpeta <code>images/expositores/</code>,
+                aparecerán automáticamente en lugar de estos placeholders.
+            </p>
+        </div>
+
+        <h2 style="color: #2563eb; margin-bottom: 30px; font-size: 2rem;">
+            🗓️ Agenda del Congreso - Sábado 20 de Diciembre
+        </h2>
+
+        <div class="schedule-grid">
+            <!-- Carmen Candia -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    CC
+                    <span class="country-flag">🇵🇾</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 09:00 AM</div>
+                    <h3>Prof. Carmen Candia</h3>
+                    <p class="specialty">Historiadora</p>
+                    <p class="topic">Historia del ADN Paraguayo y Comparación con Otras Regiones del Mundo</p>
+                </div>
+            </div>
+
+            <!-- Dannia Rios -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    DR
+                    <span class="country-flag">🇵🇾</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 10:00 AM</div>
+                    <h3>Abog. Dannia Rios Nacif</h3>
+                    <p class="specialty">Abogada especialista en Derechos Humanos</p>
+                    <p class="topic">Afectación en Niños y Adolescentes por la Ideología de Género en Educación</p>
+                </div>
+            </div>
+
+            <!-- Atilio Fariña -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    AF
+                    <span class="country-flag">🇵🇾</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 11:00 AM</div>
+                    <h3>Dr. Atilio Fariña</h3>
+                    <p class="specialty">Médico Genetista</p>
+                    <p class="topic">Protección del ADN Humano desde el Embrión contra Agentes Externos</p>
+                </div>
+            </div>
+
+            <!-- Guillermo Rodríguez -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    GD
+                    <span class="country-flag">🇵🇾</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 01:00 PM</div>
+                    <h3>Dr. Guillermo Rodríguez Dure</h3>
+                    <p class="specialty">Especialista en Política Internacional</p>
+                    <p class="topic">Política Internacional y Protección del Individuo</p>
+                </div>
+            </div>
+
+            <!-- Julio Razona -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    JR
+                    <span class="country-flag">🇦🇷</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 05:45 PM</div>
+                    <h3>Abog. Julio Razona</h3>
+                    <p class="specialty">Abogado y Escritor</p>
+                    <p class="topic">Presentación del Libro "Agenda de la Resistencia"</p>
+                </div>
+            </div>
+
+            <!-- Patricia Callisperis -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    PC
+                    <span class="country-flag">🇧🇴</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 06:30 PM</div>
+                    <h3>Dra. Patrícia Callisperis</h3>
+                    <p class="specialty">Médica Terapéutica</p>
+                    <p class="topic">Terapéutica - CDS y Restauración Celular</p>
+                </div>
+            </div>
+
+            <!-- Joseph Varón -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    JV
+                    <span class="country-flag">🇺🇸</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 07:30 PM</div>
+                    <h3>Dr. Joseph Varón</h3>
+                    <p class="specialty">Médico Intensivista</p>
+                    <p class="topic">Efectos Adversos de las Vacunas ARNm en el ADN Humano</p>
+                </div>
+            </div>
+
+            <!-- Chinda Brandolino -->
+            <div class="schedule-item">
+                <div class="speaker-photo-placeholder">
+                    CB
+                    <span class="country-flag">🇦🇷</span>
+                </div>
+                <div class="speaker-info">
+                    <div class="time">⏰ 08:00 PM</div>
+                    <h3>Dra. Chinda Brandolino</h3>
+                    <p class="specialty">Médica Pediatra</p>
+                    <p class="topic">Nuestro ADN Comprometido - Sistema de Control</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>🎯 Para Activar las Fotos Reales</h3>
+            <p>
+                1. Guarda las 8 fotos en: <code>images/expositores/</code><br>
+                2. Renombra cada archivo según la guía<br>
+                3. Refresca la página principal<br>
+                4. ¡Las fotos aparecerán automáticamente!
+            </p>
+            <a href="index.html" class="btn">🌐 Ir a la Página Principal</a>
+            <a href="IDENTIFICAR_FOTOS.html" class="btn" style="background: #10b981; margin-left: 10px;">📸 Identificar Fotos</a>
+        </div>
+    </div>
+</body>
+</html>
+

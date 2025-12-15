@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada Facebook - CheqFirma</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .info {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .info h2 {
+            color: #1a237e;
+            margin-bottom: 15px;
+        }
+
+        .info ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            color: #1a237e;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        .preview-container {
+            position: relative;
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102,126,234,0.4);
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Portada de Facebook - CheqFirma</h1>
+        
+        <div class="info">
+            <h2>✅ Especificaciones de Facebook:</h2>
+            <ul>
+                <li><strong>Dimensión recomendada:</strong> 820 x 312 píxeles</li>
+                <li><strong>Tamaño mínimo:</strong> 400 x 150 píxeles</li>
+                <li><strong>Para móvil y desktop:</strong> 820 x 462 px (mejor visualización)</li>
+                <li><strong>Formato:</strong> PNG de alta calidad</li>
+                <li><strong>Peso máximo:</strong> 100 KB (las nuestras pesan menos)</li>
+            </ul>
+        </div>
+
+        <div class="alert">
+            <strong>💡 Consejo:</strong> Facebook recorta las portadas en móvil. Las siguientes opciones están optimizadas para verse bien tanto en computadora como en celular.
+        </div>
+
+        <div class="grid">
+            <!-- OPCIÓN 1: Profesional con expositores -->
+            <div class="card">
+                <h2>Opción 1: Congreso Internacional - Profesional</h2>
+                <div class="preview-container">
+                    <canvas id="canvas1" width="820" height="312"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas1', 'CheqFirma_Portada_Profesional')">
+                    📥 Descargar Opción 1
+                </button>
+                <p style="text-align: center; color: #666; margin-top: 10px;">
+                    Diseño elegante con información del congreso y expositores
+                </p>
+            </div>
+
+            <!-- OPCIÓN 2: Impactante con fechas -->
+            <div class="card">
+                <h2>Opción 2: Fechas Destacadas - Impactante</h2>
+                <div class="preview-container">
+                    <canvas id="canvas2" width="820" height="312"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas2', 'CheqFirma_Portada_Impactante')">
+                    📥 Descargar Opción 2
+                </button>
+                <p style="text-align: center; color: #666; margin-top: 10px;">
+                    Enfocada en las fechas del evento con diseño moderno
+                </p>
+            </div>
+
+            <!-- OPCIÓN 3: Científica con ADN -->
+            <div class="card">
+                <h2>Opción 3: Tema ADN - Científica</h2>
+                <div class="preview-container">
+                    <canvas id="canvas3" width="820" height="312"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas3', 'CheqFirma_Portada_Cientifica')">
+                    📥 Descargar Opción 3
+                </button>
+                <p style="text-align: center; color: #666; margin-top: 10px;">
+                    Enfocada en el tema científico del ADN humano
+                </p>
+            </div>
+
+            <!-- OPCIÓN 4: Completa con todo -->
+            <div class="card">
+                <h2>Opción 4: Información Completa - Todo incluido</h2>
+                <div class="preview-container">
+                    <canvas id="canvas4" width="820" height="312"></canvas>
+                </div>
+                <button class="btn" onclick="downloadCanvas('canvas4', 'CheqFirma_Portada_Completa')">
+                    📥 Descargar Opción 4
+                </button>
+                <p style="text-align: center; color: #666; margin-top: 10px;">
+                    Con toda la información: fechas, lugar, expositores, tema
+                </p>
+            </div>
+        </div>
+
+        <div class="info" style="margin-top: 30px;">
+            <h2>📋 Cómo subir a Facebook:</h2>
+            <ol style="margin-left: 20px; line-height: 2;">
+                <li>Ve a tu página de Facebook de CheqFirma</li>
+                <li>Haz clic en "Editar foto de portada"</li>
+                <li>Selecciona "Subir foto"</li>
+                <li>Elige la imagen descargada</li>
+                <li>Ajusta si es necesario (arrastrar para posicionar)</li>
+                <li>Haz clic en "Guardar"</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Colores oficiales CheqFirma
+        const colors = {
+            amarillo: '#FFD700',
+            lila: '#9C27B0',
+            celeste: '#2196F3',
+            azulOscuro: '#1a237e',
+            blanco: '#ffffff'
+        };
+
+        // OPCIÓN 1: Profesional con expositores
+        function drawOption1() {
+            const canvas = document.getElementById('canvas1');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo degradado
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, colors.azulOscuro);
+            gradient.addColorStop(0.5, colors.lila);
+            gradient.addColorStop(1, colors.celeste);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Overlay semi-transparente
+            ctx.fillStyle = 'rgba(26, 35, 126, 0.7)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Círculos decorativos
+            ctx.globalAlpha = 0.1;
+            ctx.fillStyle = colors.amarillo;
+            ctx.beginPath();
+            ctx.arc(100, 150, 200, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(700, 180, 180, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+
+            // Logo/Ícono ADN
+            ctx.fillStyle = colors.amarillo;
+            ctx.font = 'bold 80px Arial';
+            ctx.fillText('🧬', 50, 100);
+
+            // Título principal
+            ctx.fillStyle = colors.blanco;
+            ctx.font = 'bold 48px Arial';
+            ctx.fillText('1° CONGRESO CHEQFIRMA', 160, 80);
+
+            // Subtítulo
+            ctx.font = '28px Arial';
+            ctx.fillText('"ADN humano en el marco de las agendas globales"', 160, 120);
+
+            // Línea decorativa
+            ctx.strokeStyle = colors.amarillo;
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(160, 135);
+            ctx.lineTo(650, 135);
+            ctx.stroke();
+
+            // Información del evento
+            ctx.font = 'bold 32px Arial';
+            ctx.fillStyle = colors.amarillo;
+            ctx.fillText('📅 19-20 DICIEMBRE 2025', 160, 180);
+
+            ctx.fillStyle = colors.blanco;
+            ctx.font = '24px Arial';
+            ctx.fillText('📍 Manzana de la Rivera, Asunción, Paraguay', 160, 215);
+
+            // Badges
+            ctx.fillStyle = colors.celeste;
+            ctx.fillRect(160, 235, 180, 40);
+            ctx.fillStyle = colors.lila;
+            ctx.fillRect(350, 235, 180, 40);
+            ctx.fillStyle = colors.amarillo;
+            ctx.fillRect(540, 235, 180, 40);
+
+            ctx.fillStyle = colors.blanco;
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('14 EXPOSITORES', 250, 262);
+            ctx.fillText('INTERNACIONAL', 440, 262);
+            
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.fillText('TRANSMISIÓN VIVA', 630, 262);
+            ctx.textAlign = 'left';
+        }
+
+        // OPCIÓN 2: Impactante con fechas
+        function drawOption2() {
+            const canvas = document.getElementById('canvas2');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo blanco
+            ctx.fillStyle = colors.blanco;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Sección izquierda con color
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, colors.celeste);
+            gradient.addColorStop(0.5, colors.lila);
+            gradient.addColorStop(1, colors.azulOscuro);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 350, canvas.height);
+
+            // Fechas grandes
+            ctx.fillStyle = colors.amarillo;
+            ctx.font = 'bold 100px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('19-20', 175, 140);
+            
+            ctx.fillStyle = colors.blanco;
+            ctx.font = 'bold 50px Arial';
+            ctx.fillText('DICIEMBRE', 175, 200);
+            ctx.font = 'bold 60px Arial';
+            ctx.fillText('2025', 175, 270);
+
+            // Información derecha
+            ctx.textAlign = 'left';
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.font = 'bold 42px Arial';
+            ctx.fillText('1° CONGRESO', 380, 60);
+            ctx.fillText('CHEQFIRMA', 380, 110);
+
+            // Ícono ADN
+            ctx.font = '50px Arial';
+            ctx.fillText('🧬', 680, 75);
+
+            // Tema
+            ctx.font = 'italic 22px Arial';
+            ctx.fillStyle = colors.lila;
+            ctx.fillText('"ADN humano en el marco de', 380, 150);
+            ctx.fillText('las agendas globales"', 380, 180);
+
+            // Info adicional
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.font = '20px Arial';
+            ctx.fillText('📍 Asunción, Paraguay', 380, 220);
+            ctx.fillText('👥 14 Expositores Internacionales', 380, 250);
+            ctx.fillText('🌐 Transmisión EN VIVO', 380, 280);
+        }
+
+        // OPCIÓN 3: Científica con ADN
+        function drawOption3() {
+            const canvas = document.getElementById('canvas3');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo oscuro
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Espirales de ADN decorativas
+            ctx.strokeStyle = 'rgba(33, 150, 243, 0.3)';
+            ctx.lineWidth = 8;
+            
+            for (let i = 0; i < 50; i++) {
+                ctx.beginPath();
+                const angle = (i / 50) * Math.PI * 4;
+                const x = 100 + Math.cos(angle) * 40;
+                const y = 50 + (i / 50) * 220;
+                ctx.moveTo(x, y);
+                
+                const angle2 = ((i + 1) / 50) * Math.PI * 4;
+                const x2 = 100 + Math.cos(angle2) * 40;
+                const y2 = 50 + ((i + 1) / 50) * 220;
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
+            // Espiral derecha
+            ctx.strokeStyle = 'rgba(255, 215, 0, 0.3)';
+            for (let i = 0; i < 50; i++) {
+                ctx.beginPath();
+                const angle = (i / 50) * Math.PI * 4;
+                const x = 720 + Math.cos(angle) * 40;
+                const y = 50 + (i / 50) * 220;
+                ctx.moveTo(x, y);
+                
+                const angle2 = ((i + 1) / 50) * Math.PI * 4;
+                const x2 = 720 + Math.cos(angle2) * 40;
+                const y2 = 50 + ((i + 1) / 50) * 220;
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
+            // Rectángulo central semi-transparente
+            ctx.fillStyle = 'rgba(26, 35, 126, 0.9)';
+            ctx.fillRect(180, 40, 460, 232);
+
+            // Borde del rectángulo
+            ctx.strokeStyle = colors.amarillo;
+            ctx.lineWidth = 3;
+            ctx.strokeRect(180, 40, 460, 232);
+
+            // Contenido
+            ctx.fillStyle = colors.amarillo;
+            ctx.font = 'bold 40px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🧬 1° CONGRESO CHEQFIRMA', 410, 90);
+
+            ctx.fillStyle = colors.blanco;
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('"ADN humano en el marco de', 410, 130);
+            ctx.fillText('las agendas globales"', 410, 160);
+
+            // Línea
+            ctx.strokeStyle = colors.celeste;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(220, 175);
+            ctx.lineTo(600, 175);
+            ctx.stroke();
+
+            // Info
+            ctx.fillStyle = colors.celeste;
+            ctx.font = 'bold 28px Arial';
+            ctx.fillText('19-20 DICIEMBRE 2025', 410, 210);
+
+            ctx.fillStyle = colors.blanco;
+            ctx.font = '22px Arial';
+            ctx.fillText('Asunción, Paraguay | 14 Expositores Internacionales', 410, 245);
+        }
+
+        // OPCIÓN 4: Completa con todo
+        function drawOption4() {
+            const canvas = document.getElementById('canvas4');
+            const ctx = canvas.getContext('2d');
+            
+            // Fondo degradado diagonal
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, colors.celeste);
+            gradient.addColorStop(0.3, colors.lila);
+            gradient.addColorStop(0.7, colors.azulOscuro);
+            gradient.addColorStop(1, '#0d1942');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Formas geométricas decorativas
+            ctx.globalAlpha = 0.15;
+            
+            // Hexágonos
+            for (let i = 0; i < 3; i++) {
+                ctx.beginPath();
+                const centerX = 200 + i * 250;
+                const centerY = 150;
+                const size = 80;
+                
+                for (let j = 0; j < 6; j++) {
+                    const angle = (Math.PI / 3) * j;
+                    const x = centerX + Math.cos(angle) * size;
+                    const y = centerY + Math.sin(angle) * size;
+                    if (j === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.closePath();
+                ctx.strokeStyle = colors.amarillo;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+
+            // Panel superior
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.fillRect(50, 30, 720, 80);
+
+            // Título en panel
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.font = 'bold 36px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('🧬 1° CONGRESO CHEQFIRMA', 70, 70);
+            
+            ctx.font = 'italic 20px Arial';
+            ctx.fillStyle = colors.lila;
+            ctx.fillText('"ADN humano en el marco de las agendas globales"', 70, 98);
+
+            // Sección de información
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.fillRect(50, 130, 340, 150);
+            ctx.fillRect(430, 130, 340, 150);
+
+            // Columna izquierda
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.font = 'bold 28px Arial';
+            ctx.fillText('📅 FECHAS', 70, 165);
+            ctx.font = 'bold 40px Arial';
+            ctx.fillStyle = colors.celeste;
+            ctx.fillText('19-20', 70, 210);
+            ctx.font = 'bold 30px Arial';
+            ctx.fillText('DICIEMBRE 2025', 70, 245);
+
+            // Columna derecha
+            ctx.fillStyle = colors.azulOscuro;
+            ctx.font = 'bold 22px Arial';
+            ctx.fillText('📍 Manzana de la Rivera', 450, 165);
+            ctx.font = '20px Arial';
+            ctx.fillText('Asunción, Paraguay', 450, 195);
+            
+            ctx.font = 'bold 22px Arial';
+            ctx.fillText('👥 14 Expositores Internacionales', 450, 230);
+            ctx.font = '20px Arial';
+            ctx.fillText('🌐 Transmisión EN VIVO', 450, 260);
+        }
+
+        // Función para descargar
+        function downloadCanvas(canvasId, fileName) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = `${fileName}.png`;
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+            
+            alert('✅ ¡Portada descargada!\n\nAhora puedes subirla a Facebook como foto de portada.\n\nDimensiones: 820x312px (optimizada para desktop y móvil)');
+        }
+
+        // Dibujar todas las opciones al cargar
+        window.onload = function() {
+            drawOption1();
+            drawOption2();
+            drawOption3();
+            drawOption4();
+        };
+    </script>
+</body>
+</html>
+

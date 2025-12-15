@@ -1,0 +1,31 @@
+{
+  "name": "congreso-cheqfirma",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de asientos para Congreso CheqFirma",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "report:now": "node scripts/run-report-now.js",
+    "report:daily": "node scripts/run-report-daily.js"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^3.0.0",
+    "dotenv": "^16.6.1",
+    "exceljs": "^4.4.0",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^6.10.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "congreso",
+    "asientos",
+    "netlify",
+    "excel"
+  ],
+  "author": "CheqFirma",
+  "license": "MIT",
+  "type": "commonjs"
+}

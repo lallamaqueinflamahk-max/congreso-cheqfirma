@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejecutar Asiento 40 - Mirta Ocampos Cartes</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Ejecutando procesamiento del asiento 40...</h1>
+    <p>Por favor, espera mientras se procesa...</p>
+    <script>
+        // Cargar el index.html en un iframe para acceder a sus funciones
+        const iframe = document.createElement('iframe');
+        iframe.src = 'index.html';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        
+        iframe.onload = function() {
+            setTimeout(function() {
+                try {
+                    // Intentar ejecutar la función desde el iframe
+                    if (iframe.contentWindow && iframe.contentWindow.procesarAsiento40Mirta) {
+                        iframe.contentWindow.procesarAsiento40Mirta();
+                        document.body.innerHTML = '<h1>✅ Función ejecutada</h1><p>Revisa las ventanas de WhatsApp y email que se abrieron.</p>';
+                    } else {
+                        document.body.innerHTML = '<h1>⚠️ Función no encontrada</h1><p>Por favor, abre index.html directamente y ejecuta en la consola: procesarAsiento40Mirta()</p>';
+                    }
+                } catch(e) {
+                    console.error('Error:', e);
+                    document.body.innerHTML = '<h1>❌ Error</h1><p>Por favor, abre index.html directamente y ejecuta en la consola: procesarAsiento40Mirta()</p><p>Error: ' + e.message + '</p>';
+                }
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
+
