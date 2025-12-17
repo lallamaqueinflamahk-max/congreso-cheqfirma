@@ -5,6 +5,7 @@ Factory para crear adaptadores de datos según configuración
 from typing import Dict, Any, Optional
 from report.datasources.postgresql import PostgreSQLAdapter
 from report.datasources.csv_adapter import CSVAdapter
+from report.datasources.netlify_blobs_adapter import NetlifyBlobsAdapter
 
 
 def create_data_adapter(config: Dict[str, Any]):
@@ -15,7 +16,7 @@ def create_data_adapter(config: Dict[str, Any]):
         config: Configuración del datasource desde config.yaml
         
     Returns:
-        Adaptador (PostgreSQLAdapter o CSVAdapter)
+        Adaptador (PostgreSQLAdapter, CSVAdapter o NetlifyBlobsAdapter)
     """
     datasource_type = config.get("type", "csv").lower()
     
@@ -47,6 +48,11 @@ def create_data_adapter(config: Dict[str, Any]):
         })
         
         return CSVAdapter(csv_path, column_mapping)
+    
+    elif datasource_type == "netlify_blobs":
+        api_url = config.get("api_url")
+        json_export_path = config.get("json_export_path")
+        return NetlifyBlobsAdapter(api_url=api_url, json_export_path=json_export_path)
     
     else:
         raise ValueError(f"Tipo de datasource no soportado: {datasource_type}")

@@ -15395,7 +15395,7 @@ Sistema de Gestión CheqFirma`);
     </script>
 
     <!-- Banner Flotante de WhatsApp Oficial (ÚNICO) -->
-    <div id="whatsappFloatBtn" class="whatsapp-float-btn" onclick="openWhatsAppOfficial()" style="display: none;">
+    <div id="whatsappFloatBtn" class="whatsapp-float-btn" onclick="openWhatsAppOfficial()" style="display: flex;">
         <div class="whatsapp-float-icon">
             <i class="fab fa-whatsapp"></i>
         </div>
@@ -15424,6 +15424,20 @@ Sistema de Gestión CheqFirma`);
             </div>
             <div class="cheq-notification-badge" id="cheqNotificationBadge" style="display: none;">1</div>
         </div>
+
+        <!-- Botón para Vendedores -->
+        <a href="venta-movil/public/login.html" target="_blank" class="vendedor-toggle-btn" id="vendedorToggleBtn2">
+            <div class="vendedor-avatar">
+                <div class="vendedor-avatar-inner">
+                    <span class="vendedor-icon">📱</span>
+                </div>
+                <div class="vendedor-status-dot"></div>
+            </div>
+            <div class="vendedor-toggle-text">
+                <strong>Vendedores</strong>
+                <span>Acceso al sistema</span>
+            </div>
+        </a>
 
         <!-- Ventana del Chatbot -->
         <div id="cheqChatWindow" class="cheq-chat-window" style="display: none;">
@@ -15491,6 +15505,9 @@ Sistema de Gestión CheqFirma`);
             right: 30px;
             z-index: 10000;
             font-family: var(--font-stack);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         /* Botón flotante para abrir */
@@ -16208,6 +16225,38 @@ Sistema de Gestión CheqFirma`);
                 font-size: 1.1rem;
                 border-width: 4px;
             }
+
+            .vendedor-toggle-btn {
+                padding: 1.5rem;
+                border-radius: 50%;
+                width: 90px;
+                height: 90px;
+                justify-content: center;
+            }
+
+            .vendedor-toggle-text {
+                display: none;
+            }
+
+            .vendedor-avatar {
+                width: 100%;
+                height: 100%;
+            }
+
+            .vendedor-avatar-inner {
+                width: 100%;
+                height: 100%;
+                font-size: 3rem;
+                border-width: 4px;
+            }
+
+            .vendedor-status-dot {
+                width: 24px;
+                height: 24px;
+                bottom: 5px;
+                right: 5px;
+                border-width: 4px;
+            }
         }
 
         /* Typing indicator */
@@ -16261,6 +16310,8 @@ Sistema de Gestión CheqFirma`);
             </div>
             <div class="cheq-notification-badge" id="cheqNotificationBadge" style="display: none;">1</div>
         </div>
+
+        <!-- Botón para Vendedores removido de aquí - ahora está inline cerca del botón comprar -->
 
         <!-- Ventana del Chatbot -->
         <div id="cheqChatWindow" class="cheq-chat-window" style="display: none;">
@@ -16328,6 +16379,9 @@ Sistema de Gestión CheqFirma`);
             right: 30px;
             z-index: 10000;
             font-family: var(--font-stack);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         /* Botón flotante para abrir */
@@ -17064,6 +17118,38 @@ Sistema de Gestión CheqFirma`);
                 font-size: 1.1rem;
                 border-width: 4px;
             }
+
+            .vendedor-toggle-btn {
+                padding: 1.5rem;
+                border-radius: 50%;
+                width: 90px;
+                height: 90px;
+                justify-content: center;
+            }
+
+            .vendedor-toggle-text {
+                display: none;
+            }
+
+            .vendedor-avatar {
+                width: 100%;
+                height: 100%;
+            }
+
+            .vendedor-avatar-inner {
+                width: 100%;
+                height: 100%;
+                font-size: 3rem;
+                border-width: 4px;
+            }
+
+            .vendedor-status-dot {
+                width: 24px;
+                height: 24px;
+                bottom: 5px;
+                right: 5px;
+                border-width: 4px;
+            }
         }
 
         /* Typing indicator */
@@ -17095,6 +17181,121 @@ Sistema de Gestión CheqFirma`);
             }
             30% {
                 transform: translateY(-10px);
+            }
+        }
+
+        /* ===================================
+           ESTILOS DEL BOTÓN DE VENDEDORES INLINE
+           (Cerca del botón comprar ahora)
+           =================================== */
+        .vendedor-toggle-btn-inline {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .vendedor-toggle-btn-inline:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+
+        .vendedor-avatar-inline {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+        }
+
+        .vendedor-avatar-inner-inline {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            border: 2px solid white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .vendedor-toggle-btn-inline:hover .vendedor-avatar-inner-inline {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .vendedor-status-dot-inline {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background: #10B981;
+            border-radius: 50%;
+            border: 2px solid white;
+            z-index: 2;
+        }
+
+        .vendedor-toggle-text-inline {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .vendedor-toggle-text-inline strong {
+            font-size: 1rem;
+            font-weight: 900;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .vendedor-toggle-text-inline span {
+            font-size: 0.8rem;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+
+        /* ===================================
+           POSICIONAMIENTO DE BOTONES FLOTANTES
+           Asegurar que no se encimen
+           =================================== */
+        /* Botón Cheq: arriba a la derecha */
+        .cheq-assistant-container {
+            position: fixed !important;
+            top: 100px !important;
+            right: 30px !important;
+            z-index: 10000 !important;
+        }
+
+        /* Botón WhatsApp: abajo a la derecha */
+        .whatsapp-float-btn {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            z-index: 9999 !important;
+        }
+
+        /* En móvil, ajustar posiciones para evitar solapamiento */
+        @media (max-width: 768px) {
+            .cheq-assistant-container {
+                top: 80px !important;
+                right: 20px !important;
+            }
+
+            .whatsapp-float-btn {
+                bottom: 20px !important;
+                right: 20px !important;
             }
         }
     </style>
@@ -17148,7 +17349,7 @@ Sistema de Gestión CheqFirma`);
             gap: 1rem;
             cursor: pointer;
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
-            z-index: 2000;
+            z-index: 9999;
             transition: all 0.3s ease;
             animation: float 3s ease-in-out infinite;
         }
@@ -21779,6 +21980,488 @@ O escribe tu pregunta de otra manera.`,
             <i class="fas fa-file-excel"></i> <span>Reporte</span>
         </button>
     </div>
+
+    <!-- ===================================
+         BOTÓN FLOTANTE DE VENDEDORES (LADO DERECHO)
+         =================================== -->
+    <div id="vendedorFloatBtn" class="vendedor-float-btn" onclick="openVendedorLoginModal()">
+        <div class="vendedor-float-icon">
+            <span>📱</span>
+        </div>
+        <div class="vendedor-float-text">
+            <strong>Vendedores</strong>
+            <span>Acceso al sistema</span>
+        </div>
+    </div>
+
+    <!-- ===================================
+         MODAL DE LOGIN PARA VENDEDORES
+         =================================== -->
+    <div id="vendedorLoginModal" class="vendedor-modal" style="display: none;">
+        <div class="vendedor-modal-content">
+            <div class="vendedor-modal-header">
+                <h2>🔐 Acceso Vendedores</h2>
+                <button class="vendedor-modal-close" onclick="closeVendedorLoginModal()">&times;</button>
+            </div>
+            <div class="vendedor-modal-body">
+                <!-- Formulario de Login -->
+                <div id="vendedorLoginForm">
+                    <div class="vendedor-form-group">
+                        <label for="vendedorUsername">Username *</label>
+                        <input type="text" id="vendedorUsername" placeholder="Ingresa tu username" required>
+                    </div>
+                    <div class="vendedor-form-group">
+                        <label for="vendedorPassword">Password *</label>
+                        <input type="password" id="vendedorPassword" placeholder="Ingresa tu password" required>
+                    </div>
+                    <div id="vendedorErrorMsg" class="vendedor-error-msg" style="display: none;"></div>
+                    <button type="button" class="vendedor-btn-primary" onclick="vendedorLogin()">
+                        <span id="vendedorLoginBtnText">Iniciar Sesión</span>
+                        <span id="vendedorLoginSpinner" style="display: none;">⏳ Cargando...</span>
+                    </button>
+                </div>
+
+                <!-- Panel con QR (después del login) -->
+                <div id="vendedorQRPanel" style="display: none;">
+                    <div class="vendedor-success-msg">
+                        <h3>✅ Login exitoso</h3>
+                        <p>Bienvenido, <strong id="vendedorNombre"></strong></p>
+                    </div>
+                    <div class="vendedor-qr-container">
+                        <h4>📱 Escanea este código QR con tu celular:</h4>
+                        <div class="vendedor-qr-wrapper">
+                            <img id="vendedorQRImage" src="" alt="QR Code" class="vendedor-qr-img">
+                        </div>
+                        <div class="vendedor-link-container">
+                            <p><strong>O usa este link:</strong></p>
+                            <a id="vendedorLink" href="#" target="_blank" class="vendedor-link-btn"></a>
+                        </div>
+                        <button type="button" class="vendedor-btn-secondary" onclick="vendedorLogout()">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* ===================================
+           ESTILOS DEL BOTÓN FLOTANTE DE VENDEDORES
+           =================================== */
+        .vendedor-float-btn {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+            z-index: 9998;
+            transition: all 0.3s ease;
+            animation: vendedorFloatPulse 2s ease-in-out infinite;
+            max-width: 250px;
+        }
+
+        .vendedor-float-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.6);
+        }
+
+        @keyframes vendedorFloatPulse {
+            0%, 100% {
+                box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+            }
+            50% {
+                box-shadow: 0 12px 32px rgba(255, 107, 107, 0.6), 0 0 0 15px rgba(255, 107, 107, 0.1);
+            }
+        }
+
+        .vendedor-float-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .vendedor-float-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .vendedor-float-text strong {
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+
+        .vendedor-float-text span {
+            font-size: 0.85rem;
+            opacity: 0.95;
+        }
+
+        /* ===================================
+           ESTILOS DEL MODAL DE LOGIN
+           =================================== */
+        .vendedor-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            backdrop-filter: blur(5px);
+        }
+
+        .vendedor-modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: vendedorModalSlide 0.3s ease;
+        }
+
+        @keyframes vendedorModalSlide {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .vendedor-modal-header {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vendedor-modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .vendedor-modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .vendedor-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .vendedor-modal-body {
+            padding: 2rem;
+        }
+
+        .vendedor-form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .vendedor-form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .vendedor-form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .vendedor-form-group input:focus {
+            outline: none;
+            border-color: #FF6B6B;
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+        }
+
+        .vendedor-error-msg {
+            background: #fee;
+            color: #c33;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #c33;
+        }
+
+        .vendedor-success-msg {
+            background: #efe;
+            color: #3c3;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3c3;
+            text-align: center;
+        }
+
+        .vendedor-btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .vendedor-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .vendedor-btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .vendedor-btn-secondary {
+            width: 100%;
+            padding: 0.75rem;
+            background: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .vendedor-btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .vendedor-qr-container {
+            text-align: center;
+        }
+
+        .vendedor-qr-wrapper {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .vendedor-qr-img {
+            width: 250px;
+            height: 250px;
+            display: block;
+        }
+
+        .vendedor-link-container {
+            margin: 1.5rem 0;
+        }
+
+        .vendedor-link-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0A4D9E;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            word-break: break-all;
+            margin-top: 0.5rem;
+        }
+
+        .vendedor-link-btn:hover {
+            background: #1E6BC7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .vendedor-float-btn {
+                right: 15px;
+                padding: 1rem 1.5rem;
+                max-width: 180px;
+            }
+
+            .vendedor-float-text {
+                display: none;
+            }
+
+            .vendedor-float-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2.5rem;
+            }
+
+            .vendedor-modal-content {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .vendedor-qr-img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+
+    <script>
+        // ===================================
+        // FUNCIONES PARA MODAL DE VENDEDORES
+        // ===================================
+        
+        function openVendedorLoginModal() {
+            const modal = document.getElementById('vendedorLoginModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                // Resetear formulario
+                document.getElementById('vendedorLoginForm').style.display = 'block';
+                document.getElementById('vendedorQRPanel').style.display = 'none';
+                document.getElementById('vendedorUsername').value = '';
+                document.getElementById('vendedorPassword').value = '';
+                document.getElementById('vendedorErrorMsg').style.display = 'none';
+            }
+        }
+
+        function closeVendedorLoginModal() {
+            const modal = document.getElementById('vendedorLoginModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        async function vendedorLogin() {
+            const username = document.getElementById('vendedorUsername').value.trim();
+            const password = document.getElementById('vendedorPassword').value.trim();
+            const errorMsg = document.getElementById('vendedorErrorMsg');
+            const loginBtn = document.querySelector('.vendedor-btn-primary');
+            const loginBtnText = document.getElementById('vendedorLoginBtnText');
+            const loginSpinner = document.getElementById('vendedorLoginSpinner');
+
+            // Validación
+            if (!username || !password) {
+                errorMsg.textContent = 'Por favor, completa todos los campos';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            // Mostrar loading
+            loginBtn.disabled = true;
+            loginBtnText.style.display = 'none';
+            loginSpinner.style.display = 'inline';
+            errorMsg.style.display = 'none';
+
+            try {
+                // Determinar la URL base del servidor
+                const baseUrl = window.location.origin;
+                const apiUrl = `${baseUrl}/venta-movil/api/login`;
+                
+                console.log('Intentando login en:', apiUrl);
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    // Login exitoso
+                    document.getElementById('vendedorLoginForm').style.display = 'none';
+                    document.getElementById('vendedorQRPanel').style.display = 'block';
+                    
+                    // Mostrar datos del vendedor
+                    document.getElementById('vendedorNombre').textContent = result.vendedor.nombre;
+                    document.getElementById('vendedorQRImage').src = `${baseUrl}${result.vendedor.qr_path}`;
+                    document.getElementById('vendedorLink').href = result.vendedor.link;
+                    document.getElementById('vendedorLink').textContent = result.vendedor.link;
+                    
+                    console.log('Login exitoso:', result);
+                } else {
+                    // Error en login
+                    errorMsg.textContent = result.error || 'Error al iniciar sesión. Verifica tus credenciales.';
+                    errorMsg.style.display = 'block';
+                    console.error('Error en login:', result);
+                }
+            } catch (error) {
+                // Error de red o servidor
+                errorMsg.textContent = 'Error de conexión. Verifica que el servidor esté corriendo en ' + window.location.origin + '/venta-movil';
+                errorMsg.style.display = 'block';
+                console.error('Error de conexión:', error);
+            } finally {
+                // Restaurar botón
+                loginBtn.disabled = false;
+                loginBtnText.style.display = 'inline';
+                loginSpinner.style.display = 'none';
+            }
+        }
+
+        function vendedorLogout() {
+            document.getElementById('vendedorLoginForm').style.display = 'block';
+            document.getElementById('vendedorQRPanel').style.display = 'none';
+            document.getElementById('vendedorUsername').value = '';
+            document.getElementById('vendedorPassword').value = '';
+            document.getElementById('vendedorErrorMsg').style.display = 'none';
+        }
+
+        // Cerrar modal al hacer click fuera
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('vendedorLoginModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeVendedorLoginModal();
+                    }
+                });
+            }
+
+            // Cerrar con ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('vendedorLoginModal');
+                    if (modal && modal.style.display === 'flex') {
+                        closeVendedorLoginModal();
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,60 @@
+name: Generar Reporte Diario de Ventas
+
+on:
+  schedule:
+    # Ejecutar todos los días a las 8:00 AM UTC (4:00 AM hora Paraguay)
+    - cron: '0 8 * * *'
+  workflow_dispatch:  # Permitir ejecución manual
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+      
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Crear directorio de salida
+        run: mkdir -p report/output
+      
+      - name: Generar reporte
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          REPORT_TOKEN: ${{ secrets.REPORT_TOKEN }}
+        run: |
+          python reporting/generate_sales_report.py reporting/config.yml
+      
+      - name: Subir reporte como artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: reporte-ventas-${{ github.run_number }}
+          path: report/output/*.xlsx
+          retention-days: 30
+      
+      - name: Subir metadata como artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: metadata-${{ github.run_number }}
+          path: report/output/*.json
+          retention-days: 30
+      
+      # Opcional: Commitear reporte al repositorio
+      - name: Commitear reporte al repo (opcional)
+        if: github.event_name == 'schedule'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add report/output/*.xlsx report/output/*.json
+          git diff --staged --quiet || git commit -m "Reporte diario automático - $(date +'%Y-%m-%d')"
+          git push || echo "No hay cambios o no se pudo hacer push"
+

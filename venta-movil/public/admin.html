@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner para Vendedores -->
+    <div class="banner-vendedores">
+        <div class="banner-content">
+            <div class="banner-icon">📱</div>
+            <div class="banner-text">
+                <h3>🔐 Acceso para Vendedores</h3>
+                <p>Ingresa con tu username y password para ver tu código QR y acceder al formulario de ventas</p>
+            </div>
+            <a href="/login" class="btn-banner">Iniciar Sesión</a>
+        </div>
+    </div>
+
+    <div class="container admin-container">
+        <h1>👨‍💼 Panel Admin</h1>
+        
+        <!-- Filtros -->
+        <div class="filtros">
+            <h2>Filtros</h2>
+            <div class="filtros-grid">
+                <div class="form-group">
+                    <label for="filtro-canal">Canal</label>
+                    <select id="filtro-canal">
+                        <option value="">Todos</option>
+                        <option value="venta_fisica">Venta Física</option>
+                        <option value="live_virtual">Live Virtual</option>
+                        <option value="post_transmision">Post Transmisión</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-vendedor">Vendedor</label>
+                    <select id="filtro-vendedor">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-fecha">Fecha</label>
+                    <input type="date" id="filtro-fecha">
+                </div>
+                <div class="form-group">
+                    <label for="filtro-estado-pago">Estado de Pago</label>
+                    <select id="filtro-estado-pago">
+                        <option value="">Todos</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="pagado">Pagado</option>
+                        <option value="cancelado">Cancelado</option>
+                        <option value="devuelto">Devuelto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filtro-asiento-estado">Estado Asiento</label>
+                    <select id="filtro-asiento-estado">
+                        <option value="">Todos</option>
+                        <option value="reservado">Reservado</option>
+                        <option value="vacante">Vacante</option>
+                        <option value="comprado">Comprado</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="aplicarFiltros()" class="btn btn-primary">Aplicar Filtros</button>
+            <button onclick="limpiarFiltros()" class="btn btn-secondary">Limpiar</button>
+        </div>
+
+        <!-- Exportación -->
+        <div class="exportacion">
+            <h2>Exportar Reportes</h2>
+            <div class="export-buttons">
+                <button onclick="exportar('ventas_virtuales', 'xlsx')" class="btn btn-export">📊 Exportar Ventas Virtuales (Excel)</button>
+                <button onclick="exportar('ventas_virtuales', 'csv')" class="btn btn-export">📄 Exportar Ventas Virtuales (CSV)</button>
+                <button onclick="exportar('ventas_fisicas', 'xlsx')" class="btn btn-export">📊 Exportar Ventas Físicas (Excel)</button>
+                <button onclick="exportar('ventas_fisicas', 'csv')" class="btn btn-export">📄 Exportar Ventas Físicas (CSV)</button>
+                <button onclick="exportar('reservas_asientos', 'xlsx')" class="btn btn-export">📊 Exportar Reservas (Excel)</button>
+                <button onclick="exportar('reservas_asientos', 'csv')" class="btn btn-export">📄 Exportar Reservas (CSV)</button>
+            </div>
+        </div>
+
+        <!-- Tabla de ventas -->
+        <div class="tabla-container">
+            <h2>Ventas Registradas</h2>
+            <div id="loading" style="display: none;">Cargando...</div>
+            <table id="tabla-ventas" class="tabla-ventas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Vendedor</th>
+                        <th>Canal</th>
+                        <th>Comprador</th>
+                        <th>Total</th>
+                        <th>Estado Pago</th>
+                        <th>Asiento</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+

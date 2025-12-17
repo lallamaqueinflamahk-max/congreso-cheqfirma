@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Vendedor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner para Vendedores -->
+    <div class="banner-vendedores">
+        <div class="banner-content">
+            <div class="banner-icon">📱</div>
+            <div class="banner-text">
+                <h3>🔐 Acceso para Vendedores</h3>
+                <p>Ingresa con tu username y password para ver tu código QR y acceder al formulario de ventas</p>
+            </div>
+            <a href="/login" class="btn-banner">Iniciar Sesión</a>
+        </div>
+    </div>
+
+    <div class="container setup-container">
+        <h1>⚙️ Crear Vendedor</h1>
+        
+        <form id="vendedor-form">
+            <div class="form-group">
+                <label for="vendedor_id">ID del Vendedor *</label>
+                <input type="text" id="vendedor_id" name="vendedor_id" required 
+                       pattern="[a-zA-Z0-9_-]+" 
+                       placeholder="ej: juan_perez">
+                <small>Solo letras, números, guiones y guiones bajos</small>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre del Vendedor *</label>
+                <input type="text" id="nombre" name="nombre" required 
+                       placeholder="ej: Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username (opcional)</label>
+                <input type="text" id="username" name="username" 
+                       pattern="[a-zA-Z0-9_-]+"
+                       placeholder="ej: juan_perez">
+                <small>Para login de vendedores. Solo letras, números, guiones y guiones bajos.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password (opcional)</label>
+                <input type="password" id="password" name="password" 
+                       placeholder="Solo si proporcionas username">
+                <small>Requerido si proporcionas username.</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Crear Vendedor</button>
+        </form>
+
+        <!-- Resultado -->
+        <div id="resultado" style="display: none;" class="resultado">
+            <h2>✅ Vendedor Creado</h2>
+            <div class="info-box">
+                <p><strong>ID:</strong> <span id="result-vendedor-id"></span></p>
+                <p><strong>Nombre:</strong> <span id="result-nombre"></span></p>
+                <p><strong>Link:</strong> <a id="result-link" href="#" target="_blank"></a></p>
+            </div>
+            <div class="qr-container">
+                <h3>QR Code</h3>
+                <img id="qr-image" src="" alt="QR Code" style="max-width: 300px;">
+                <br>
+                <a id="qr-download" href="#" download class="btn btn-secondary">Descargar QR</a>
+            </div>
+            <button onclick="crearOtro()" class="btn btn-primary">Crear Otro Vendedor</button>
+        </div>
+
+        <!-- Lista de vendedores existentes -->
+        <div class="vendedores-lista">
+            <h2>Vendedores Existentes</h2>
+            <div id="lista-vendedores"></div>
+        </div>
+    </div>
+
+    <script src="setup.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Venta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner para Vendedores -->
+    <div class="banner-vendedores">
+        <div class="banner-content">
+            <div class="banner-icon">📱</div>
+            <div class="banner-text">
+                <h3>🔐 Acceso para Vendedores</h3>
+                <p>Ingresa con tu username y password para ver tu código QR y acceder al formulario de ventas</p>
+            </div>
+            <a href="/login" class="btn-banner">Iniciar Sesión</a>
+        </div>
+    </div>
+
+    <div class="container venta-container">
+        <h1 id="vendedor-nombre">Cargar Venta</h1>
+        
+        <!-- QR del vendedor -->
+        <div id="qr-vendedor-container" class="qr-vendedor-container" style="display: none;">
+            <h3>📱 Tu Código QR</h3>
+            <img id="qr-vendedor-img" src="" alt="QR Code" style="max-width: 200px; border: 2px solid #667eea; border-radius: 8px; padding: 8px; background: white;">
+            <p><small>Comparte este código para que otros puedan acceder a tu formulario</small></p>
+        </div>
+        
+        <form id="venta-form">
+            <!-- Canal de venta -->
+            <div class="form-group">
+                <label for="canal">Canal de Venta *</label>
+                <select id="canal" name="canal" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="venta_fisica">Venta Física (Asientos)</option>
+                    <option value="live_virtual">Live Virtual (Evento en Vivo)</option>
+                    <option value="post_transmision">Post Transmisión</option>
+                </select>
+            </div>
+
+            <!-- Campos comunes -->
+            <div class="form-group">
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="medio_pago">Medio de Pago *</label>
+                <select id="medio_pago" name="medio_pago" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="transferencia_bancaria">Transferencia Bancaria</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="efectivo">Efectivo</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="precio_unitario">Precio Unitario</label>
+                <input type="number" id="precio_unitario" name="precio_unitario" step="0.01" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="precio_promocional_preventa_40off">Precio Promocional Preventa (40% off)</label>
+                <input type="number" id="precio_promocional_preventa_40off" name="precio_promocional_preventa_40off" step="0.01" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="precio_venta">Precio de Venta *</label>
+                <input type="number" id="precio_venta" name="precio_venta" step="0.01" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cantidad">Cantidad *</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="total">Total *</label>
+                <input type="number" id="total" name="total" step="0.01" min="0" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="comprador_email">Email del Comprador</label>
+                <input type="email" id="comprador_email" name="comprador_email">
+            </div>
+
+            <div class="form-group">
+                <label for="comprador_whatsapp">WhatsApp del Comprador *</label>
+                <input type="tel" id="comprador_whatsapp" name="comprador_whatsapp" placeholder="+595981234567" required>
+            </div>
+
+            <div class="form-group">
+                <label for="estado_pago">Estado de Pago *</label>
+                <select id="estado_pago" name="estado_pago" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="pagado">Pagado</option>
+                    <option value="cancelado">Cancelado</option>
+                    <option value="devuelto">Devuelto</option>
+                </select>
+            </div>
+
+            <!-- Campos específicos por canal -->
+            <div id="campos-venta-fisica" class="campos-canal" style="display: none;">
+                <!-- Visualización de asientos -->
+                <div class="form-group">
+                    <label>Mapa de Asientos</label>
+                    <div class="asientos-leyenda">
+                        <div class="leyenda-item">
+                            <span class="leyenda-color verde"></span>
+                            <span>Libre</span>
+                        </div>
+                        <div class="leyenda-item">
+                            <span class="leyenda-color amarillo"></span>
+                            <span>Reservado</span>
+                        </div>
+                        <div class="leyenda-item">
+                            <span class="leyenda-color rojo"></span>
+                            <span>Vendido</span>
+                        </div>
+                    </div>
+                    <div id="asientos-grid" class="asientos-grid">
+                        <!-- Los asientos se cargarán dinámicamente -->
+                    </div>
+                    <small>Haz clic en un asiento para seleccionarlo</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asiento_fisico_numero">Número de Asiento Seleccionado *</label>
+                    <input type="number" id="asiento_fisico_numero" name="asiento_fisico_numero" min="1" max="100" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="asiento_estado">Estado del Asiento *</label>
+                    <select id="asiento_estado" name="asiento_estado">
+                        <option value="">Seleccionar...</option>
+                        <option value="reservado">Reservado</option>
+                        <option value="vacante">Vacante</option>
+                        <option value="comprado">Comprado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notas">Notas</label>
+                <textarea id="notas" name="notas" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Guardar Venta</button>
+        </form>
+
+        <!-- Mensaje de éxito -->
+        <div id="mensaje-exito" style="display: none;" class="mensaje-exito">
+            <h2>✅ Venta Registrada</h2>
+            <p id="mensaje-texto"></p>
+            <button onclick="cargarOtra()" class="btn btn-secondary">Cargar Otra Venta</button>
+        </div>
+    </div>
+
+    <script src="venta.js"></script>
+</body>
+</html>
+

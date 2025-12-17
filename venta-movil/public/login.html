@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Vendedor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Banner para Vendedores -->
+    <div class="banner-vendedores">
+        <div class="banner-content">
+            <div class="banner-icon">📱</div>
+            <div class="banner-text">
+                <h3>🔐 Acceso para Vendedores</h3>
+                <p>Ingresa con tu username y password para ver tu código QR y acceder al formulario de ventas</p>
+            </div>
+            <a href="/" class="btn-banner">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <div class="container login-container">
+        <h1>🔐 Login Vendedor</h1>
+        
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username *</label>
+                <input type="text" id="username" name="username" required 
+                       placeholder="Tu username">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" required 
+                       placeholder="Tu password">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-large">Iniciar Sesión</button>
+        </form>
+
+        <!-- Mensaje de error -->
+        <div id="mensaje-error" style="display: none;" class="mensaje-error">
+            <p id="error-texto"></p>
+        </div>
+
+        <!-- Panel del vendedor (después del login) -->
+        <div id="panel-vendedor" style="display: none;" class="panel-vendedor">
+            <h2>Bienvenido, <span id="vendedor-nombre"></span></h2>
+            
+            <div class="info-box">
+                <p><strong>ID:</strong> <span id="vendedor-id"></span></p>
+                <p><strong>Link de Venta:</strong> <a id="vendedor-link" href="#" target="_blank"></a></p>
+            </div>
+
+            <div class="qr-container">
+                <h3>📱 Tu Código QR</h3>
+                <p>Escanea este código para acceder al formulario de venta</p>
+                <img id="qr-image" src="" alt="QR Code" style="max-width: 300px; border: 3px solid #667eea; border-radius: 10px; padding: 10px; background: white;">
+                <br><br>
+                <a id="qr-download" href="#" download class="btn btn-secondary">Descargar QR</a>
+            </div>
+
+            <div class="acciones">
+                <a id="link-venta" href="#" class="btn btn-primary">Ir al Formulario de Venta</a>
+                <button onclick="cerrarSesion()" class="btn btn-secondary">Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
+

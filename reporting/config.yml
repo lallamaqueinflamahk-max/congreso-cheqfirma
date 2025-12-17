@@ -1,0 +1,60 @@
+# Configuración del Sistema de Reporte de Ventas Automático
+# Congreso ADN Humano
+
+# Fecha del evento (para calcular proyecciones)
+event:
+  date: "2025-12-19T08:00:00"  # ISO format
+  name: "Congreso ADN Humano"
+
+# Capacidad total
+capacity: 100
+
+# Fuente de datos
+datasource:
+  type: "netlify_blobs"  # opciones: "netlify_blobs", "postgresql", "csv"
+  
+  # Para Netlify Blobs (recomendado):
+  api_url: "https://tu-sitio.netlify.app/.netlify/functions/getSeats"
+  # Alternativa: exportar datos a JSON y usar:
+  # json_export_path: "data/exported_seats.json"
+  
+  # Para PostgreSQL:
+  # host: "localhost"
+  # port: 5432
+  # dbname: "congreso"
+  # user: "postgres"
+  # password: "${DB_PASSWORD}"  # usar variable de entorno
+  
+  # Para CSV:
+  # csv_path: "data/seats.csv"
+  # column_mapping:
+  #   seat_id: "seat_id"
+  #   seat_number: "seat_number"
+  #   status: "status"
+  #   buyer_name: "buyer_name"
+  #   buyer_email: "buyer_email"
+  #   venta_origen: "venta_origen"
+  #   amount_paid: "amount_paid"
+  #   deposit_amount: "deposit_amount"
+
+# Directorio de salida
+output_dir: "report/output"
+
+# Configuración de proyección
+proyeccion:
+  dias: 28  # Días a proyectar (o hasta fin del evento si es menor)
+  usar_tendencia: true
+  usar_conversion_reservas: true
+
+# Timezone (opcional, por defecto usa sistema)
+timezone: "America/Asuncion"
+
+# Moneda
+currency: "Gs"  # Guaraníes paraguayos
+
+# Filtros opcionales
+filters:
+  # eventos: []  # Lista de eventos/productos a incluir (vacío = todos)
+  # fecha_desde: "2025-01-01"  # Fecha inicio (opcional)
+  # fecha_hasta: null  # Fecha fin (null = hoy)
+
