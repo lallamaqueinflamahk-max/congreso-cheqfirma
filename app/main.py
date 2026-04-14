@@ -13,3 +13,4 @@ def read_root():
 @app.get("/test")
 def test():
     return {"message": "Ruta de prueba funcionando"}
+
