@@ -24,7 +24,7 @@ pytest-cov>=4.1.0
 # Configuración
 PyYAML>=6.0.1
 
-# Web Framework (ESTO ES LO QUE FALTA)
+# Web Framework
 fastapi
 uvicorn
 
