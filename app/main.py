@@ -10,3 +10,4 @@ def read_root():
     path = os.path.join(os.path.dirname(__file__), "index.html")
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
+
